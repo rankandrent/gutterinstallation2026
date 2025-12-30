@@ -16,9 +16,11 @@ interface ServicePageProps {
         city: string
         state_id: string
     }[]
+    latitude?: number
+    longitude?: number
 }
 
-export default function ServicePage({ city, state, stateCode, zipCodes, relatedCities }: ServicePageProps) {
+export default function ServicePage({ city, state, stateCode, zipCodes, relatedCities, latitude, longitude }: ServicePageProps) {
     const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     const formattedState = state.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
 
@@ -53,23 +55,42 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                     <div className="absolute top-48 -left-24 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto text-center">
-                    <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-300 text-sm font-semibold uppercase tracking-wider">
-                        #1 Rated in {stateCode.toUpperCase()}
-                    </div>
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-                        Premium Gutter Installation in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{formattedCity}</span>
-                    </h1>
-                    <div className="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto font-light space-y-4">
-                        <p dangerouslySetInnerHTML={{ __html: content.intro.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-medium">$1</span>') }} />
+                <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Column: Text */}
+                    <div className="text-center lg:text-left">
+                        <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-300 text-sm font-semibold uppercase tracking-wider">
+                            #1 Rated in {stateCode.toUpperCase()}
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+                            Premium Gutter Installation in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{formattedCity}</span>
+                        </h1>
+                        <div className="text-xl md:text-2xl text-slate-300 mb-10 font-light space-y-4">
+                            <p dangerouslySetInnerHTML={{ __html: content.intro.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-medium">$1</span>') }} />
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                            <CallBtn className="py-4 px-10 text-lg w-full sm:w-auto transform hover:scale-105" label="Call Now for Fast Quote" />
+                            <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all w-full sm:w-auto">
+                                View Services
+                            </button>
+                        </div>
                     </div>
 
+                    {/* Right Column: Image */}
+                    <div className="relative hidden lg:block">
+                        <div className="relative w-full aspect-square max-w-lg mx-auto">
+                            {/* Decorative blob behind image */}
+                            <div className="absolute inset-0 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <CallBtn className="py-4 px-10 text-lg w-full sm:w-auto transform hover:scale-105" label="Call Now for Fast Quote" />
-                        <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all w-full sm:w-auto">
-                            View Services
-                        </button>
+                            <Image
+                                src="/Premium Gutter Installation-.png"
+                                alt="Premium Gutter Installation"
+                                width={600}
+                                height={600}
+                                className="relative z-10 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                                priority
+                            />
+                        </div>
                     </div>
                 </div>
             </header>
@@ -99,8 +120,8 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             "@type": "GeoCircle",
                             "geoMidpoint": {
                                 "@type": "GeoCoordinates",
-                                "latitude": "37.0902",
-                                "longitude": "-95.7129"
+                                "latitude": latitude || "37.0902",
+                                "longitude": longitude || "-95.7129"
                             },
                             "geoRadius": "50000"
                         },

@@ -10,10 +10,15 @@ interface BreadcrumbProps {
 }
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
+    const schemaItems = [
+        { label: 'Home', href: '/' },
+        ...items.map(item => ({ label: item.label, href: item.href }))
+    ]
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": items.map((item, index) => ({
+        "itemListElement": schemaItems.map((item, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "name": item.label,
