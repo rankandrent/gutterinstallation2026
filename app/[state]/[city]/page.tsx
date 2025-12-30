@@ -60,6 +60,19 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     }
 }
 
+// Fetch related cities in the same state
+async function getRelatedCities(stateCode: string, currentCity: string) {
+    const { data } = await supabase
+        .from('usa city name')
+        .select('city, state_id')
+        .eq('state_id', stateCode)
+        .neq('city', currentCity)
+        .order('population', { ascending: false })
+        .limit(10)
+
+    return data || []
+}
+
 export default async function Page(props: PageProps) {
     const params = await props.params
     const { state, city } = params
@@ -73,5 +86,17 @@ export default async function Page(props: PageProps) {
     const stateName = cityData?.state_name || state
     const stateCodeProper = cityData?.state_id || state
 
-    return <ServicePage city={cityName} state={stateName} stateCode={stateCodeProper} />
+    // Parse zip codes from space-separated string
+    const zipCodes = cityData?.zips ? cityData.zips.split(' ').filter(Boolean) : []
+
+    // Fetch related cities
+    const relatedCities = await getRelatedCities(stateCodeProper, cityName)
+
+    return <ServicePage
+        city={cityName}
+        state={stateName}
+        stateCode={stateCodeProper}
+        zipCodes={zipCodes}
+        relatedCities={relatedCities}
+    />
 }

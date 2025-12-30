@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Footer from '@/components/Footer'
 import { getSEOContent } from '@/lib/seo-content'
 import RelatedServices from '@/components/RelatedServices'
@@ -10,9 +11,14 @@ interface ServicePageProps {
     city: string
     state: string
     stateCode: string
+    zipCodes?: string[]
+    relatedCities?: {
+        city: string
+        state_id: string
+    }[]
 }
 
-export default function ServicePage({ city, state, stateCode }: ServicePageProps) {
+export default function ServicePage({ city, state, stateCode, zipCodes, relatedCities }: ServicePageProps) {
     const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     const formattedState = state.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
 
@@ -166,17 +172,63 @@ export default function ServicePage({ city, state, stateCode }: ServicePageProps
                     <div className="relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl transform rotate-3 opacity-20"></div>
                         <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
-                            <div className="aspect-[4/3] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden">
-                                {/* Placeholder for local image */}
-                                <div className="text-center p-8">
-                                    <span className="text-6xl mb-4 block">🏠</span>
-                                    <p className="text-slate-400 font-medium">Project Gallery: {formattedCity}</p>
+                            <div className="aspect-[4/3] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative">
+                                <Image
+                                    src="/images/gutter-install-crew.jpg"
+                                    alt={`Gutter installation in ${formattedCity}`}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                    <p className="font-medium text-lg">Local Project: {formattedCity}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Popular Zip Codes Section */}
+            {zipCodes && zipCodes.length > 0 && (
+                <section className="py-16 px-6 bg-white border-y border-slate-100">
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+                            Popular Zip Codes in {formattedCity}
+                        </h2>
+                        <div className="flex flex-wrap justify-center gap-3">
+                            {zipCodes.map((zip, i) => (
+                                <span key={i} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-slate-600 text-sm font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default">
+                                    {zip}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Nearby Cities Section */}
+            {relatedCities && relatedCities.length > 0 && (
+                <section className="py-16 px-6 bg-slate-50 border-b border-slate-200">
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+                            Other Top Locations in {stateCode.toUpperCase()}
+                        </h2>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                            {relatedCities.map((cityData, i) => (
+                                <Link
+                                    key={i}
+                                    href={`/${cityData.state_id}/${cityData.city.toLowerCase().replace(/ /g, '-')}`}
+                                    className="block p-3 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all text-center text-slate-700 font-medium hover:text-blue-600 truncate"
+                                    title={cityData.city}
+                                >
+                                    {cityData.city}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Services Detailed Section */}
             <section className="py-24 px-6 bg-slate-50">
