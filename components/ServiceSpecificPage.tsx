@@ -457,7 +457,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                         <div className="relative w-full aspect-square max-w-lg mx-auto">
                             <div className="absolute inset-0 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
                             <Image
-                                src="/Premium Gutter Installation-.png"
+                                src="/gutter-installation-hero.png"
                                 alt={`${service.title} in ${formattedCity}, ${stateCode}`}
                                 width={600}
                                 height={600}

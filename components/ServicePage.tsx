@@ -86,7 +86,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             <div className="absolute inset-0 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
 
                             <Image
-                                src="/Premium Gutter Installation-.png"
+                                src="/gutter-installation-hero.png"
                                 alt="Premium Gutter Installation"
                                 width={600}
                                 height={600}
@@ -212,7 +212,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                         <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
                             <div className="aspect-[4/3] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative">
                                 <Image
-                                    src="/images/gutter-install-crew.jpg"
+                                    src="/gutter-install-crew.jpg"
                                     alt={`Gutter installation in ${formattedCity}`}
                                     fill
                                     className="object-cover"
