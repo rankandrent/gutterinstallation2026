@@ -75,7 +75,7 @@ export async function GET(
     // State Page URL (highest priority)
     const stateUrl = `
     <url>
-        <loc>${baseUrl}/${stateCode}</loc>
+        <loc>${baseUrl}/${stateCode.toLowerCase()}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -91,7 +91,7 @@ export async function GET(
         // Main city page
         const mainCityUrl = `
     <url>
-        <loc>${baseUrl}/${stateCode}/${citySlug}</loc>
+        <loc>${baseUrl}/${stateCode.toLowerCase()}/${citySlug}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>${cityPriority}</priority>
@@ -107,7 +107,7 @@ export async function GET(
             const servicePriority = PRIORITY_SERVICES.includes(service.slug) ? '0.6' : '0.5'
             return `
     <url>
-        <loc>${baseUrl}/${stateCode}/${citySlug}/${service.slug}</loc>
+        <loc>${baseUrl}/${stateCode.toLowerCase()}/${citySlug}/${service.slug}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>${servicePriority}</priority>

@@ -659,7 +659,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                             {relatedCities.map((cityData, i) => (
                                 <Link
                                     key={i}
-                                    href={`/${cityData.state_id}/${cityData.city.toLowerCase().replace(/ /g, '-')}/${service.slug}`}
+                                    href={`/${cityData.state_id.toLowerCase()}/${cityData.city.toLowerCase().replace(/ /g, '-')}/${service.slug}`}
                                     className="block p-3 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all text-center text-slate-700 font-medium truncate"
                                     title={`${service.title} in ${cityData.city}`}
                                 >

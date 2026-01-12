@@ -133,7 +133,7 @@ export default async function Home() {
             {uniqueStates.map((state) => (
               <Link
                 key={state.state_id}
-                href={`/${state.state_id}`}
+                href={`/${state.state_id.toLowerCase()}`}
                 className="group flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex flex-col text-left">

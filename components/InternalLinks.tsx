@@ -33,7 +33,7 @@ export default function InternalLinks({ currentCity, stateCode, relatedCities }:
                                 return (
                                     <li key={i}>
                                         <Link
-                                            href={`/${city.state_id}/${citySlug}`}
+                                            href={`/${city.state_id.toLowerCase()}/${citySlug}`}
                                             className="text-blue-600 hover:text-blue-800 hover:underline text-sm"
                                         >
                                             Gutter Installation in {city.city}, {city.state_id}
@@ -56,7 +56,7 @@ export default function InternalLinks({ currentCity, stateCode, relatedCities }:
                                     return (
                                         <li key={i}>
                                             <Link
-                                                href={`/${city.state_id}/${citySlug}`}
+                                                href={`/${city.state_id.toLowerCase()}/${citySlug}`}
                                                 className="text-slate-600 hover:text-blue-600 hover:underline text-sm"
                                             >
                                                 {city.city} Gutter Services
@@ -72,7 +72,7 @@ export default function InternalLinks({ currentCity, stateCode, relatedCities }:
                 {/* State Link for Topical Authority */}
                 <div className="mt-8 text-center">
                     <Link
-                        href={`/${stateCode}`}
+                        href={`/${stateCode.toLowerCase()}`}
                         className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
                     >
                         <span>←</span>

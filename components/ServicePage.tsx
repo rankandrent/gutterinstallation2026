@@ -259,7 +259,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             {relatedCities.map((cityData, i) => (
                                 <Link
                                     key={i}
-                                    href={`/${cityData.state_id}/${cityData.city.toLowerCase().replace(/ /g, '-')}`}
+                                    href={`/${cityData.state_id.toLowerCase()}/${cityData.city.toLowerCase().replace(/ /g, '-')}`}
                                     className="block p-3 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all text-center text-slate-700 font-medium hover:text-blue-600"
                                     title={`Gutter Installation in ${cityData.city}, ${cityData.state_id}`}
                                 >

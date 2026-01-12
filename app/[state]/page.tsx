@@ -49,12 +49,12 @@ export async function generateMetadata(props: StatePageProps): Promise<Metadata>
         description: `Find gutter installation near me in ${stateName}. Connect with licensed local gutter contractors for seamless gutters, gutter guards, gutter cleaning, soffit & fascia repair. Free quotes in 24 hours!`,
         keywords: `gutter installation near me ${stateName}, gutter companies near me ${stateName}, seamless gutters near me ${stateName}, gutter repair near me ${stateName}, gutter guards near me ${stateName}`,
         alternates: {
-            canonical: `/${stateCode}`
+            canonical: `/${stateCode.toLowerCase()}`
         },
         openGraph: {
             title: `Find Gutter Installation Near Me in ${stateName} | Local Experts`,
             description: `Connect with top-rated gutter installers near you in ${stateName}. Seamless gutters, gutter guards, cleaning & repair with lifetime warranty. Get a free quote now.`,
-            url: `https://usgutterinstallation.com/${stateCode}`,
+            url: `https://usgutterinstallation.com/${stateCode.toLowerCase()}`,
             type: 'website'
         }
     }
@@ -118,7 +118,7 @@ export default async function StatePage(props: StatePageProps) {
             </header>
 
             <Breadcrumb items={[
-                { label: stateName, href: `/${params.state}` }
+                { label: stateName, href: `/${params.state.toLowerCase()}` }
             ]} />
 
             <RelatedServices state={stateName} />
@@ -140,7 +140,7 @@ export default async function StatePage(props: StatePageProps) {
                             return (
                                 <Link
                                     key={index}
-                                    href={`/${city.state_id}/${citySlug}`}
+                                    href={`/${city.state_id.toLowerCase()}/${citySlug}`}
                                     className="group flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                                 >
                                     <div className="flex flex-col text-left">
