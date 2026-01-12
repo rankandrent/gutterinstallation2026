@@ -36,12 +36,12 @@ export async function GET() {
     </sitemap>
     ${priorityStates.filter(s => uniqueStates.includes(s)).map(state => `
     <sitemap>
-        <loc>${baseUrl}/sitemap/${state}.xml</loc>
+        <loc>${baseUrl}/sitemap/${state.toLowerCase()}.xml</loc>
         <lastmod>${today}</lastmod>
     </sitemap>`).join('')}
     ${otherStates.map(state => `
     <sitemap>
-        <loc>${baseUrl}/sitemap/${state}.xml</loc>
+        <loc>${baseUrl}/sitemap/${state.toLowerCase()}.xml</loc>
         <lastmod>${today}</lastmod>
     </sitemap>`).join('')}
 </sitemapindex>`

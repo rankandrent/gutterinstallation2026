@@ -39,7 +39,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         description: `Looking for gutter installation near me in ${formattedCity}, ${stateCode}? Find licensed local gutter contractors for seamless gutters, gutter guards, gutter cleaning, soffit & fascia repair. Get a free quote in 24 hours!`,
         keywords: `gutter installation near me ${formattedCity}, gutter repair near me ${formattedCity} ${stateCode}, gutter guards near me ${formattedCity}, seamless gutters near me ${formattedCity}, gutter cleaning near me ${formattedCity}, soffit repair near me ${formattedCity}, gutter companies near me ${formattedCity}`,
         alternates: {
-            canonical: `/${state}/${city}`
+            canonical: `/${state.toLowerCase()}/${city.toLowerCase()}`
         },
         openGraph: {
             title: `Find Gutter Installation Near Me in ${formattedCity}, ${stateCode}`,

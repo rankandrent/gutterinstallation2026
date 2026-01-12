@@ -32,7 +32,7 @@ export async function generateMetadata(props: StartServicePageProps): Promise<Me
         title: `${serviceInfo.title} ${formattedCity}, ${formattedState} | US Gutter Installation`,
         description: serviceInfo.description(formattedCity, formattedState),
         alternates: {
-            canonical: `/${state}/${city}/${service}`
+            canonical: `/${state.toLowerCase()}/${city.toLowerCase()}/${service}`
         }
     }
 }

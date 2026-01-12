@@ -134,7 +134,7 @@ export default async function StatePage(props: StatePageProps) {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                         {cities.map((city, index) => {
-                            const citySlug = city.city.trim().replace(/\s+/g, '-')
+                            const citySlug = city.city.trim().toLowerCase().replace(/\s+/g, '-')
                             const primaryZip = city.zips ? city.zips.split(' ')[0] : ''
 
                             return (
