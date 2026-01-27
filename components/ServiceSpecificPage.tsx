@@ -19,7 +19,7 @@ interface ServiceSpecificPageProps {
     }[]
 }
 
-// Service-specific extended content for semantic SEO
+// Service-specific extended content for semantic SEO - Gutter Services
 const serviceExtendedContent: Record<string, {
     whatIs: string
     process: string[]
@@ -29,205 +29,305 @@ const serviceExtendedContent: Record<string, {
     duration: string
     warranty: string
 }> = {
-    "sump-pump-installation": {
-        whatIs: "A professional sump pump installation involves placing a submersible or pedestal pump in a basin (sump pit) at the lowest point of your basement. It automatically pumps accumulating water out and away from your home's foundation to prevent flooding and water damage.",
+    "seamless-gutter-installation": {
+        whatIs: "Seamless gutter installation involves custom-fabricating continuous aluminum gutters on-site to perfectly fit your home's roofline. Unlike sectional gutters, seamless systems have no joints along the run, dramatically reducing leaks, clogs, and maintenance while providing superior water management.",
         process: [
-            "Assessment of basement water intrusion source",
-            "Excavation of sump pit (if new) or cleaning of existing",
-            "Installation of perforated sump basin with gravel pack",
-            "Pump placement and discharge pipe connection",
-            "Silent check valve installation to prevent backflow",
-            "Discharge line routing to exterior drainage"
+            "Complete roofline measurement and assessment",
+            "Custom on-site gutter fabrication with portable machine",
+            "Removal of old gutters and inspection of fascia boards",
+            "Installation of new hidden hangers every 24 inches",
+            "Seamless gutter mounting with proper slope for drainage",
+            "Downspout connection and water flow testing"
         ],
         materials: [
-            { name: "Cast Iron Submersible Pump", description: "Heavy-duty housing dissipates heat, 20+ year lifespan" },
-            { name: "Thermoplastic Pump", description: "Corrosion-resistant, lightweight, cost-effective" },
-            { name: "Silent Check Valve", description: "Spring-loaded valve that eliminates 'clunking' noise" },
-            { name: "Sealed Basin Lid", description: "Prevents radon, odors, and moisture evaporation" }
+            { name: "Aluminum Coil Stock", description: "0.027-0.032 gauge aluminum, available in 30+ colors" },
+            { name: "Hidden Hangers", description: "Heavy-duty brackets that mount inside the gutter" },
+            { name: "Gutter Sealant", description: "Professional-grade silicone for watertight connections" },
+            { name: "Aluminum Downspouts", description: "2x3 or 3x4 inch corrugated or smooth styles" }
         ],
         faqs: [
-            { q: "What size sump pump do I need?", a: "For most homes, a 1/3 HP pump is sufficient. High water tables or deep basements may require 1/2 or 3/4 HP." },
-            { q: "How long does a sump pump last?", a: "Average lifespan is 7-10 years. Frequent cycling or sediment can reduce this. We recommend replacement every 10 years." },
-            { q: "Do I need a cover on my sump pit?", a: "Yes. A sealed lid prevents radon gas entry, keeps odors out, and prevents debris (or pets) from falling in." }
+            { q: "How long do seamless gutters last?", a: "With proper maintenance, aluminum seamless gutters last 20-30 years. Copper can last 50+ years." },
+            { q: "What colors are available?", a: "We offer 30+ factory-baked colors. Custom color matching is also available for an additional fee." },
+            { q: "Do seamless gutters really prevent leaks?", a: "Yes! The only seams are at corners and downspouts, reducing leak points by 90% compared to sectional." }
         ],
-        priceRange: "$400-800 replacement, $2500+ new pit",
-        duration: "1-2 hours replacement, 1 day new pit",
-        warranty: "3-5 year manufacturer, 1 year labor"
+        priceRange: "$8-15 per linear foot",
+        duration: "1 day for most homes",
+        warranty: "20-year material, 5-year labor"
     },
-    "battery-backup-systems": {
-        whatIs: "A battery backup sump pump system is a secondary pump powered by a heavy-duty marine battery. It sits next to your primary pump and automatically activates if the primary pump fails or if power is lost during a storm—exactly when you need protection most.",
+    "gutter-guards-leaf-protection": {
+        whatIs: "Gutter guards are protective covers installed over your gutters to prevent leaves, debris, and pests from clogging your drainage system. Our micro-mesh and solid-cover options allow rainwater to flow freely while blocking even small debris like pine needles and shingle grit.",
         process: [
-            "Testing of primary pump and discharge line",
-            "Installation of backup pump in existing pit",
-            "Connection to dedicated discharge or shared line",
-            "Battery case and control unit mounting",
-            "Wiring and float switch adjustment",
-            "Simulation test to ensure auto-activation"
+            "Complete gutter cleaning and inspection",
+            "Assessment of debris type (leaves, needles, seeds)",
+            "Selection of appropriate guard type for your situation",
+            "Professional installation with secure fastening",
+            "Testing with water to ensure proper flow",
+            "Final adjustment of guard angle for optimal performance"
         ],
         materials: [
-            { name: "AGM Deep Cycle Battery", description: "Maintenance-free, long life, safe for indoor use" },
-            { name: "Smart Control Unit", description: "Digital display, self-testing, and alarm features" },
-            { name: "DC Backup Pump", description: "Efficient 12V pump capable of removing 2000+ GPH" },
-            { name: "Wifi Module", description: "Sends text/email alerts during activation" }
+            { name: "Micro-Mesh Guards", description: "Surgical-grade stainless steel mesh blocks smallest debris" },
+            { name: "Solid Cover Guards", description: "Aluminum covers with surface tension technology" },
+            { name: "Foam Inserts", description: "Budget-friendly option that blocks large debris" },
+            { name: "Brush Guards", description: "Polypropylene bristles that let water through" }
         ],
         faqs: [
-            { q: "How long will the battery last?", a: "A fully charged battery typically provides 5-7 hours of continuous pumping, or 2-3 days of intermittent cycling." },
-            { q: "Do I really need a backup?", a: "If you have a finished basement or store valuables there, yes. Power outages and storms go hand-in-hand." },
-            { q: "Can I use a car battery?", a: "No. You need a Deep Cycle Marine/RV battery designed for long, slow discharge. Car batteries are for short bursts." }
+            { q: "Do gutter guards really work?", a: "Yes! Quality guards reduce cleaning by 90-95%. Some fine debris may still require occasional maintenance." },
+            { q: "Will they void my gutter warranty?", a: "Professional installation maintains warranties. DIY installation may void them." },
+            { q: "Which type is best for pine trees?", a: "Micro-mesh guards are ideal for pine needles - they block needles while allowing water flow." }
         ],
-        priceRange: "$800-1500 installed",
-        duration: "2-3 hours",
-        warranty: "3 year pump/controller, 1 year battery"
+        priceRange: "$7-20 per linear foot",
+        duration: "4-8 hours for most homes",
+        warranty: "Lifetime clog-free guarantee available"
     },
-    "sewage-ejector-pumps": {
-        whatIs: "Sewage ejector pumps (or grinder pumps) lift wastewater from basement bathrooms, laundry sinks, or floor drains up to the main sewer line. Unlike sump pumps, they are designed to handle solids and sealed in gas-tight basins to prevent sewage gases.",
+    "gutter-cleaning-maintenance": {
+        whatIs: "Professional gutter cleaning removes leaves, debris, and buildup from your gutters and downspouts to ensure proper water drainage. Regular maintenance prevents water damage, foundation issues, and extends the life of your gutter system significantly.",
         process: [
-            "Basin location and venting assessment",
-            "Removal of old unit (if replacement)",
-            "Installation of sealed gas-tight basin",
-            "Connection of 2\" discharge and vent pipes",
-            "Pump installation and float setting",
-            "Seal testing to ensure no gas leaks"
+            "Roof and gutter inspection for damage",
+            "Manual debris removal from all gutters",
+            "Downspout clearing and flushing",
+            "Gutter realignment if sagging detected",
+            "Seam and connection inspection",
+            "Water flow testing to verify drainage"
         ],
         materials: [
-            { name: "Grinder Pump", description: "Macerates solids into slurry, prevents clogs" },
-            { name: "Solids Handling Pump", description: "Passes 2\" solids without grinding (standard)" },
-            { name: "Gas-Tight Basin", description: "Bolted gasketed lid prevents sewer gas escape" },
-            { name: "Check/Ball Valve", description: "Prevents wastewater backflow into basin" }
+            { name: "Gutter Scoops", description: "Specialized tools for efficient debris removal" },
+            { name: "High-Pressure Flush", description: "Clears packed downspouts and stubborn clogs" },
+            { name: "Ladder Stabilizers", description: "Safe access equipment for all roof types" },
+            { name: "Gutter Sealant", description: "For minor repairs discovered during cleaning" }
         ],
         faqs: [
-            { q: "What is the difference between sump and ejector pumps?", a: "Sump pumps handle clear groundwater. Ejector pumps handle raw sewage and solids, requiring a sealed system." },
-            { q: "Why does it smell?", a: "Smells usually indicate a compromised lid seal or a dry P-trap. We can smoke-test to find the leak." },
-            { q: "Can I flush wipes?", a: "We strongly advise against it, even with a grinder pump. Wipes are the #1 cause of ejector pump failure." }
+            { q: "How often should I clean gutters?", a: "At minimum twice yearly - spring and fall. Homes with many trees may need quarterly cleaning." },
+            { q: "Can clogged gutters damage my home?", a: "Yes! Overflowing gutters cause foundation damage, basement flooding, fascia rot, and landscape erosion." },
+            { q: "Do you repair while cleaning?", a: "Minor repairs like resealing seams are included. Major repairs are quoted separately." }
         ],
-        priceRange: "$900-1800 replacement",
+        priceRange: "$150-350 per cleaning",
+        duration: "1-3 hours",
+        warranty: "30-day clog-free guarantee"
+    },
+    "downspout-installation-extensions": {
+        whatIs: "Downspout installation and extensions ensure rainwater is properly directed away from your foundation. We install new downspouts, replace damaged ones, and add extensions to discharge water at least 6 feet from your home to prevent flooding and foundation damage.",
+        process: [
+            "Water flow assessment and discharge planning",
+            "Downspout sizing based on roof drainage area",
+            "Secure mounting with aluminum straps",
+            "Elbow and extension installation",
+            "Underground drain connection if applicable",
+            "Testing to verify proper water flow direction"
+        ],
+        materials: [
+            { name: "Aluminum Downspouts", description: "2x3 or 3x4 inch in matching gutter colors" },
+            { name: "Extension Pieces", description: "Above-ground extensions in various lengths" },
+            { name: "Splash Blocks", description: "Concrete or plastic dispersal bases" },
+            { name: "Flip-Up Extensions", description: "Retractable for easy lawn mowing" }
+        ],
+        faqs: [
+            { q: "How far should water drain from foundation?", a: "Minimum 6 feet, ideally 10 feet. We can install underground drains for longer distances." },
+            { q: "Can downspouts connect underground?", a: "Yes! We install buried drain lines to pop-up emitters for invisible water management." },
+            { q: "How many downspouts do I need?", a: "Generally one downspout per 35-40 feet of gutter run. Large roof areas may need more." }
+        ],
+        priceRange: "$75-200 per downspout",
         duration: "2-4 hours",
-        warranty: "3 year limited warranty"
+        warranty: "5-year installation warranty"
     },
-    "basement-waterproofing": {
-        whatIs: "Basement waterproofing involves a combination of techniques to manage hydrostatic pressure and prevent water intrusion. This includes interior discharge drainage (French drains), vapor barriers, and sealant applications to keep your basement dry and mold-free.",
+    "soffit-fascia-repair": {
+        whatIs: "Soffit and fascia are the finishing pieces under your roof overhang that protect rafters and provide ventilation. Damaged soffit or fascia can lead to water intrusion, pest entry, and gutter failure. We repair or replace these critical components to maintain your home's integrity.",
         process: [
-            "Moisture mapping and foundation inspection",
-            "Jackhammering perimeter floor trench (for French drain)",
-            "Laying perforated pipe and gravel",
-            "Installing wall vapor barrier/encapsulation",
-            "Re-concreting the floor",
-            "Connection to high-capacity sump system"
+            "Inspection of existing soffit and fascia condition",
+            "Removal of damaged sections and gutter detachment",
+            "Wood rot repair or complete board replacement",
+            "New fascia board installation with aluminum capping",
+            "Vented soffit installation for proper attic airflow",
+            "Gutter reattachment and painting if needed"
         ],
         materials: [
-            { name: "Perforated Drain Tile", description: "Collects sub-floor water" },
-            { name: "Washed Clean Gravel", description: "Filters sediment, improves flow" },
-            { name: "Vapor Barrier (12-20 mil)", description: "Thick plastic sheeting stops moisture through walls" },
-            { name: "Dimpled Drainage Board", description: "Directs wall leaks down to drain tile" }
+            { name: "Aluminum Fascia Cover", description: "Maintenance-free wrap over wood fascia" },
+            { name: "Vinyl Soffit Panels", description: "Vented panels for attic ventilation" },
+            { name: "PVC Fascia Boards", description: "Rot-proof composite alternative to wood" },
+            { name: "Pressure-Treated Lumber", description: "Durable wood for structural replacement" }
         ],
         faqs: [
-            { q: "Is this messy?", a: "Excavation creates dust, but we use negative pressure fans and plastic containment to keep your home clean." },
-            { q: "Does this fix cracked walls?", a: "Waterproofing manages water. Structural crack repair is a separate service we often perform simultaneously." },
-            { q: "Can I finish my basement after?", a: "Yes! Our internal systems are designed specifically to allow for drywall and flooring installation afterward." }
+            { q: "Why is my fascia rotting?", a: "Usually from gutter overflow or ice dams. We fix the cause and replace the damaged wood." },
+            { q: "Can you wrap existing fascia?", a: "If the wood is solid, yes. Rotted wood must be replaced before covering with aluminum." },
+            { q: "Does soffit affect energy bills?", a: "Yes! Proper soffit ventilation reduces attic heat buildup and can lower cooling costs." }
         ],
-        priceRange: "$40-80 per linear foot",
+        priceRange: "$6-20 per linear foot",
+        duration: "1-2 days",
+        warranty: "10-year material, 2-year labor"
+    },
+    "copper-gutter-systems": {
+        whatIs: "Copper gutter systems are the premium choice for discerning homeowners. These hand-crafted gutters develop a beautiful patina over time, last 50-100 years, and add significant curb appeal and value to historic homes, luxury properties, and custom builds.",
+        process: [
+            "Detailed measurements and custom design",
+            "Material ordering and lead time planning",
+            "Careful removal of existing gutters",
+            "Expert copper soldering of all joints",
+            "Installation with copper hangers and hardware",
+            "Sealing and initial patina treatment options"
+        ],
+        materials: [
+            { name: "16-oz Copper Sheet", description: "Standard weight for residential copper gutters" },
+            { name: "20-oz Copper Sheet", description: "Heavy-duty for commercial or large homes" },
+            { name: "Copper Hangers", description: "Matching hardware for seamless appearance" },
+            { name: "Lead-Free Solder", description: "Professional joints that last decades" }
+        ],
+        faqs: [
+            { q: "How long until copper patinas?", a: "Bronze color develops in months, full green patina takes 15-20 years depending on climate." },
+            { q: "Can I keep copper shiny?", a: "Yes, with regular polishing. Most owners prefer the natural patina as a mark of quality." },
+            { q: "Are copper gutters worth the cost?", a: "For the right home, absolutely. They last 3-4x longer than aluminum and add significant value." }
+        ],
+        priceRange: "$25-50 per linear foot",
         duration: "2-4 days",
-        warranty: "Lifetime transferable warranty"
+        warranty: "Lifetime material, 10-year labor"
     },
-    "french-drain-installation": {
-        whatIs: "A French drain is a trench filled with gravel and a perforated pipe that redirects surface water or groundwater away from your foundation. Exterior French drains stop water before it enters, while interior drains capture water that has already penetrated.",
+    "commercial-gutter-services": {
+        whatIs: "Commercial gutter services handle the high-capacity drainage needs of businesses, apartment complexes, warehouses, and industrial facilities. We design and install large-scale gutter systems, box gutters, internal drainage, and high-volume downspout systems.",
         process: [
-            "Site grading and flow determination",
-            "Trench excavation (exterior) or floor breaking (interior)",
-            "Lining with filter fabric",
-            "Pipe and gravel installation",
-            "Backfilling and soil grading",
-            "Discharge point termination (daylight or dry well)"
+            "Site survey and drainage load calculation",
+            "Engineering review and code compliance",
+            "Custom fabrication of oversized gutters",
+            "Crane or lift installation for large buildings",
+            "Commercial-grade securing and waterproofing",
+            "Final inspection and drainage verification"
         ],
         materials: [
-            { name: "Filter Fabric (Geotextile)", description: "Prevents soil from clogging the pipe" },
-            { name: "Perforated PVC/Corrugated", description: "Allows water entry along entire length" },
-            { name: "Drainage Stone", description: "Promotes rapid water movement to pipe" },
-            { name: "Catch Basins", description: "Surface grates to capture standing water" }
+            { name: "Box Gutters", description: "Built-in gutters for flat commercial roofs" },
+            { name: "6-Inch K-Style", description: "High-capacity for large roof areas" },
+            { name: "Industrial Downspouts", description: "4x5 or 5x6 inch for maximum flow" },
+            { name: "Stainless Steel", description: "Corrosion-resistant for industrial environments" }
         ],
         faqs: [
-            { q: "Better: Interior or Exterior?", a: "Exterior is best to stop water entering. Interior is best for hydrostatic pressure relief under the floor." },
-            { q: "Will it clog?", a: "With proper filter fabric and clean stone, clogs are rare. We install cleanouts for easy maintenance." },
-            { q: "Where does the water go?", a: "To a sump pump (interior) or a gravity-fed daylight point/dry well (exterior) far from the house." }
+            { q: "Do you handle multi-story buildings?", a: "Yes, we have lift equipment and OSHA-certified crews for buildings up to 6 stories." },
+            { q: "Can you install during business hours?", a: "We offer flexible scheduling including nights and weekends to minimize disruption." },
+            { q: "Do you offer maintenance contracts?", a: "Yes, commercial properties benefit from quarterly inspections and cleaning plans." }
         ],
-        priceRange: "$30-70 per linear foot",
-        duration: "1-3 days",
-        warranty: "20 years on pipe/gravel system"
-    },
-    "smart-sump-pumps": {
-        whatIs: "Smart sump pumps connect to your home's Wi-Fi to provide 24/7 monitoring. Using a smartphone app, you can check water levels, receive alerts for power outages or pump failures, and even track pumping cycles to understand your basement's water load.",
-        process: [
-            "Standard pump installation procedure",
-            "Wifi controller mounting and wiring",
-            "App download and account setup",
-            "Network connection and signal testing",
-            "Alert threshold configuration",
-            "User training on app features"
-        ],
-        materials: [
-            { name: "Smart Controller", description: "The 'brain' connecting pump to cloud" },
-            { name: "Water Level Sensor", description: "Digital pressure sensor (no moving float parts)" },
-            { name: "High Water Alarm", description: "Audible backup alarm" },
-            { name: "App Interface", description: "iOS/Android dashboard" }
-        ],
-        faqs: [
-            { q: "What if wifi goes out?", a: "The pump still works! You just won't get alerts. We recommend battery backups for full protection." },
-            { q: "Is there a monthly fee?", a: "Most systems we install have free apps. Some advanced monitoring services have optional subscriptions." },
-            { q: "Can I retrofit my old pump?", a: "Yes, we can add a smart outlet/controller to an existing standard pump in most cases." }
-        ],
-        priceRange: "$600-1200 installed",
-        duration: "1-2 hours",
-        warranty: "3 year electronics warranty"
-    },
-    "commercial-pump-services": {
-        whatIs: "Commercial pump services address the high-capacity drainage needs of businesses, apartments, and industrial facilities. This includes elevator pit pumps (oil detection), duplex systems (redundancy), and 3-phase high-voltage pump systems.",
-        process: [
-            "System analysis and code compliance check",
-            "Turnkey replacement or custom fabrication",
-            "Control panel wiring and logic setup",
-            "Oil-mind/separator installation (elevator pits)",
-            "Discharge piping welding/fitting",
-            "Commissioning and alarm testing"
-        ],
-        materials: [
-            { name: "Duplex Control Panel", description: "Alternates pumps and runs both during high flow" },
-            { name: "Oil-Sensing Switch", description: "Prevents pumping oil into sewer (required for elevators)" },
-            { name: "3-Phase Pumps", description: "High torque, efficient industrial motors" },
-            { name: "Rail Systems", description: "Allows pump removal without entering deep pits" }
-        ],
-        faqs: [
-            { q: "Do you service elevator pits?", a: "Yes, we are certified to install oil-sensing pumps required by code for elevator shafts." },
-            { q: "What is a duplex system?", a: "Two pumps in one pit. They alternate use to extend life and provide backup if one fails." },
-            { q: "Do you offer maintenance contracts?", a: "Yes. Commercial systems should be inspected quarterly. We offer custom plans." }
-        ],
-        priceRange: "Custom Quote",
-        duration: "Varies significantly",
+        priceRange: "Custom quote required",
+        duration: "1-2 weeks for large projects",
         warranty: "Commercial warranty terms apply"
     },
-    "emergency-plumber": {
-        whatIs: "Our emergency sump pump repair service provides 24/7 rapid response for critical failures. If your basement is taking on water, our on-call plumbers arrive with stocked trucks to extract water, replace pumps, and secure your home immediately.",
+    "storm-damage-repair": {
+        whatIs: "Storm damage repair restores your gutter system after severe weather events. High winds, falling branches, hail, and ice can crush, detach, or puncture gutters. Our rapid response team assesses damage, works with insurance, and restores your drainage system quickly.",
         process: [
-            "Immediate dispatch and phone triage",
-            "Water extraction (if flooded)",
-            "Temporary bypass pumping if needed",
-            "Diagnosis of failure mode",
-            "Permanent pump replacement",
-            "Disinfectant application (if sewage)"
+            "Emergency assessment and documentation",
+            "Insurance claim assistance and photos",
+            "Temporary repairs if needed for active leaks",
+            "Damaged section removal and disposal",
+            "Matching material sourcing and fabrication",
+            "Complete restoration and testing"
         ],
         materials: [
-            { name: "Emergency Pump Stock", description: "Trucks carry 1/3 and 1/2 HP pumps at all times" },
-            { name: "Portable Trash Pumps", description: "Gas-powered pumps for high-volume water removal" },
-            { name: "Universal Fernco Couplings", description: "Fast adaptors for any pipe type" },
-            { name: "Wet/Dry Vacuums", description: "Final cleanup tools" }
+            { name: "Replacement Gutter Sections", description: "Matched to existing system color and style" },
+            { name: "New Hangers", description: "Replace bent or pulled-out brackets" },
+            { name: "Fascia Repair Materials", description: "Often damaged alongside gutters" },
+            { name: "Sealant", description: "Waterproof all new connections" }
         ],
         faqs: [
-            { q: "How fast can you get here?", a: "We aim for <2 hours for active flooding calls." },
-            { q: "Do you charge extra?", a: "Emergency calls carry a dispatch fee, but we provide upfront flat-rate pricing before starting work." },
-            { q: "Does insurance cover this?", a: "If you have 'Sump Pump Failure' rider, yes. We help with the documentation." }
+            { q: "Will insurance cover this?", a: "Most homeowners policies cover sudden storm damage. We provide detailed documentation for claims." },
+            { q: "How fast can you respond?", a: "For active water intrusion, we offer same-day emergency service in most areas." },
+            { q: "Can you match my old gutters?", a: "We stock 30+ colors and can source specialty materials to match existing systems." }
         ],
-        priceRange: "$350-600 + parts",
-        duration: "Until the water stops",
-        warranty: "Standard warranty on new parts"
+        priceRange: "$200-2000+ depending on damage",
+        duration: "Same-day to 2 days",
+        warranty: "Standard installation warranty"
+    },
+    "ice-dam-removal": {
+        whatIs: "Ice dam removal safely eliminates dangerous ice buildup at roof edges that traps water and causes interior leaks. We use steam equipment and safe techniques to clear ice without roof damage, and install prevention systems to stop future ice dam formation.",
+        process: [
+            "Roof and attic heat loss assessment",
+            "Safe ice dam removal using steam equipment",
+            "Gutter and downspout ice clearing",
+            "Inspection for water damage",
+            "Heat cable installation for prevention",
+            "Attic ventilation improvement recommendations"
+        ],
+        materials: [
+            { name: "Heat Cables", description: "Self-regulating cables for roof edges and gutters" },
+            { name: "Ice Melt Panels", description: "Aluminum panels with integrated heating" },
+            { name: "Attic Ventilation", description: "Ridge vents and soffit baffles" },
+            { name: "Ice & Water Shield", description: "Membrane underlayment for new roofs" }
+        ],
+        faqs: [
+            { q: "Why do ice dams form?", a: "Heat escaping through the roof melts snow, which refreezes at cold eaves creating dams." },
+            { q: "Are heat cables worth it?", a: "For problem areas, yes. They prevent costly water damage from ice dam leaks." },
+            { q: "Can I remove ice myself?", a: "We don't recommend it - improper removal damages shingles. Steam is the safe solution." }
+        ],
+        priceRange: "$400-800 removal, $600-1500 prevention",
+        duration: "2-6 hours",
+        warranty: "Heat cable manufacturer warranty"
+    },
+    "underground-drain-solutions": {
+        whatIs: "Underground drain solutions move rainwater from downspouts to a safe discharge point far from your foundation. We install buried drain lines, pop-up emitters, French drains, and dry wells to eliminate soggy yards and protect foundations from water damage.",
+        process: [
+            "Site grading and water flow assessment",
+            "Drain path planning to avoid utilities",
+            "Trenching to proper depth and slope",
+            "Solid or perforated pipe installation",
+            "Pop-up emitter or dry well termination",
+            "Backfilling and landscape restoration"
+        ],
+        materials: [
+            { name: "Corrugated Drain Pipe", description: "Flexible, easy to route around obstacles" },
+            { name: "Solid PVC Pipe", description: "Durable option for long runs" },
+            { name: "Pop-Up Emitters", description: "Opens when water flows, closes when dry" },
+            { name: "Dry Wells", description: "Underground basins for water absorption" }
+        ],
+        faqs: [
+            { q: "How deep are drains buried?", a: "Typically 12-18 inches, below the frost line where required by code." },
+            { q: "Will this kill my grass?", a: "Trenching disturbs sod, but we restore it. Within weeks, you won't see the line." },
+            { q: "Can drains freeze?", a: "Properly sloped drains empty completely and won't freeze. We ensure correct installation." }
+        ],
+        priceRange: "$15-30 per linear foot",
+        duration: "1-2 days",
+        warranty: "10-year drain system warranty"
+    },
+    "color-gutter-matching": {
+        whatIs: "Color gutter matching ensures your new or replacement gutters perfectly complement your home's exterior. We offer 30+ factory-baked aluminum colors, custom color matching, and advice on choosing colors that enhance your curb appeal and coordinate with trim and roofing.",
+        process: [
+            "On-site color consultation with samples",
+            "Existing trim and roof color assessment",
+            "Factory color selection or custom match",
+            "Material ordering in specified color",
+            "Professional installation with color-matched hardware",
+            "Touch-up paint for any installation marks"
+        ],
+        materials: [
+            { name: "Factory-Baked Aluminum", description: "30+ standard colors that won't peel or fade" },
+            { name: "Custom Color Matching", description: "Match any existing color for additions" },
+            { name: "Painted Copper", description: "Copper gutters with factory finish" },
+            { name: "Color-Matched Accessories", description: "Downspouts, elbows, end caps in same color" }
+        ],
+        faqs: [
+            { q: "Will the color fade?", a: "Factory-baked finishes resist fading for 20+ years. Low-quality paint will fade." },
+            { q: "Can you match my old gutters?", a: "Usually yes. We have color charts and can custom order to match existing systems." },
+            { q: "What colors are most popular?", a: "White, cream, brown, and bronze. Dark colors like black are trending for modern homes." }
+        ],
+        priceRange: "$1-3 upcharge per linear foot for specialty colors",
+        duration: "No additional time",
+        warranty: "Color fade warranty included"
+    },
+    "emergency-gutter-repair": {
+        whatIs: "Emergency gutter repair provides rapid response when gutters fail during storms or after damage. Overflowing, detached, or crushed gutters cause immediate water intrusion. Our 24/7 service stabilizes the situation and performs permanent repairs quickly.",
+        process: [
+            "Rapid dispatch and phone assessment",
+            "Temporary measures to stop water intrusion",
+            "Damage documentation for insurance",
+            "Emergency repair or replacement",
+            "Downspout clearing if blocked",
+            "Full system inspection for hidden damage"
+        ],
+        materials: [
+            { name: "Emergency Patch Materials", description: "Quick-set repairs for immediate stop-gap" },
+            { name: "Replacement Sections", description: "Trucks stocked with common sizes and colors" },
+            { name: "Heavy-Duty Hangers", description: "Reinforce failing connections" },
+            { name: "Sealant", description: "Stop active leaks immediately" }
+        ],
+        faqs: [
+            { q: "Do you come out in storms?", a: "For safety, we wait for active severe weather to pass, but respond immediately after." },
+            { q: "Is there an emergency fee?", a: "After-hours calls include a dispatch fee. We provide upfront pricing before work begins." },
+            { q: "Can you do permanent repairs same day?", a: "Often yes for common repairs. Specialty materials may require a follow-up visit." }
+        ],
+        priceRange: "$150-500+ depending on repair",
+        duration: "1-3 hours for most repairs",
+        warranty: "Standard repair warranty applies"
     }
 }
 
@@ -236,7 +336,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
     const formattedState = state.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
 
     // Get extended content for this service
-    const extendedContent = serviceExtendedContent[service.slug] || serviceExtendedContent["sump-pump-installation"]
+    const extendedContent = serviceExtendedContent[service.slug] || serviceExtendedContent["seamless-gutter-installation"]
 
     // Build comprehensive schema
     const serviceSchema = {
@@ -245,10 +345,10 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
         "name": `${service.title} in ${formattedCity}, ${stateCode}`,
         "description": service.description(formattedCity, formattedState),
         "provider": {
-            "@type": "PlumbingService",
-            "name": "Pipey Pro",
-            "telephone": "+13213420091",
-            "url": "https://pipeypro.com",
+            "@type": "HomeAndConstructionBusiness",
+            "name": "US Gutter Installation",
+            "telephone": "+18588985338",
+            "url": "https://usgutterinstallation.com",
             "priceRange": "$$",
             "address": {
                 "@type": "PostalAddress",
@@ -276,7 +376,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
             "availability": "https://schema.org/InStock"
         },
         "termsOfService": extendedContent.warranty,
-        "url": `https://pipeypro.com/${stateCode}/${city}/${service.slug}`
+        "url": `https://usgutterinstallation.com/${stateCode}/${city}/${service.slug}`
     }
 
     const faqSchema = {
@@ -303,7 +403,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
             <nav className="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-cyan-500">
-                        Pipey Pro
+                        US Gutter Installation
                     </Link>
                     <div className="flex items-center gap-6">
                         <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
@@ -356,11 +456,11 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     <div className="relative hidden lg:block">
                         <div className="relative w-full aspect-square max-w-lg mx-auto">
                             <div className="absolute inset-0 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-                            {/* Placeholder for Sump Pump - we removed the gutter image reference */}
+                            {/* Professional Gutter Installation Image */}
                             <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden">
                                 <Image
                                     src="https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png"
-                                    alt="Professional Sump Pump Installation & Repair"
+                                    alt="Professional Gutter Installation & Repair"
                                     fill
                                     className="object-cover"
                                     priority
@@ -475,7 +575,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                             {service.title} Service Area in {formattedCity}
                         </h2>
                         <p className="text-lg text-slate-600 mb-6">
-                            We provide {service.title.toLowerCase()} services throughout {formattedCity} and the surrounding {stateCode.toUpperCase()} areas. Our local crews are familiar with {formattedCity}'s water tables, flood zones, and plumbing codes.
+                            We provide {service.title.toLowerCase()} services throughout {formattedCity} and the surrounding {stateCode.toUpperCase()} areas. Our local crews are familiar with {formattedCity}'s climate, drainage requirements, and local building codes.
                         </p>
                         <ul className="space-y-3">
                             <li className="flex items-center gap-3 text-slate-700">
@@ -546,7 +646,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                         </div>
                     </div>
                     <p className="text-slate-500 mt-6 text-sm">
-                        *Prices vary based on basement conditions and pump selection. Request a free quote for exact pricing.
+                        *Prices vary based on home size, gutter condition, and material selection. Request a free quote for exact pricing.
                     </p>
                 </div>
             </section>

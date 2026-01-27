@@ -6,7 +6,7 @@ const path = require('path')
 // Load environment variables from .env.local
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') })
 
-const SITE_URL = 'https://pipeypro.com'
+const SITE_URL = 'https://usgutterinstallation.com'
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -67,9 +67,9 @@ async function submitToIndexNow(urlList) {
                 'Content-Type': 'application/json; charset=utf-8',
             },
             body: JSON.stringify({
-                host: 'pipeypro.com',
+                host: 'usgutterinstallation.com',
                 key: INDEXNOW_KEY,
-                keyLocation: `https://pipeypro.com/${INDEXNOW_KEY}.txt`,
+                keyLocation: `https://usgutterinstallation.com/${INDEXNOW_KEY}.txt`,
                 urlList: urlList
             }),
         })

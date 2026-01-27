@@ -46,7 +46,7 @@ export default async function TopBusinesses({ city, state }: TopBusinessesProps)
         "Get Pricing"
     ]
 
-    const mainPhoneNumber = "+13213420091"
+    const mainPhoneNumber = "+18588985338"
 
     // Generate ItemList schema for SEO
     const itemListSchema = {
@@ -74,8 +74,8 @@ export default async function TopBusinesses({ city, state }: TopBusinessesProps)
         })),
         "provider": {
             "@type": "Organization",
-            "name": "Pipey Pro",
-            "url": "https://pipeypro.com"
+            "name": "US Gutter Installation",
+            "url": "https://usgutterinstallation.com"
         }
     }
 
@@ -101,11 +101,11 @@ export default async function TopBusinesses({ city, state }: TopBusinessesProps)
                         className="text-3xl md:text-4xl font-bold text-slate-900 mt-3 mb-4"
                         itemProp="name"
                     >
-                        Top {leads.length} Best Sump Pump Services Near Me in {formattedCity}, {stateUpper}
+                        Top {leads.length} Best Gutter Installation Services Near Me in {formattedCity}, {stateUpper}
                     </h2>
                     <p className="text-slate-600 max-w-2xl text-lg leading-relaxed" itemProp="description">
-                        Looking for sump pump installation near me in {formattedCity}? Connect with our vetted, top-rated
-                        local sump pump contractors for cleaning, repair, and new installations.
+                        Looking for gutter installation near me in {formattedCity}? Connect with our vetted, top-rated
+                        local gutter contractors for cleaning, repair, and new installations.
                     </p>
                 </div>
 

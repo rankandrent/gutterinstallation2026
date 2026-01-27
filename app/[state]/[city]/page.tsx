@@ -35,16 +35,16 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const metaTitle = getMetaTitle(formattedCity, stateCode, stateName)
 
     return {
-        title: `Sump Pump Installation Near Me in ${formattedCity}, ${stateCode} | Local Pros`,
-        description: `Looking for sump pump installation near me in ${formattedCity}, ${stateCode}? Find licensed local plumbers for sump pump repair, replacement, battery backups & waterproofing. Free quote!`,
-        keywords: `sump pump installation near me ${formattedCity}, sump pump repair near me ${formattedCity} ${stateCode}, battery backup sump pump near me ${formattedCity}, basement waterproofing near me ${formattedCity}, sewage pump repair near me ${formattedCity}, french drain installation near me ${formattedCity}, plumbing contractors near me ${formattedCity}`,
+        title: `Gutter Installation Near Me in ${formattedCity}, ${stateCode} | Local Pros`,
+        description: `Looking for gutter installation near me in ${formattedCity}, ${stateCode}? Find licensed local contractors for seamless gutters, gutter guards, and repairs. Free quote!`,
+        keywords: `gutter installation near me ${formattedCity}, seamless gutters near me ${formattedCity} ${stateCode}, gutter guards near me ${formattedCity}, gutter repair near me ${formattedCity}, gutter cleaning near me ${formattedCity}, downspout installation near me ${formattedCity}, leaf guards ${formattedCity}`,
         alternates: {
             canonical: `/${state.toLowerCase()}/${city.toLowerCase()}`
         },
         openGraph: {
-            title: `Find Sump Pump Installation Near Me in ${formattedCity}, ${stateCode}`,
-            description: `Connect with the #1 rated sump pump and waterproofing contractors near you in ${formattedCity}. Repair, replacement, and backups. 24/7 Service. Free quotes!`,
-            url: `https://pipeypro.com/${state}/${city}`,
+            title: `Find Gutter Installation Near Me in ${formattedCity}, ${stateCode}`,
+            description: `Connect with the #1 rated gutter installation contractors near you in ${formattedCity}. Seamless gutters, repairs, and guards. 24/7 Service. Free quotes!`,
+            url: `https://usgutterinstallation.com/${state}/${city}`,
         }
     }
 }

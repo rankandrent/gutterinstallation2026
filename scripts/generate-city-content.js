@@ -18,9 +18,9 @@ if (!SUPABASE_URL || !SUPABASE_KEY || !OPENROUTER_KEY) {
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 async function generateIntro(city, state) {
-    const prompt = `Write a unique, engaging, and professional 100-word introduction for a Sump Pump Installation service page in ${city}, ${state}. 
+    const prompt = `Write a unique, engaging, and professional 100-word introduction for a Gutter Installation service page in ${city}, ${state}. 
     Focus on local relevance, citing specific weather patterns like heavy rain, snowmelt, or storms common to ${state}. 
-    Mention "sump pump repair", "basement waterproofing", and "battery backup" naturally. 
+    Mention "seamless gutters", "gutter guards", and "gutter cleaning" naturally. 
     Do not use generic fluff. Make it sound like a local expert writing it.
     Return ONLY the text paragraph, no quotes or markdown.`
 
@@ -34,7 +34,7 @@ async function generateIntro(city, state) {
             body: JSON.stringify({
                 "model": "google/gemini-2.0-flash-exp:free",
                 "messages": [
-                    { "role": "system", "content": "You are a professional SEO copywriter for a plumbing company." },
+                    { "role": "system", "content": "You are a professional SEO copywriter for a gutter installation company." },
                     { "role": "user", "content": prompt }
                 ]
             })

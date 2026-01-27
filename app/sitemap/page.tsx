@@ -6,8 +6,8 @@ import { Metadata } from 'next'
 export const revalidate = 86400 // Daily revalidation
 
 export const metadata: Metadata = {
-    title: 'Site Directory | Pipey Pro',
-    description: 'Browse our complete directory of Sump Pump Installation and Repair services by state and city.',
+    title: 'Site Directory | US Gutter Installation',
+    description: 'Browse our complete directory of Gutter Installation and Repair services by state and city.',
     robots: {
         index: true,
         follow: true
@@ -29,7 +29,7 @@ export default async function SitemapPage() {
             <nav className="bg-white border-b border-slate-200 py-4 px-6">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-cyan-500">
-                        Pipey Pro
+                        US Gutter Installation
                     </Link>
                     <Link href="/" className="text-sm font-medium text-slate-600 hover:text-blue-600">
                         Back to Home
@@ -41,7 +41,7 @@ export default async function SitemapPage() {
                 <header className="mb-12">
                     <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Site Directory</h1>
                     <p className="text-lg text-slate-600 max-w-2xl">
-                        Find local sump pump repair and installation experts in your area. Browse by state below.
+                        Find local gutter installation and repair experts in your area. Browse by state below.
                     </p>
                 </header>
 

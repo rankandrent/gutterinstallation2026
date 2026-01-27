@@ -9,8 +9,8 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
                 <div className="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <h4 className="text-white font-bold text-lg mb-4">Pipey Pro</h4>
-                        <p className="text-sm mb-4">America&apos;s trusted sump pump and waterproofing partner. Connecting homeowners with local experts nationwide.</p>
+                        <h4 className="text-white font-bold text-lg mb-4">US Gutter Installation</h4>
+                        <p className="text-sm mb-4">America&apos;s trusted gutter installation partner. Connecting homeowners with local experts nationwide.</p>
                         <a href={PHONE_HREF} className="text-xl font-bold text-white hover:text-blue-500 transition-colors flex items-center gap-2">
                             📞 {PHONE_NUMBER}
                         </a>
@@ -27,9 +27,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold text-lg mb-4">Services</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><span className="cursor-default">Sump Pump Installation</span></li>
-                            <li><span className="cursor-default">Battery Backups</span></li>
-                            <li><span className="cursor-default">Basement Waterproofing</span></li>
+                            <li><span className="cursor-default">Seamless Gutters</span></li>
+                            <li><span className="cursor-default">Gutter Guards</span></li>
+                            <li><span className="cursor-default">Gutter Repair</span></li>
+                            <li><span className="cursor-default">Gutter Cleaning</span></li>
                         </ul>
                     </div>
                     <div>
@@ -42,7 +43,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="border-t border-slate-800 pt-8 text-center text-sm">
-                    &copy; {currentYear} Pipey Pro. All rights reserved.
+                    &copy; {currentYear} US Gutter Installation. All rights reserved.
                 </div>
             </div>
         </footer>

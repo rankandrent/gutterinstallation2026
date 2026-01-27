@@ -17,16 +17,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pipeypro.com'),
+  metadataBase: new URL('https://usgutterinstallation.com'),
   title: {
-    default: "Sump Pump Installation Near Me | Professional Repair & Replacement",
+    default: "Gutter Installation Near Me | Seamless Gutters & Gutter Guards",
     template: "%s"
   },
-  description: "Find expert sump pump installation and repair near me. 24/7 flood protection, basement waterproofing, and battery backup systems. Licensed pros in 31,000+ cities.",
-  keywords: "sump pump installation, sump pump repair, basement waterproofing, battery backup sump pump, sewage ejector pump, flood prevention, sump pump replacement, water backup systems, drain tile installation, french drain installation",
-  authors: [{ name: 'Pipey Pro' }],
-  creator: 'Pipey Pro',
-  publisher: 'Pipey Pro',
+  description: "Find expert gutter installation and repair near me. Seamless gutters, gutter guards, soffit & fascia repair. Licensed pros in 31,000+ cities.",
+  keywords: "gutter installation near me, seamless gutters near me, gutter repair near me, gutter guards near me, gutter cleaning near me, gutter companies near me, leaf guard gutters near me, soffit repair near me, fascia repair near me, downspout installation near me",
+  authors: [{ name: 'US Gutter Installation' }],
+  creator: 'US Gutter Installation',
+  publisher: 'US Gutter Installation',
   robots: {
     index: true,
     follow: true,
@@ -40,30 +40,30 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://pipeypro.com',
+    canonical: 'https://usgutterinstallation.com',
     languages: {
-      'en-US': 'https://pipeypro.com',
+      'en-US': 'https://usgutterinstallation.com',
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Pipey Pro',
-    title: 'Sump Pump Installation Near Me | Professional Repair & Replacement',
-    description: 'Find expert sump pump installation and repair near me. 24/7 flood protection, basement waterproofing, and battery backup systems.',
+    siteName: 'US Gutter Installation',
+    title: 'Gutter Installation Near Me | Seamless Gutters & Gutter Guards',
+    description: 'Find expert gutter installation and repair near me. Seamless gutters, gutter guards, soffit & fascia repair.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Pipey Pro - Sump Pump Installation & Repair',
+        alt: 'US Gutter Installation - Seamless Gutters & Gutter Guards',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sump Pump Installation Near Me | Pipey Pro',
-    description: 'Find expert sump pump installation and repair near me. 24/7 flood protection, basement waterproofing, and battery backup systems.',
+    title: 'Gutter Installation Near Me | US Gutter Installation',
+    description: 'Find expert gutter installation and repair near me. Seamless gutters, gutter guards, soffit & fascia repair.',
     images: ['/og-image.jpg'],
   },
   icons: {
@@ -80,17 +80,17 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Pipey Pro",
-  "url": "https://pipeypro.com",
-  "logo": "https://pipeypro.com/logo.png",
-  "description": "America's #1 sump pump installation directory connecting homeowners with licensed local plumbing and waterproofing contractors.",
+  "name": "US Gutter Installation",
+  "url": "https://usgutterinstallation.com",
+  "logo": "https://usgutterinstallation.com/logo.png",
+  "description": "America's #1 gutter installation directory connecting homeowners with licensed local gutter contractors.",
   "areaServed": {
     "@type": "Country",
     "name": "United States"
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-321-342-0091",
+    "telephone": "+1-858-898-5338",
     "contactType": "customer service",
     "availableLanguage": "English"
   },
@@ -101,13 +101,13 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Pipey Pro",
-  "url": "https://pipeypro.com",
+  "name": "US Gutter Installation",
+  "url": "https://usgutterinstallation.com",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://pipeypro.com/{search_term_string}"
+      "urlTemplate": "https://usgutterinstallation.com/{search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
