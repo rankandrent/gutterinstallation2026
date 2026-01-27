@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Footer from '@/components/Footer'
 import { NavbarCallBtn, CallBtn } from '@/components/CallBtn'
+import TrustBadges from '@/components/TrustBadges'
 
 export const metadata = {
     title: 'Contact US Gutter Installation | Get a Free Quote Today',
@@ -70,6 +71,7 @@ export default function ContactPage() {
                 </div>
             </main>
 
+            <TrustBadges />
             <Footer />
         </div>
     )

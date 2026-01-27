@@ -8,8 +8,9 @@ import CoverageStats from '@/components/CoverageStats'
 import Breadcrumb from '@/components/Breadcrumb'
 import CityMap from '@/components/CityMap'
 import InternalLinks from '@/components/InternalLinks'
-import TopBusinesses from '@/components/TopBusinesses'
+import TrustBadges from '@/components/TrustBadges'
 import AuthoritySignals from '@/components/AuthoritySignals'
+import TopBusinesses from '@/components/TopBusinesses'
 
 interface ServicePageProps {
     city: string
@@ -586,6 +587,8 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                 stateCode={stateCode}
                 relatedCities={relatedCities}
             />
+            <TrustBadges />
+            <Footer />
         </div>
     )
 }

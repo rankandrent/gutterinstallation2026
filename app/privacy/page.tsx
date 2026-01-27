@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import TrustBadges from '@/components/TrustBadges'
 
 export const metadata = {
     title: 'Privacy Policy | US Gutter Installation',
@@ -46,6 +47,7 @@ export default function PrivacyPage() {
                 </div>
             </main>
 
+            <TrustBadges />
             <Footer />
         </div>
     )

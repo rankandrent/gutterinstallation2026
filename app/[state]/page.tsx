@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import Footer from '@/components/Footer'
-import RelatedServices from '@/components/RelatedServices'
-import CoverageStats from '@/components/CoverageStats'
 import Breadcrumb from '@/components/Breadcrumb'
+import TrustBadges from '@/components/TrustBadges'
 import { NavbarCallBtn } from '@/components/CallBtn'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
+import RelatedServices from '@/components/RelatedServices'
 
 export const revalidate = 3600
 
@@ -188,6 +188,7 @@ export default async function StatePage(props: StatePageProps) {
             </div>
 
 
+            <TrustBadges />
             <Footer />
         </div >
     )
