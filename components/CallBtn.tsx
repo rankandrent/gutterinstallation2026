@@ -7,12 +7,16 @@ export function CallBtn({
     className = "",
     variant = "primary",
     label = "Call Now",
-    showNumber = false
+    showNumber = false,
+    phoneNumber,
+    phoneHref
 }: {
     className?: string,
     variant?: "primary" | "secondary" | "outline",
     label?: string,
-    showNumber?: boolean
+    showNumber?: boolean,
+    phoneNumber?: string,
+    phoneHref?: string
 }) {
     const baseStyles = "inline-flex items-center justify-center font-bold transition-all duration-300 transform active:scale-95"
 
@@ -22,41 +26,39 @@ export function CallBtn({
         outline: "border-2 border-white/20 hover:bg-white/10 text-white rounded-xl backdrop-blur-sm"
     }
 
+    const displayPhone = phoneNumber || PHONE_NUMBER
+    const linkHref = phoneHref || PHONE_HREF
+
     return (
         <a
-            href={PHONE_HREF}
+            href={linkHref}
             className={`${baseStyles} ${variants[variant]} ${className}`}
         >
             <span className="mr-2 text-xl">📞</span>
-            <span>{label} {showNumber && <span className="ml-1 font-mono tracking-tighter opacity-90 block sm:inline"> | {PHONE_NUMBER}</span>}</span>
+            <span>{label} {showNumber && <span className="ml-1 font-mono tracking-tighter opacity-90 block sm:inline"> | {displayPhone}</span>}</span>
         </a>
     )
 }
 
-export function FloatingCallBtn() {
-    return (
-        <div className="fixed bottom-6 right-6 z-50 animate-bounce-slow">
-            <a
-                href={PHONE_HREF}
-                className="flex items-center gap-3 bg-red-600 text-white px-6 py-4 rounded-full shadow-2xl border-4 border-white/20 font-bold text-lg"
-            >
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center animate-pulse">
-                    📞
-                </div>
-                Call Now for Estimate
-            </a>
-        </div>
-    )
-}
+// FloatingCallBtn moved to components/FloatingCallBtn.tsx to enable 'use client' without affecting other components
 
-export function NavbarCallBtn() {
+export function NavbarCallBtn({
+    phoneNumber,
+    phoneHref
+}: {
+    phoneNumber?: string,
+    phoneHref?: string
+} = {}) {
+    const displayPhone = phoneNumber || PHONE_NUMBER
+    const linkHref = phoneHref || PHONE_HREF
+
     return (
         <a
-            href={PHONE_HREF}
+            href={linkHref}
             className="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg hover:shadow-red-500/20 hover:-translate-y-0.5"
         >
             <span className="animate-pulse">📞</span>
-            <span>{PHONE_NUMBER}</span>
+            <span>{displayPhone}</span>
         </a>
     )
 }

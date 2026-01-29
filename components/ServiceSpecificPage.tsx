@@ -338,6 +338,11 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
     // Get extended content for this service
     const extendedContent = serviceExtendedContent[service.slug] || serviceExtendedContent["seamless-gutter-installation"]
 
+    // Phone number logic
+    const isIceDamService = service.slug === 'ice-dam-removal'
+    const phoneNumber = isIceDamService ? '+1 (323) 693-8415' : undefined
+    const phoneHref = isIceDamService ? 'tel:+13236938415' : undefined
+
     // Build comprehensive schema
     const serviceSchema = {
         "@context": "https://schema.org",
@@ -347,7 +352,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
         "provider": {
             "@type": "HomeAndConstructionBusiness",
             "name": "US Gutter Installation",
-            "telephone": "+18588985338",
+            "telephone": phoneNumber || "+18588985338",
             "url": "https://usgutterinstallation.com",
             "priceRange": "$$",
             "address": {
@@ -411,7 +416,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                             <Link href="/about" className="hover:text-blue-600 transition-colors">About</Link>
                             <Link href="/contact" className="hover:text-blue-600 transition-colors">Contact</Link>
                         </div>
-                        <NavbarCallBtn />
+                        <NavbarCallBtn phoneNumber={phoneNumber} phoneHref={phoneHref} />
                     </div>
                 </div>
             </nav>
@@ -449,7 +454,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                            <CallBtn className="py-4 px-10 text-lg w-full sm:w-auto transform hover:scale-105" label="Get Free Quote" showNumber={true} />
+                            <CallBtn className="py-4 px-10 text-lg w-full sm:w-auto transform hover:scale-105" label="Get Free Quote" showNumber={true} phoneNumber={phoneNumber} phoneHref={phoneHref} />
                         </div>
                     </div>
 
@@ -684,7 +689,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     <p className="text-blue-200 text-lg mb-8 max-w-2xl mx-auto">
                         Get a free, no-obligation quote from our local {formattedCity} experts. We respond within 24 hours with transparent pricing.
                     </p>
-                    <CallBtn className="py-4 px-12 text-xl" label="Call Now for Free Quote" showNumber={true} />
+                    <CallBtn className="py-4 px-12 text-xl" label="Call Now for Free Quote" showNumber={true} phoneNumber={phoneNumber} phoneHref={phoneHref} />
                 </div>
             </section>
 
