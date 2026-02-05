@@ -250,7 +250,7 @@ const serviceExtendedContent: Record<string, {
             { q: "Are heat cables worth it?", a: "For problem areas, yes. They prevent costly water damage from ice dam leaks." },
             { q: "Can I remove ice myself?", a: "We don't recommend it - improper removal damages shingles. Steam is the safe solution." }
         ],
-        priceRange: "$400-800 removal, $600-1500 prevention",
+        priceRange: "Custom quote required",
         duration: "2-6 hours",
         warranty: "Heat cable manufacturer warranty"
     },
@@ -340,8 +340,8 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
 
     // Phone number logic
     const isIceDamService = service.slug === 'ice-dam-removal'
-    const phoneNumber = isIceDamService ? '+1 (323) 693-8415' : undefined
-    const phoneHref = isIceDamService ? 'tel:+13236938415' : undefined
+    const phoneNumber = isIceDamService ? '+1 (877) 303-0931' : undefined
+    const phoneHref = isIceDamService ? 'tel:+18773030931' : undefined
 
     // Build comprehensive schema
     const serviceSchema = {
