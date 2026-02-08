@@ -28,8 +28,21 @@ export async function generateMetadata(props: StartServicePageProps): Promise<Me
     const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     const formattedState = state.toUpperCase()
 
+    // SEO-optimized meta titles for specific services
+    const metaTitles: Record<string, string> = {
+        'ice-dam-removal': `Ice Dam Removal Near Me ${formattedCity}, ${formattedState} | Steam Removal`,
+        'ice-dam-prevention': `Ice Dam Prevention ${formattedCity}, ${formattedState} | Stop Ice Dams`,
+        'roof-snow-removal': `Roof Snow Removal Near Me ${formattedCity}, ${formattedState} | Safe Snow Clearing`,
+        'gutter-heat-cables': `Gutter Heat Cables ${formattedCity}, ${formattedState} | Heat Cable Installation`,
+        'seamless-gutter-installation': `Seamless Gutter Installation Near Me ${formattedCity}, ${formattedState}`,
+        'gutter-guards-leaf-protection': `Gutter Guards Near Me ${formattedCity}, ${formattedState} | Leaf Protection`,
+        'gutter-cleaning-maintenance': `Gutter Cleaning Near Me ${formattedCity}, ${formattedState} | Same-Day Service`,
+    }
+
+    const metaTitle = metaTitles[service] || `${serviceInfo.title} ${formattedCity}, ${formattedState} | US Gutter Installation`
+
     return {
-        title: `${serviceInfo.title} ${formattedCity}, ${formattedState} | US Gutter Installation`,
+        title: metaTitle,
         description: serviceInfo.description(formattedCity, formattedState),
         alternates: {
             canonical: `/${state.toLowerCase()}/${city.toLowerCase()}/${service}`

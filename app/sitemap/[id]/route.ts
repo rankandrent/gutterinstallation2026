@@ -10,6 +10,9 @@ const PRIORITY_SERVICES = [
     'gutter-cleaning-maintenance',
     'soffit-fascia-repair',
     'ice-dam-removal',
+    'ice-dam-prevention',
+    'roof-snow-removal',
+    'gutter-heat-cables',
 ]
 
 export async function GET(

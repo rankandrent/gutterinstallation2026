@@ -90,6 +90,33 @@ export const servicesData: Record<string, ServiceDetail> = {
         features: ["Low-pressure steam removal (safe for shingles)", "Heat cable installation available", "Ice and water shield installation", "Attic insulation assessment", "Gutter heating systems"],
         benefits: ["Prevents interior roof leaks", "Protects gutters from ice weight", "Safe for all roofing materials", "Long-term prevention options", "Emergency same-day service"]
     },
+    "ice-dam-prevention": {
+        title: "Ice Dam Prevention",
+        slug: "ice-dam-prevention",
+        description: (city, state) => `Looking for ice dam prevention near me in ${city}, ${state}? Stop ice dams before they form with our professional prevention systems. Heat cables, improved attic ventilation, and ice shields protect your roof and gutters all winter.`,
+        icon: "🛡️",
+        heroImage: "https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png",
+        features: ["Self-regulating heat cable systems", "Attic ventilation improvement", "Ice and water shield membrane", "Soffit baffle installation", "R-value insulation assessment"],
+        benefits: ["Prevents costly ice dam damage", "Reduces emergency repair calls", "Lowers heating bills with better insulation", "Protects roof and gutters long-term", "One-time investment for years of protection"]
+    },
+    "roof-snow-removal": {
+        title: "Roof Snow Removal",
+        slug: "roof-snow-removal",
+        description: (city, state) => `Need roof snow removal near me in ${city}, ${state}? Heavy snow loads can cause ice dams, roof damage, and even collapse. Our safe snow removal service protects your home and prevents structural damage.`,
+        icon: "🌨️",
+        heroImage: "https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png",
+        features: ["Safe roof access techniques", "Roof rake and steam equipment", "Ice dam prevention during removal", "Gutter snow clearing included", "Emergency same-day service available"],
+        benefits: ["Prevents ice dam formation", "Reduces roof structural stress", "Protects gutters from snow weight", "Prevents water intrusion", "Extends roof lifespan"]
+    },
+    "gutter-heat-cables": {
+        title: "Gutter Heat Cable Installation",
+        slug: "gutter-heat-cables",
+        description: (city, state) => `Searching for gutter heat cables near me in ${city}, ${state}? Our self-regulating heat cable systems prevent ice dams and frozen gutters automatically. Professional installation with thermostat controls for energy efficiency.`,
+        icon: "⚡",
+        heroImage: "https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png",
+        features: ["Self-regulating cable technology", "Roof edge and gutter coverage", "Thermostat and timer controls", "Waterproof electrical connections", "Energy-efficient operation"],
+        benefits: ["Automatic ice prevention", "No manual intervention needed", "Protects gutters and roof edges", "Reduces ice dam emergency calls", "Long-lasting cable lifespan"]
+    },
     "underground-drain-solutions": {
         title: "Underground Drain Solutions",
         slug: "underground-drain-solutions",

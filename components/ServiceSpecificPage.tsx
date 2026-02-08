@@ -254,6 +254,81 @@ const serviceExtendedContent: Record<string, {
         duration: "2-6 hours",
         warranty: "Heat cable manufacturer warranty"
     },
+    "ice-dam-prevention": {
+        whatIs: "Ice dam prevention involves installing systems that stop ice dams before they form. By improving attic ventilation, adding heat cables, and installing ice shields, you can protect your roof and gutters from costly winter damage year after year.",
+        process: [
+            "Comprehensive roof and attic inspection",
+            "Thermal imaging to identify heat loss areas",
+            "Attic insulation R-value assessment",
+            "Heat cable layout planning for problem areas",
+            "Installation of self-regulating heat cables",
+            "Soffit baffle and ventilation improvements"
+        ],
+        materials: [
+            { name: "Self-Regulating Heat Cables", description: "Automatically adjust heat output based on temperature" },
+            { name: "Ice & Water Shield", description: "Rubberized membrane prevents water intrusion" },
+            { name: "Soffit Baffles", description: "Ensure proper airflow from eaves to ridge" },
+            { name: "Ridge Vents", description: "Allow warm attic air to escape properly" }
+        ],
+        faqs: [
+            { q: "Is prevention better than removal?", a: "Yes! Prevention is a one-time investment that saves thousands in potential water damage and emergency repairs." },
+            { q: "Do heat cables use a lot of electricity?", a: "Self-regulating cables are energy-efficient, only using power when temperatures drop below freezing." },
+            { q: "How long do prevention systems last?", a: "Heat cables last 10-15 years, ice shields last the life of your roof." }
+        ],
+        priceRange: "$500-2,500 depending on coverage",
+        duration: "4-8 hours",
+        warranty: "10-year installation warranty"
+    },
+    "roof-snow-removal": {
+        whatIs: "Roof snow removal safely clears heavy snow accumulation from your roof to prevent ice dams, structural damage, and potential roof collapse. Our trained crews use specialized equipment to remove snow without damaging shingles or gutters.",
+        process: [
+            "Roof load assessment and safety planning",
+            "Safe access setup with proper equipment",
+            "Careful snow removal using roof rakes",
+            "Steam clearing for ice-heavy areas",
+            "Gutter and downspout snow clearing",
+            "Inspection for ice dam formation"
+        ],
+        materials: [
+            { name: "Roof Rakes", description: "Extended aluminum rakes that reach from ground level" },
+            { name: "Steam Equipment", description: "Low-pressure steam for ice and packed snow" },
+            { name: "Safety Harnesses", description: "OSHA-compliant fall protection for roof work" },
+            { name: "Roof Protection Pads", description: "Prevent shingle damage during removal" }
+        ],
+        faqs: [
+            { q: "When should I remove roof snow?", a: "When accumulation exceeds 12 inches, before rapid warming, or if you notice sagging or creaking." },
+            { q: "Can heavy snow damage my roof?", a: "Yes! Fresh snow weighs 3-5 lbs per cubic foot, packed snow 20+ lbs. This stresses rafters and can cause collapse." },
+            { q: "Do you remove all the snow?", a: "We leave 1-2 inches to protect shingles. Complete removal risks shingle damage." }
+        ],
+        priceRange: "$200-600 per visit",
+        duration: "2-4 hours",
+        warranty: "Service satisfaction guarantee"
+    },
+    "gutter-heat-cables": {
+        whatIs: "Gutter heat cable installation prevents ice dams and frozen gutters by maintaining temperatures above freezing in problem areas. Self-regulating cables automatically adjust their heat output, running only when needed to save energy while protecting your home.",
+        process: [
+            "Assessment of ice-prone areas on roof edge",
+            "Heat cable layout design for optimal coverage",
+            "Professional cable installation in zigzag pattern",
+            "Gutter and downspout cable routing",
+            "Electrical connection with GFCI protection",
+            "Thermostat and timer setup for efficiency"
+        ],
+        materials: [
+            { name: "Self-Regulating Cables", description: "Adjust heat output automatically based on temperature" },
+            { name: "Constant Wattage Cables", description: "Consistent heat output for severe climates" },
+            { name: "Mounting Clips", description: "UV-resistant clips for secure roof attachment" },
+            { name: "Waterproof Connectors", description: "Weather-sealed electrical connections" }
+        ],
+        faqs: [
+            { q: "How much electricity do heat cables use?", a: "Self-regulating cables use 5-8 watts per foot. A typical 100-foot installation costs $10-20/month during winter." },
+            { q: "Should I leave heat cables on all winter?", a: "Thermostat-controlled systems only run when needed. Manual systems should run during snow/ice events." },
+            { q: "Can I install heat cables myself?", a: "For safety and warranty, professional installation is recommended. Improper installation can damage roofing and void warranties." }
+        ],
+        priceRange: "$500-1,500 depending on length",
+        duration: "4-6 hours",
+        warranty: "5-year installation, manufacturer cable warranty"
+    },
     "underground-drain-solutions": {
         whatIs: "Underground drain solutions move rainwater from downspouts to a safe discharge point far from your foundation. We install buried drain lines, pop-up emitters, French drains, and dry wells to eliminate soggy yards and protect foundations from water damage.",
         process: [
@@ -339,9 +414,11 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
     const extendedContent = serviceExtendedContent[service.slug] || serviceExtendedContent["seamless-gutter-installation"]
 
     // Phone number logic
-    const isIceDamService = service.slug === 'ice-dam-removal'
-    const phoneNumber = isIceDamService ? '+1 (877) 303-0931' : undefined
-    const phoneHref = isIceDamService ? 'tel:+18773030931' : undefined
+    // Winter services that use the special phone number
+    const winterServices = ['ice-dam-removal', 'ice-dam-prevention', 'roof-snow-removal', 'gutter-heat-cables']
+    const isWinterService = winterServices.includes(service.slug)
+    const phoneNumber = isWinterService ? '+1 (323) 693-8415' : undefined
+    const phoneHref = isWinterService ? 'tel:+13236938415' : undefined
 
     // Build comprehensive schema
     const serviceSchema = {
@@ -672,6 +749,46 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                                     title={`${service.title} in ${cityData.city}`}
                                 >
                                     {cityData.city}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Related Winter Services - Only show on winter service pages */}
+            {isWinterService && (
+                <section className="py-16 px-6 bg-gradient-to-br from-blue-50 to-cyan-50 border-t border-blue-100">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-10">
+                            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-3">❄️ Winter Protection</span>
+                            <h2 className="text-2xl font-bold text-slate-900">
+                                Complete Winter Ice Dam Solutions in {formattedCity}
+                            </h2>
+                            <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
+                                Protect your home from ice dams and winter roof damage with our comprehensive services.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { slug: 'ice-dam-removal', title: 'Ice Dam Removal', icon: '🧊', desc: 'Professional steam removal of existing ice dams' },
+                                { slug: 'ice-dam-prevention', title: 'Ice Dam Prevention', icon: '🛡️', desc: 'Stop ice dams before they form with insulation upgrades' },
+                                { slug: 'roof-snow-removal', title: 'Roof Snow Removal', icon: '❄️', desc: 'Safe snow clearing to prevent structural damage' },
+                                { slug: 'gutter-heat-cables', title: 'Gutter Heat Cables', icon: '🔥', desc: 'Self-regulating heat cables for year-round protection' }
+                            ].filter(s => s.slug !== service.slug).map((winterService, i) => (
+                                <Link
+                                    key={i}
+                                    href={`/${stateCode.toLowerCase()}/${city.toLowerCase().replace(/ /g, '-')}/${winterService.slug}`}
+                                    className="block p-6 bg-white rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group"
+                                >
+                                    <div className="text-3xl mb-3">{winterService.icon}</div>
+                                    <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                        {winterService.title}
+                                    </h3>
+                                    <p className="text-sm text-slate-600 mb-4">{winterService.desc}</p>
+                                    <span className="text-blue-600 text-sm font-semibold flex items-center gap-1">
+                                        Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                    </span>
                                 </Link>
                             ))}
                         </div>
