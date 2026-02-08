@@ -7,6 +7,8 @@ import { CallBtn, NavbarCallBtn } from '@/components/CallBtn'
 import Breadcrumb from '@/components/Breadcrumb'
 import { ServiceDetail } from '@/lib/services-data'
 import CityMap from '@/components/CityMap'
+import NeighborhoodsSection from '@/components/NeighborhoodsSection'
+import type { NeighborhoodData } from '@/lib/neighborhoods-supabase'
 
 interface ServiceSpecificPageProps {
     city: string
@@ -17,6 +19,7 @@ interface ServiceSpecificPageProps {
         city: string
         state_id: string
     }[]
+    neighborhoodData?: NeighborhoodData | null
 }
 
 // Service-specific extended content for semantic SEO - Gutter Services
@@ -406,7 +409,7 @@ const serviceExtendedContent: Record<string, {
     }
 }
 
-export default function ServiceSpecificPage({ city, state, stateCode, service, relatedCities }: ServiceSpecificPageProps) {
+export default function ServiceSpecificPage({ city, state, stateCode, service, relatedCities, neighborhoodData }: ServiceSpecificPageProps) {
     const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     const formattedState = state.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
 
@@ -732,6 +735,18 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     </p>
                 </div>
             </section>
+
+            {/* Neighborhoods Section */}
+            {neighborhoodData && (
+                <NeighborhoodsSection
+                    data={neighborhoodData}
+                    city={formattedCity}
+                    state={formattedState}
+                    stateCode={stateCode}
+                    serviceName={service.title}
+                    serviceSlug={service.slug}
+                />
+            )}
 
             {/* Nearby Cities */}
             {relatedCities && relatedCities.length > 0 && (

@@ -1,4 +1,5 @@
 import { getCityData, getRelatedCities } from '@/lib/data-fetching'
+import { getNeighborhoodData } from '@/lib/neighborhoods-supabase'
 import { servicesData } from '@/lib/services-data'
 import ServiceSpecificPage from '@/components/ServiceSpecificPage'
 import { notFound } from 'next/navigation'
@@ -69,8 +70,11 @@ export default async function Page(props: StartServicePageProps) {
     const stateName = cityData?.state_name || state
     const stateCodeProper = cityData?.state_id || state
 
-    // Fetch related cities
-    const relatedCities = await getRelatedCities(stateCodeProper, cityName)
+    // Fetch related cities and neighborhood data in parallel
+    const [relatedCities, neighborhoodData] = await Promise.all([
+        getRelatedCities(stateCodeProper, cityName),
+        getNeighborhoodData(cityName, stateCodeProper)
+    ])
 
     return <ServiceSpecificPage
         city={cityName}
@@ -78,5 +82,6 @@ export default async function Page(props: StartServicePageProps) {
         stateCode={stateCodeProper}
         service={serviceInfo}
         relatedCities={relatedCities}
+        neighborhoodData={neighborhoodData}
     />
 }
