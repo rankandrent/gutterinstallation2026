@@ -12,6 +12,8 @@ import TrustBadges from '@/components/TrustBadges'
 import AuthoritySignals from '@/components/AuthoritySignals'
 import TopBusinesses from '@/components/TopBusinesses'
 import { servicesData } from '@/lib/services-data'
+import NeighborhoodsSection from '@/components/NeighborhoodsSection'
+import type { NeighborhoodData } from '@/lib/neighborhoods-supabase'
 
 interface ServicePageProps {
     city: string
@@ -25,9 +27,10 @@ interface ServicePageProps {
     latitude?: number
     longitude?: number
     customIntro?: string
+    neighborhoodData?: NeighborhoodData | null
 }
 
-export default function ServicePage({ city, state, stateCode, zipCodes, relatedCities, latitude, longitude, customIntro }: ServicePageProps) {
+export default function ServicePage({ city, state, stateCode, zipCodes, relatedCities, latitude, longitude, customIntro, neighborhoodData }: ServicePageProps) {
     const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     const formattedState = state.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
 
@@ -293,6 +296,17 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
 
             {/* Top 10 Businesses Section */}
             <TopBusinesses city={formattedCity} state={stateCode} />
+
+            {/* Neighborhoods Section for City Pages */}
+            {neighborhoodData && (
+                <NeighborhoodsSection
+                    data={neighborhoodData}
+                    city={formattedCity}
+                    state={formattedState}
+                    stateCode={stateCode}
+                    pageType="city"
+                />
+            )}
 
             {/* Popular Zip Codes Section */}
             {zipCodes && zipCodes.length > 0 && (

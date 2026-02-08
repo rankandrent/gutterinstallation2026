@@ -6,8 +6,11 @@ interface NeighborhoodsSectionProps {
     city: string
     state: string
     stateCode: string
-    serviceName: string
-    serviceSlug: string
+    // For service pages
+    serviceName?: string
+    serviceSlug?: string
+    // Page type: 'city' for city pages, 'service' for service pages
+    pageType?: 'city' | 'service'
 }
 
 export default function NeighborhoodsSection({
@@ -16,7 +19,8 @@ export default function NeighborhoodsSection({
     state,
     stateCode,
     serviceName,
-    serviceSlug
+    serviceSlug,
+    pageType = 'service'
 }: NeighborhoodsSectionProps) {
     if (!data || (!data.neighborhoods?.length && !data.famous_buildings?.length)) {
         return null
@@ -24,12 +28,44 @@ export default function NeighborhoodsSection({
 
     const hasLandmarks = data.famous_buildings && data.famous_buildings.length > 0
     const hasNeighborhoods = data.neighborhoods && data.neighborhoods.length > 0
+    const isCityPage = pageType === 'city'
 
-    // Generate schema markup for areaServed and landmarks
+    // Dynamic content based on page type
+    const sectionTitle = isCityPage
+        ? `Gutter Services Across ${city}`
+        : `${serviceName} Service Areas in ${city}`
+
+    const schemaName = isCityPage
+        ? `Gutter Installation Services in ${city}, ${stateCode}`
+        : `${serviceName} in ${city}, ${stateCode}`
+
+    const landmarksTitle = isCityPage
+        ? `Notable Locations in ${city}`
+        : `Local Landmarks We Serve Near`
+
+    const neighborhoodsTitle = isCityPage
+        ? `${city} Neighborhoods We Cover`
+        : `${serviceName} Available In`
+
+    const ctaText = isCityPage
+        ? `Need gutter services in ${city}? We provide seamless gutter installation, repairs, and maintenance throughout all neighborhoods!`
+        : `Don't see your neighborhood? We provide ${serviceName?.toLowerCase()} services to all zip codes in ${city} and the surrounding metropolitan area!`
+
+    // Generate schema markup
+    const schemaType = isCityPage ? 'LocalBusiness' : 'Service'
     const areaServedSchema = {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": `${serviceName} in ${city}, ${stateCode}`,
+        "@type": schemaType,
+        "name": schemaName,
+        ...(isCityPage ? {
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": city,
+                "addressRegion": stateCode,
+                "addressCountry": "US"
+            }
+        } : {}),
         "areaServed": [
             {
                 "@type": "City",
@@ -51,7 +87,9 @@ export default function NeighborhoodsSection({
         ...(hasLandmarks && {
             "serviceArea": {
                 "@type": "GeoCircle",
-                "description": `${serviceName} service area covering ${city} and surrounding neighborhoods`
+                "description": isCityPage
+                    ? `Gutter services covering ${city} and surrounding areas`
+                    : `${serviceName} service area covering ${city} and surrounding neighborhoods`
             }
         })
     }
@@ -60,7 +98,7 @@ export default function NeighborhoodsSection({
     const landmarksSchema = hasLandmarks ? {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": `Local Landmarks Near ${city}`,
+        "name": `Local Landmarks in ${city}, ${stateCode}`,
         "itemListElement": data.famous_buildings.slice(0, 10).map((landmark, index) => ({
             "@type": "ListItem",
             "position": index + 1,
@@ -75,6 +113,11 @@ export default function NeighborhoodsSection({
             }
         }))
     } : null
+
+    // Badge colors based on page type
+    const badgeClass = isCityPage
+        ? "bg-blue-100 text-blue-700"
+        : "bg-green-100 text-green-700"
 
     return (
         <section className="py-16 px-6 bg-slate-50 border-t border-slate-200">
@@ -93,7 +136,7 @@ export default function NeighborhoodsSection({
             <div className="max-w-7xl mx-auto">
                 {/* Header Badge */}
                 <div className="flex justify-start mb-8">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+                    <span className={`inline-flex items-center gap-2 px-4 py-2 ${badgeClass} rounded-full text-sm font-semibold`}>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                         </svg>
@@ -105,11 +148,15 @@ export default function NeighborhoodsSection({
                     {/* Left Side - Description & Landmarks */}
                     <div>
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                            Serving Every Corner of<br />{city}, {stateCode}
+                            {isCityPage ? (
+                                <>Complete Gutter Coverage in<br />{city}, {stateCode}</>
+                            ) : (
+                                <>Serving Every Corner of<br />{city}, {stateCode}</>
+                            )}
                         </h2>
 
                         {data.description && (
-                            <div className="border-l-4 border-blue-500 pl-6 mb-8">
+                            <div className={`border-l-4 ${isCityPage ? 'border-blue-500' : 'border-blue-500'} pl-6 mb-8`}>
                                 <p className="text-slate-600 leading-relaxed italic">
                                     {data.description}
                                 </p>
@@ -121,7 +168,7 @@ export default function NeighborhoodsSection({
                             <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
                                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
                                     <span className="text-xl">🏛️</span>
-                                    Local Landmarks We Serve Near
+                                    {landmarksTitle}
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
                                     {data.famous_buildings.slice(0, 8).map((landmark, i) => (
@@ -141,12 +188,12 @@ export default function NeighborhoodsSection({
                     {hasNeighborhoods && (
                         <div>
                             <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                <span className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span className={`w-8 h-8 ${isCityPage ? 'bg-blue-100' : 'bg-blue-100'} rounded-full flex items-center justify-center`}>
                                     <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                     </svg>
                                 </span>
-                                Serviceable Neighborhoods
+                                {neighborhoodsTitle}
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                                 {data.neighborhoods.map((neighborhood, i) => (
@@ -161,12 +208,13 @@ export default function NeighborhoodsSection({
                 </div>
 
                 {/* Bottom Callout */}
-                <div className="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 text-center">
+                <div className={`mt-12 rounded-2xl p-6 text-center ${isCityPage ? 'bg-gradient-to-r from-slate-800 to-slate-900' : 'bg-gradient-to-r from-blue-600 to-blue-700'}`}>
                     <p className="text-white text-sm md:text-base">
-                        Don&apos;t see your neighborhood? We serve <strong>all zip codes</strong> in {city} and the surrounding metropolitan area!
+                        {ctaText}
                     </p>
                 </div>
             </div>
         </section>
     )
 }
+

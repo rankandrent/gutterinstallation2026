@@ -8,6 +8,7 @@ export const revalidate = 3600
 export const dynamicParams = true
 
 import { getCityData, getRelatedCities } from '@/lib/data-fetching'
+import { getNeighborhoodData } from '@/lib/neighborhoods-supabase'
 
 interface PageProps {
     params: Promise<{
@@ -67,8 +68,11 @@ export default async function Page(props: PageProps) {
     // Parse zip codes from space-separated string
     const zipCodes = cityData?.zips ? cityData.zips.split(' ').filter(Boolean) : []
 
-    // Fetch related cities
-    const relatedCities = await getRelatedCities(stateCodeProper, cityName)
+    // Fetch related cities and neighborhood data in parallel
+    const [relatedCities, neighborhoodData] = await Promise.all([
+        getRelatedCities(stateCodeProper, cityName),
+        getNeighborhoodData(cityName, stateCodeProper)
+    ])
 
     return <ServicePage
         city={cityName}
@@ -79,5 +83,7 @@ export default async function Page(props: PageProps) {
         latitude={cityData?.lat}
         longitude={cityData?.lng}
         customIntro={cityData?.seo_intro}
+        neighborhoodData={neighborhoodData}
     />
 }
+
