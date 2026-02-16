@@ -33,379 +33,409 @@ const serviceExtendedContent: Record<string, {
     warranty: string
 }> = {
     "seamless-gutter-installation": {
-        whatIs: "Seamless gutter installation involves custom-fabricating continuous aluminum gutters on-site to perfectly fit your home's roofline. Unlike sectional gutters, seamless systems have no joints along the run, dramatically reducing leaks, clogs, and maintenance while providing superior water management.",
+        whatIs: "Seamless gutter installation is the gold standard for modern home water management. Unlike traditional sectional gutters that are pieced together from pre-cut lengths, seamless gutters are custom-fabricated on-site using a specialized portable roll-forming machine. This allows for a continuous run of aluminum or copper that perfectly matches the dimensions of your roofline. The absence of joints along the straight sections is the key advantage; seams are the primary failure points in any gutter system, where expansion, contraction, and debris buildup inevitably lead to leaks and sagging. By eliminating these weak points, seamless systems provide superior structural integrity, reduce the risk of basement flooding, and maintain a cleaner, more streamlined aesthetic for your home's exterior. Our installation crews focus on precision, ensuring a perfect 1/4-inch slope towards downspouts for optimal drainage velocity.",
         process: [
-            "Complete roofline measurement and assessment",
-            "Custom on-site gutter fabrication with portable machine",
-            "Removal of old gutters and inspection of fascia boards",
-            "Installation of new hidden hangers every 24 inches",
-            "Seamless gutter mounting with proper slope for drainage",
-            "Downspout connection and water flow testing"
+            "Comprehensive on-site assessment and digital roofline mapping",
+            "Custom fabrication using heavy-duty 0.032 gauge aluminum coils",
+            "Precision cutting and mitering of corner joints for a watertight fit",
+            "Installation of reinforced hidden hangers every 18-24 inches",
+            "Professional mounting with laser-leveled sloping for drainage",
+            "Hand-soldered or high-grade sealed end caps and outlets",
+            "Full water flow testing to verify 100% drainage efficiency"
         ],
         materials: [
-            { name: "Aluminum Coil Stock", description: "0.027-0.032 gauge aluminum, available in 30+ colors" },
-            { name: "Hidden Hangers", description: "Heavy-duty brackets that mount inside the gutter" },
-            { name: "Gutter Sealant", description: "Professional-grade silicone for watertight connections" },
-            { name: "Aluminum Downspouts", description: "2x3 or 3x4 inch corrugated or smooth styles" }
+            { name: "Heavy-Duty Aluminum Coil", description: "0.032 inch thickness for maximum durability and dent resistance" },
+            { name: "K-Style & Half-Round Profiles", description: "Architectural options to match any home style or water volume" },
+            { name: "Stainless Steel Hidden Hangers", description: "Corrosion-resistant brackets that provide invisible, robust support" },
+            { name: "Professional Grade Sealant", description: "Industrial silicone that remains flexible in extreme temperature swings" }
         ],
         faqs: [
-            { q: "How long do seamless gutters last?", a: "With proper maintenance, aluminum seamless gutters last 20-30 years. Copper can last 50+ years." },
-            { q: "What colors are available?", a: "We offer 30+ factory-baked colors. Custom color matching is also available for an additional fee." },
-            { q: "Do seamless gutters really prevent leaks?", a: "Yes! The only seams are at corners and downspouts, reducing leak points by 90% compared to sectional." }
+            { q: "What is the primary benefit of seamless vs. sectional gutters?", a: "The biggest benefit is the elimination of leak-prone joints. Seams in sectional gutters are where debris gets caught and where seals eventually fail. Seamless gutters are stronger and significantly more reliable." },
+            { q: "How long does a typical installation take?", a: "Most residential seamless gutter installations are completed in a single day. Large or complex rooflines may occasionally require a second day for finishing details." },
+            { q: "Can I choose a color to match my trim?", a: "Absolutely. We offer over 30 factory-baked enamel colors, ensuring a perfect match for your home's siding or fascia." },
+            { q: "How often do seamless gutters need to be inspected?", a: "We recommend a professional inspection at least once a year, preferably in late autumn, to ensure all connections and slopes remain optimal." }
         ],
-        priceRange: "$8-15 per linear foot",
-        duration: "1 day for most homes",
-        warranty: "20-year material, 5-year labor"
+        priceRange: "$9 - $18 per linear foot",
+        duration: "Finished in 4-8 hours",
+        warranty: "Lifetime Material & 5-Year Labor Warranty"
     },
     "gutter-guards-leaf-protection": {
-        whatIs: "Gutter guards are protective covers installed over your gutters to prevent leaves, debris, and pests from clogging your drainage system. Our micro-mesh and solid-cover options allow rainwater to flow freely while blocking even small debris like pine needles and shingle grit.",
+        whatIs: "Professional gutter guard installation is an essential investment for homeowners looking to protect their property from the devastating effects of clogged gutters. Our leaf protection systems utilize advanced micro-mesh technology, constructed from surgical-grade stainless steel with thousands of tiny openings as small as 50 microns. This design is engineered to capture 100% of rainwater, even in the heaviest downpours, while effectively blocking even the smallest debris like pine needles, maple seeds, and shingle granules. By preventing clogs, gutter guards eliminate the need for dangerous ladder work, protect your fascia from rotting, and prevent foundation erosion caused by overflowing water. We offer several grades of protection, from budget-friendly aluminum covers to premium stainless steel mesh that comes with a lifetime no-clog guarantee.",
         process: [
-            "Complete gutter cleaning and inspection",
-            "Assessment of debris type (leaves, needles, seeds)",
-            "Selection of appropriate guard type for your situation",
-            "Professional installation with secure fastening",
-            "Testing with water to ensure proper flow",
-            "Final adjustment of guard angle for optimal performance"
+            "Complete debris removal and industrial-strength system flush",
+            "Structural assessment and pitch correction of existing gutters",
+            "Internal hidden hanger reinforcement for guard support",
+            "Custom mitered cut and fit of guard sections to roof corners",
+            "Professional fastening with high-grade self-tapping screws",
+            "Testing with high-volume water simulation to verify performance",
+            "Final cleanup and disposal of old debris and materials"
         ],
         materials: [
-            { name: "Micro-Mesh Guards", description: "Surgical-grade stainless steel mesh blocks smallest debris" },
-            { name: "Solid Cover Guards", description: "Aluminum covers with surface tension technology" },
-            { name: "Foam Inserts", description: "Budget-friendly option that blocks large debris" },
-            { name: "Brush Guards", description: "Polypropylene bristles that let water through" }
+            { name: "Surgical Stainless Steel Mesh", description: "50-micron openings that block silt and pine needles" },
+            { name: "Extruded Aluminum Frames", description: "High-tensile strength frames that never rust or warp" },
+            { name: "Patented V-Shape Technology", description: "Self-cleaning design that allows wind to clear dry debris" },
+            { name: "UV-Resistant Fasteners", description: "Color-matched screws designed for long-term outdoor exposure" }
         ],
         faqs: [
-            { q: "Do gutter guards really work?", a: "Yes! Quality guards reduce cleaning by 90-95%. Some fine debris may still require occasional maintenance." },
-            { q: "Will they void my gutter warranty?", a: "Professional installation maintains warranties. DIY installation may void them." },
-            { q: "Which type is best for pine trees?", a: "Micro-mesh guards are ideal for pine needles - they block needles while allowing water flow." }
+            { q: "Do gutter guards really eliminate cleaning?", a: "While 'no maintenance' is a common marketing term, the reality is that quality guards reduce cleaning needs by 90-95%. You may still need to occasionally brush off the top of the guards in very heavy tree areas." },
+            { q: "Will they work with my roof type?", a: "Our guards are designed to be compatible with nearly all roof types, including asphalt shingles, metal, and tile. We use specialized installation techniques for each." },
+            { q: "Do they cause ice dams in winter?", a: "Actually, by keeping gutters clear of water-trapping debris, quality guards often help reduce the severity of ice dam formation." },
+            { q: "How much does professional installation cost?", a: "Pricing varies based on the type of guard and the linear footage of your home, but generally falls between $8 and $22 per foot installed." }
         ],
-        priceRange: "$7-20 per linear foot",
-        duration: "4-8 hours for most homes",
-        warranty: "Lifetime clog-free guarantee available"
+        priceRange: "$8 - $22 per linear foot",
+        duration: "4-10 hours depending on size",
+        warranty: "Lifetime Clog-Free Guarantee"
     },
     "gutter-cleaning-maintenance": {
-        whatIs: "Professional gutter cleaning removes leaves, debris, and buildup from your gutters and downspouts to ensure proper water drainage. Regular maintenance prevents water damage, foundation issues, and extends the life of your gutter system significantly.",
+        whatIs: "Professional gutter cleaning is the most cost-effective way to prevent catastrophic water damage to your home's foundation, siding, and landscaping. Our comprehensive maintenance service goes far beyond simply scooping out leaves. We perform a complete system diagnostic, identifying invisible issues like micro-leaks, loose hangers, and improper pitch before they turn into expensive repairs. Our technicians use specialized tools to safely remove all organic debris, shingle granules, and environmental buildup that can trap moisture against your home's fascia boards. A clean gutter system ensures that rainwater is channeled rapidly away from your foundation, preventing the hydrostatic pressure that causes basement cracks and flooding. We recommend a professional cleaning at least twice a year—after the spring bud drop and again after the final autumn leaves fall—to maintain a healthy, functional roofline.",
         process: [
-            "Roof and gutter inspection for damage",
-            "Manual debris removal from all gutters",
-            "Downspout clearing and flushing",
-            "Gutter realignment if sagging detected",
-            "Seam and connection inspection",
-            "Water flow testing to verify drainage"
+            "Comprehensive roofline and gutter structural integrity inspection",
+            "Manual hand-removal of all large debris and organic buildup",
+            "High-volume air or water flushing of all horizontal gutter runs",
+            "Individual snake-cleaning and flushing of every downspout",
+            "Verification and adjustment of gutter slope for proper drainage",
+            "Before and after photographic documentation for homeowner review",
+            "Final site cleanup and eco-friendly disposal of all gutter debris"
         ],
         materials: [
-            { name: "Gutter Scoops", description: "Specialized tools for efficient debris removal" },
-            { name: "High-Pressure Flush", description: "Clears packed downspouts and stubborn clogs" },
-            { name: "Ladder Stabilizers", description: "Safe access equipment for all roof types" },
-            { name: "Gutter Sealant", description: "For minor repairs discovered during cleaning" }
+            { name: "Industrial Gutter Vacuums", description: "High-suction equipment for removing fine silt and shingle grit" },
+            { name: "Flexible Downspout Snakes", description: "Specialized tools to clear deep clogs in curved elbow joints" },
+            { name: "Telescoping Safety Ladders", description: "Stabilized equipment that protects your gutters from weight damage" },
+            { name: "Professional Grade Flushes", description: "Eco-friendly solutions that clear stubborn environmental buildup" }
         ],
         faqs: [
-            { q: "How often should I clean gutters?", a: "At minimum twice yearly - spring and fall. Homes with many trees may need quarterly cleaning." },
-            { q: "Can clogged gutters damage my home?", a: "Yes! Overflowing gutters cause foundation damage, basement flooding, fascia rot, and landscape erosion." },
-            { q: "Do you repair while cleaning?", a: "Minor repairs like resealing seams are included. Major repairs are quoted separately." }
+            { q: "How often should I have my gutters cleaned?", a: "For most homes, twice a year is sufficient. However, if your property is heavily wooded with oak or pine trees, we recommend a quarterly maintenance plan to ensure year-round protection." },
+            { q: "Do you clean the downspouts as well?", a: "Yes, cleaning the downspouts is a critical part of our service. A clean gutter with a clogged downspout will still overflow and cause damage." },
+            { q: "What happens if you find damage during the cleaning?", a: "Our technicians provide a detailed inspection report. If minor issues are found, we can often repair them on the spot. Major issues will be documented and quoted for a separate visit." },
+            { q: "Is gutter cleaning dangerous for homeowners to do themselves?", a: "Ladder-related falls are one of the leading causes of home accidents. Our professional crews are fully insured and equipped with specialized safety gear, allowing you to stay safely on the ground." }
         ],
-        priceRange: "$150-350 per cleaning",
-        duration: "1-3 hours",
-        warranty: "30-day clog-free guarantee"
+        priceRange: "$175 - $450 per visit",
+        duration: "1.5 - 3 hours typical",
+        warranty: "30-Day No-Clog Performance Guarantee"
     },
     "downspout-installation-extensions": {
-        whatIs: "Downspout installation and extensions ensure rainwater is properly directed away from your foundation. We install new downspouts, replace damaged ones, and add extensions to discharge water at least 6 feet from your home to prevent flooding and foundation damage.",
+        whatIs: "Downspout installation and drainage extensions are the final, critical step in any effective water management strategy. While gutters collect the rain, it's the downspouts that carry it safely to the ground. Our professional installation ensures that your downspouts are strategically sized and placed to handle the specific square footage of your roof. Standard 2x3 downspouts are often insufficient for modern homes with steep pitches; we specialize in high-capacity 3x4 'industrial' downspouts that can move twice as much water during peak storms. Furthermore, our extension solutions—including both above-ground and underground options—ensure that water is discharged at least 10 feet away from your home's foundation. This prevents the soil saturation that leads to basement seepage, foundation settling, and costly structural repairs. We use premium-grade aluminum that is color-matched to your existing system for a seamless, professional look.",
         process: [
-            "Water flow assessment and discharge planning",
-            "Downspout sizing based on roof drainage area",
-            "Secure mounting with aluminum straps",
-            "Elbow and extension installation",
-            "Underground drain connection if applicable",
-            "Testing to verify proper water flow direction"
+            "Hydraulic drainage load calculation based on roof area",
+            "Strategic placement planning to maximize yard drainage",
+            "Precision miter-cutting of heavy-duty aluminum downspout stock",
+            "Installation of reinforced color-matched wall straps",
+            "Connection of high-flow elbow joints and leaf filters",
+            "Trenching and installation of underground 4-inch PVC extensions",
+            "Final water flow verification and discharge point testing"
         ],
         materials: [
-            { name: "Aluminum Downspouts", description: "2x3 or 3x4 inch in matching gutter colors" },
-            { name: "Extension Pieces", description: "Above-ground extensions in various lengths" },
-            { name: "Splash Blocks", description: "Concrete or plastic dispersal bases" },
-            { name: "Flip-Up Extensions", description: "Retractable for easy lawn mowing" }
+            { name: "3x4-Inch Oversized Downspouts", description: "High-capacity aluminum stock designed for extreme rainfall" },
+            { name: "Underground PVC Drain Lines", description: "Solid 4-inch piping that moves water far from the foundation" },
+            { name: "Pop-Up Emitters", description: "Discharge points that open under water pressure and close to block pests" },
+            { name: "Reinforced Aluminum Straps", description: "Heavy-duty fasteners that secure downspouts against high winds" }
         ],
         faqs: [
-            { q: "How far should water drain from foundation?", a: "Minimum 6 feet, ideally 10 feet. We can install underground drains for longer distances." },
-            { q: "Can downspouts connect underground?", a: "Yes! We install buried drain lines to pop-up emitters for invisible water management." },
-            { q: "How many downspouts do I need?", a: "Generally one downspout per 35-40 feet of gutter run. Large roof areas may need more." }
+            { q: "Why should I upgrade to oversized downspouts?", a: "If your gutters overflow during heavy rain even when clean, your downspouts likely can't move the water fast enough. Upgrading to 3x4 inch spouts can often solve this problem without needing new gutters." },
+            { q: "How far should water discharge from my foundation?", a: "Ideally, water should be discharged at least 10 feet away. Standard 3-foot extensions are often insufficient and can still lead to foundation dampness." },
+            { q: "Can you hide my downspouts underground?", a: "Yes, we specialize in underground drainage solutions that take water from the downspout and pipe it invisibly to a pop-up emitter in your yard or to a dry well." },
+            { q: "Do you offer different colors?", a: "We stock over 30 colors and can match almost any existing gutter system, siding, or trim for a perfectly integrated look." }
         ],
-        priceRange: "$75-200 per downspout",
-        duration: "2-4 hours",
-        warranty: "5-year installation warranty"
+        priceRange: "$85 - $250 per downspout/extension",
+        duration: "2 - 5 hours total",
+        warranty: "10-Year Leak-Proof Warranty"
     },
     "soffit-fascia-repair": {
-        whatIs: "Soffit and fascia are the finishing pieces under your roof overhang that protect rafters and provide ventilation. Damaged soffit or fascia can lead to water intrusion, pest entry, and gutter failure. We repair or replace these critical components to maintain your home's integrity.",
+        whatIs: "Soffit and fascia are more than just decorative trim; they are critical structural components that protect your home's roofline and ensure proper attic ventilation. The fascia board provides the primary mounting surface for your gutter system, while the soffit allows fresh air into your attic, preventing moisture buildup and wood rot. When these components are damaged by water, pests, or age, the entire integrity of your roof is at risk. Our repair and replacement service focuses on using rot-proof materials like cellular PVC and aluminum-wrapped wood to provide a lifetime solution. We don't just cover up the problem; we identify the underlying cause of the damage—often a failing gutter or ice dam—and fix it permanently. Our goal is to restore your home's curb appeal while ensuring a dry, well-ventilated structure that will last for decades.",
         process: [
-            "Inspection of existing soffit and fascia condition",
-            "Removal of damaged sections and gutter detachment",
-            "Wood rot repair or complete board replacement",
-            "New fascia board installation with aluminum capping",
-            "Vented soffit installation for proper attic airflow",
-            "Gutter reattachment and painting if needed"
+            "Comprehensive wood-rot and structural integrity inspection",
+            "Safe removal of damaged fascia boards and vented soffit panels",
+            "Installation of new, moisture-resistant pressure-treated framing",
+            "Precision mounting of premium cellular PVC or aluminum-wrapped fascia",
+            "Installation of high-flow ventilated soffit for optimal attic cooling",
+            "Custom color-matching of aluminum trim coil and hardware",
+            "Full cleanup and re-mounting of existing gutter systems if possible"
         ],
         materials: [
-            { name: "Aluminum Fascia Cover", description: "Maintenance-free wrap over wood fascia" },
-            { name: "Vinyl Soffit Panels", description: "Vented panels for attic ventilation" },
-            { name: "PVC Fascia Boards", description: "Rot-proof composite alternative to wood" },
-            { name: "Pressure-Treated Lumber", description: "Durable wood for structural replacement" }
+            { name: "Cellular PVC Trim Boards", description: "Advanced rot-proof material that looks like wood but never decays" },
+            { name: "Ventilated Aluminum Soffit", description: "High-airflow panels that reduce attic heat and prevent moisture" },
+            { name: "Polyurethane Sealants", description: "Marine-grade caulking that provides a permanent weather-tight seal" },
+            { name: "Stainless Steel Fasteners", description: "Zero-rust nails and screws designed for long-term outdoor exposure" }
         ],
         faqs: [
-            { q: "Why is my fascia rotting?", a: "Usually from gutter overflow or ice dams. We fix the cause and replace the damaged wood." },
-            { q: "Can you wrap existing fascia?", a: "If the wood is solid, yes. Rotted wood must be replaced before covering with aluminum." },
-            { q: "Does soffit affect energy bills?", a: "Yes! Proper soffit ventilation reduces attic heat buildup and can lower cooling costs." }
+            { q: "Why is my fascia rotted?", a: "Fascia rot is almost always caused by water backing up behind the gutter, often due to clogs, improper pitch, or the absence of a drip edge. We fix the source of the leak first." },
+            { q: "Can you install aluminum covers over rotted wood?", a: "Absolutely not. Covering rotted wood traps moisture and accelerates the decay. We always remove and replace failing wood before installing any aluminum capping." },
+            { q: "Does soffit ventilation affect my energy bill?", a: "Yes. A properly ventilated attic can be 30-50 degrees cooler in the summer, significantly reducing the load on your air conditioning system." },
+            { q: "What is the lifespan of new fascia and soffit?", a: "When we use aluminum-wrapped or PVC materials, the life expectancy is 30-50 years, often outlasting the roof itself." }
         ],
-        priceRange: "$6-20 per linear foot",
-        duration: "1-2 days",
-        warranty: "10-year material, 2-year labor"
+        priceRange: "$12 - $35 per linear foot",
+        duration: "1 - 2 days typically",
+        warranty: "10-Year Structural Integrity Warranty"
     },
     "copper-gutter-systems": {
-        whatIs: "Copper gutter systems are the premium choice for discerning homeowners. These hand-crafted gutters develop a beautiful patina over time, last 50-100 years, and add significant curb appeal and value to historic homes, luxury properties, and custom builds.",
+        whatIs: "Copper gutter systems represent the pinnacle of architectural drainage, offering a level of elegance and longevity that no other material can match. Unlike aluminum or steel, copper is a reactive metal that develops a stunning natural patina over time—transitioning from a bright, shiny penny finish to a deep bronze, and eventually to a classic 'verdigris' green. This patina isn't just aesthetic; it's a protective layer that makes copper virtually impervious to rust and corrosion, even in harsh coastal environments. A properly installed, hand-soldered copper system can last 75 to 100 years, often outlasting the building itself. We specialize in both traditional K-style and historic half-round profiles, using heavy-duty 16oz or 20oz copper stock. Every joint, corner, and end cap is hand-soldered by master craftsmen to ensure a leak-proof, structural bond that withstands extreme thermal expansion. For homeowners seeking to enhance their property's value and architectural distinction, copper is the ultimate choice.",
         process: [
-            "Detailed measurements and custom design",
-            "Material ordering and lead time planning",
-            "Careful removal of existing gutters",
-            "Expert copper soldering of all joints",
-            "Installation with copper hangers and hardware",
-            "Sealing and initial patina treatment options"
+            "Detailed architectural mapping and custom design consultation",
+            "Hand-selection of premium 16-oz or 20-oz cold-rolled copper stock",
+            "Precision on-site fabrication of seamless runs and mitered corners",
+            "Expert hand-soldering of all joints using lead-free silver solder",
+            "Installation of heavy-duty decorative copper hangers and brackets",
+            "Optional application of patina-accelerants or protective coatings",
+            "Final structural polish and watertight performance certification"
         ],
         materials: [
-            { name: "16-oz Copper Sheet", description: "Standard weight for residential copper gutters" },
-            { name: "20-oz Copper Sheet", description: "Heavy-duty for commercial or large homes" },
-            { name: "Copper Hangers", description: "Matching hardware for seamless appearance" },
-            { name: "Lead-Free Solder", description: "Professional joints that last decades" }
+            { name: "16-oz & 20-oz Cold-Rolled Copper", description: "Standard and heavy-weight architectural grade copper stock" },
+            { name: "Ornate Solid Copper Hangers", description: "Decorative brackets that provide massive load-bearing support" },
+            { name: "Silver Solder Alloy", description: "High-strength, lead-free joining material for permanent bonds" },
+            { name: "Smooth Round Copper Downspouts", description: "Classic architectural spouts that complement historic aesthetics" }
         ],
         faqs: [
-            { q: "How long until copper patinas?", a: "Bronze color develops in months, full green patina takes 15-20 years depending on climate." },
-            { q: "Can I keep copper shiny?", a: "Yes, with regular polishing. Most owners prefer the natural patina as a mark of quality." },
-            { q: "Are copper gutters worth the cost?", a: "For the right home, absolutely. They last 3-4x longer than aluminum and add significant value." }
+            { q: "How long until the copper turns green?", a: "The patina process depends heavily on your local climate. In most areas, copper turns bronze in a few months, chocolate brown in 2-5 years, and develops the classic green verdigris in 15-20 years." },
+            { q: "Do copper gutters require more maintenance?", a: "Actually, they require less. Because they are soldered into a single structural unit, they don't have gaskets or sealants that dry out and leak. Regular cleaning of leaves is all that's required." },
+            { q: "Are copper gutters a good investment?", a: "Absolutely. While the initial cost is higher, their 80+ year lifespan and the significant boost they provide to home resale value make them highly cost-effective over the long term." },
+            { q: "Will copper runoff stain my siding or driveway?", a: "New copper can occasionally leave slight 'copper tracks' on light-colored porous surfaces during the first few rains. We can apply temporary treatments to minimize this during the initial oxidation phase." }
         ],
-        priceRange: "$25-50 per linear foot",
-        duration: "2-4 days",
-        warranty: "Lifetime material, 10-year labor"
+        priceRange: "$28 - $55 per linear foot",
+        duration: "2 - 4 days typical",
+        warranty: "Lifetime Material & 10-Year Craftsmanship Warranty"
     },
     "commercial-gutter-services": {
-        whatIs: "Commercial gutter services handle the high-capacity drainage needs of businesses, apartment complexes, warehouses, and industrial facilities. We design and install large-scale gutter systems, box gutters, internal drainage, and high-volume downspout systems.",
+        whatIs: "Commercial gutter systems must meet a completely different set of engineering requirements than residential systems. Managing the massive water volume from a 20,000+ square foot warehouse or retail roof requires oversized box gutters and high-flow industrial downspouts. We provide full-service commercial drainage solutions, including the installation of 6-inch, 7-inch, and custom box gutter profiles fabricated from heavy-gauge aluminum or stainless steel. Our crews are OSHA-certified and equipped with the necessary lifts and safety gear to handle multi-story complexes, apartments, and industrial facilities. We focus on long-term durability and low maintenance, integrating internal drainage systems and high-capacity scuppers to prevent the roof ponding that leads to structural failure. Whether it's a new construction project or a complex retrofit, we deliver drainage systems that meet local building codes and protect your commercial assets.",
         process: [
-            "Site survey and drainage load calculation",
-            "Engineering review and code compliance",
-            "Custom fabrication of oversized gutters",
-            "Crane or lift installation for large buildings",
-            "Commercial-grade securing and waterproofing",
-            "Final inspection and drainage verification"
+            "Comprehensive drainage-load engineering and site survey",
+            "Custom fabrication of heavy-gauge 6\" or 7\" box gutter profiles",
+            "OSHA-compliant safety setup and lift-equipment deployment",
+            "Installation of reinforced industrial mounting brackets and straps",
+            "TIG-welding or high-grade commercial sealing of all joints",
+            "Integration of high-volume scuppers and internal drain connections",
+            "Full hydraulic testing and code-compliance certification"
         ],
         materials: [
-            { name: "Box Gutters", description: "Built-in gutters for flat commercial roofs" },
-            { name: "6-Inch K-Style", description: "High-capacity for large roof areas" },
-            { name: "Industrial Downspouts", description: "4x5 or 5x6 inch for maximum flow" },
-            { name: "Stainless Steel", description: "Corrosion-resistant for industrial environments" }
+            { name: "7-Inch Commercial Box Gutters", description: "High-capacity profiles for massive commercial roof areas" },
+            { name: "Heavy-Gauge 0.040 Aluminum", description: "Increased thickness for industrial-strength durability" },
+            { name: "Industrial Steel Downspouts", description: "Impact-resistant spouts for high-traffic loading zones" },
+            { name: "Internal Scupper Systems", description: "Emergency overflow outlets for parapet roof designs" }
         ],
         faqs: [
-            { q: "Do you handle multi-story buildings?", a: "Yes, we have lift equipment and OSHA-certified crews for buildings up to 6 stories." },
-            { q: "Can you install during business hours?", a: "We offer flexible scheduling including nights and weekends to minimize disruption." },
-            { q: "Do you offer maintenance contracts?", a: "Yes, commercial properties benefit from quarterly inspections and cleaning plans." }
+            { q: "Do you offer maintenance contracts for businesses?", a: "Yes. We provide quarterly or bi-annual commercial maintenance plans to ensure your drainage system remains clear and functional, protecting your facility 365 days a year." },
+            { q: "Can you install on buildings over 3 stories?", a: "Absolutely. We are equipped with 60ft-80ft man-lifts and our crews are fully trained in high-altitude safety and OSHA fall-protection standards." },
+            { q: "How do you handle box gutter leaks?", a: "Box gutters often leak at the seams. we specialize in re-lining box gutters with seamless EPDM or high-grade industrial coatings that provide a permanent, watertight seal." },
+            { q: "Are your crews insured for commercial work?", a: "Yes, we carry $5M in commercial general liability insurance and full workers' compensation coverage for all large-scale projects." }
         ],
-        priceRange: "Custom quote required",
-        duration: "1-2 weeks for large projects",
-        warranty: "Commercial warranty terms apply"
+        priceRange: "Project-Based Custom Quotes",
+        duration: "3 - 10 days typically",
+        warranty: "20-Year Commercial Grade Warranty"
     },
     "storm-damage-repair": {
-        whatIs: "Storm damage repair restores your gutter system after severe weather events. High winds, falling branches, hail, and ice can crush, detach, or puncture gutters. Our rapid response team assesses damage, works with insurance, and restores your drainage system quickly.",
+        whatIs: "Severe weather—high winds, heavy snow, hail, and falling branches—can compromise your gutter system in an instant. When gutters become detached, crushed, or punctured, they stop directing water away from your home, leading to immediate risks of fascia rot and basement flooding. Our storm damage rapid-response team is available 7 days a week to stabilize your property and perform permanent repairs. We don't just patch holes; we perform a full structural audit to ensure that invisible damage, like loosened hangers or hairline cracks in the sealant, is addressed. Furthermore, we specialize in insurance claim documentation, providing detailed high-resolution photos and professional estimates that your adjuster needs to process your claim quickly. Our goal is to restore your home's exterior protection to its pre-storm condition, ensuring your family stays dry and your foundation remains secure.",
         process: [
-            "Emergency assessment and documentation",
-            "Insurance claim assistance and photos",
-            "Temporary repairs if needed for active leaks",
-            "Damaged section removal and disposal",
-            "Matching material sourcing and fabrication",
-            "Complete restoration and testing"
+            "Emergency 24-hour response and initial damage stabilization",
+            "Full-system structural audit and hidden-leak detection",
+            "High-resolution photographic documentation for insurance claims",
+            "Professional itemized repair or replacement estimates",
+            "On-site fabrication of matching seamless gutter sections",
+            "Reinforcement of all mounting points and hanger systems",
+            "Final water-test and insurance claim finalization assistance"
         ],
         materials: [
-            { name: "Replacement Gutter Sections", description: "Matched to existing system color and style" },
-            { name: "New Hangers", description: "Replace bent or pulled-out brackets" },
-            { name: "Fascia Repair Materials", description: "Often damaged alongside gutters" },
-            { name: "Sealant", description: "Waterproof all new connections" }
+            { name: "Heavy-Duty Hanger Replacements", description: "Upgraded brackets to prevent future wind-related detaching" },
+            { name: "Color-Matched Gutter Stock", description: "Precise matching to your existing system's age and weathering" },
+            { name: "High-Tact Bond Sealant", description: "Specialized repair sealant that can be applied in damp conditions" },
+            { name: "Reinforced Fascia Capping", description: "Aluminum wrap that protects storm-damaged wood from further rot" }
         ],
         faqs: [
-            { q: "Will insurance cover this?", a: "Most homeowners policies cover sudden storm damage. We provide detailed documentation for claims." },
-            { q: "How fast can you respond?", a: "For active water intrusion, we offer same-day emergency service in most areas." },
-            { q: "Can you match my old gutters?", a: "We stock 30+ colors and can source specialty materials to match existing systems." }
+            { q: "Will insurance cover my gutter replacement?", a: "Most homeowners policies cover gutter damage caused by 'sudden and accidental' events like storms or falling trees. We provide the documentation you need to prove the cause of loss." },
+            { q: "How quickly can you come out after a storm?", a: "We prioritize emergency calls and can typically have a crew on-site for stabilization within 24 hours of the weather clearing." },
+            { q: "Can you fix just the damaged section?", a: "If the rest of the system is sound, yes. We can fabricate a new seamless section and 'zip' it into your existing system with professional-grade connectors." },
+            { q: "What should I do if my gutters are hanging off the house?", a: "Stay clear of the area and call us immediately. Avoid trying to fix it yourself, as detached gutters are under tension and can be dangerous to handle." }
         ],
-        priceRange: "$200-2000+ depending on damage",
-        duration: "Same-day to 2 days",
-        warranty: "Standard installation warranty"
+        priceRange: "$250 - $2,500 typical repair range",
+        duration: "2 - 6 hours standard",
+        warranty: "Full Restoration Satisfactory Guarantee"
     },
     "ice-dam-removal": {
-        whatIs: "Ice dam removal safely eliminates dangerous ice buildup at roof edges that traps water and causes interior leaks. We use steam equipment and safe techniques to clear ice without roof damage, and install prevention systems to stop future ice dam formation.",
+        whatIs: "Ice dams are a serious threat to your home's structure, forming when heat escaping from your attic melts snow on the roof, which then refreezes at the cold eaves. This ridge of ice traps melting snow, forcing water under your shingles and into your walls and ceilings. Our professional ice dam removal service uses low-pressure steam—the only safe and proven method to clear ice without damaging your roofing materials. Unlike hacking with hammers or using dangerous chemicals, steam gently melts the ice, allowing it to flow safely into the gutters. We prioritize emergency calls to prevent active interior leaks and structural rot. Our team also performs a 'thermal audit' during the removal process, identifying the insulation gaps or ventilation issues that caused the dam in the first place, helping you prevent future occurrences.",
         process: [
-            "Roof and attic heat loss assessment",
-            "Safe ice dam removal using steam equipment",
-            "Gutter and downspout ice clearing",
-            "Inspection for water damage",
-            "Heat cable installation for prevention",
-            "Attic ventilation improvement recommendations"
+            "Emergency site assessment and interior leak localization",
+            "Safe snow removal from the roof surface using specialized rakes",
+            "Deployment of professional low-pressure high-temperature steam units",
+            "Gentle 'grid-cutting' of ice dams into manageable blocks",
+            "Safe extraction of ice blocks and clearing of gutter channels",
+            "Full flush of downspouts to ensure immediate drainage",
+            "Thermographic attic inspection to identify heat-leak sources"
         ],
         materials: [
-            { name: "Heat Cables", description: "Self-regulating cables for roof edges and gutters" },
-            { name: "Ice Melt Panels", description: "Aluminum panels with integrated heating" },
-            { name: "Attic Ventilation", description: "Ridge vents and soffit baffles" },
-            { name: "Ice & Water Shield", description: "Membrane underlayment for new roofs" }
+            { name: "Low-Pressure Industrial Steamers", description: "The only safe equipment for removing ice without shingle damage" },
+            { name: "Roof-Safe Poly Snap-Rakes", description: "Specialized tools for removing heavy snow without scraping granules" },
+            { name: "Safety Harness & Anchors", description: "Oversized fall-protection gear for working on icy, steeply pitched roofs" },
+            { name: "Biodegradable De-Icing Agents", description: "Eco-friendly salts used only for final downspout clearing" }
         ],
         faqs: [
-            { q: "Why do ice dams form?", a: "Heat escaping through the roof melts snow, which refreezes at cold eaves creating dams." },
-            { q: "Are heat cables worth it?", a: "For problem areas, yes. They prevent costly water damage from ice dam leaks." },
-            { q: "Can I remove ice myself?", a: "We don't recommend it - improper removal damages shingles. Steam is the safe solution." }
+            { q: "Will steam damage my roof shingles?", a: "No. Low-pressure steam is the industry-recommended method because it uses temperature, not pressure, to melt ice. It is much safer than pressure washing or mechanical removal." },
+            { q: "Can I just use salt pucks to melt the ice?", a: "Salt pucks can damage your shingles, corrode your aluminum gutters, and kill your landscaping. Steam is a faster, safer, and more effective solution." },
+            { q: "How long does it take to remove an ice dam?", a: "Most residential ice dams can be cleared in 2-5 hours, depending on the thickness of the ice and the length of the problematic eaves." },
+            { q: "Do you offer emergency service?", a: "Yes, we prioritize active leaks. Our crews are equipped to operate in sub-zero temperatures and blizzard conditions to protect your home." }
         ],
-        priceRange: "Custom quote required",
-        duration: "2-6 hours",
-        warranty: "Heat cable manufacturer warranty"
+        priceRange: "$450 - $1,200 typical visit",
+        duration: "2 - 6 hours standard",
+        warranty: "Immediate Leak-Relief Guarantee"
     },
     "ice-dam-prevention": {
-        whatIs: "Ice dam prevention involves installing systems that stop ice dams before they form. By improving attic ventilation, adding heat cables, and installing ice shields, you can protect your roof and gutters from costly winter damage year after year.",
+        whatIs: "The best way to handle ice dams is to ensure they never form in the first place. Ice dam prevention is a holistic approach that combines attic insulation, proper ventilation, and advanced heat technologies. Most ice dams are caused by 'hot spots' on your roof where heat leaks through the ceiling, melts snow, and then refreezes at the cold eaves. Our prevention service begins with a comprehensive energy audit of your attic. We identify air leaks around chimneys, vents, and light fixtures, and then install high-R-value blown-in insulation and baffles to ensure consistent roof temperatures. When structural changes aren't enough, we integrate self-regulating heat cable systems that maintain clear drainage channels. By addressing the root cause, we protect your home from winter water damage and significantly reduce your heating costs.",
         process: [
-            "Comprehensive roof and attic inspection",
-            "Thermal imaging to identify heat loss areas",
-            "Attic insulation R-value assessment",
-            "Heat cable layout planning for problem areas",
-            "Installation of self-regulating heat cables",
-            "Soffit baffle and ventilation improvements"
+            "Comprehensive attic insulation and bypass energy audit",
+            "Installation of high-flow soffit baffles and ridge vents",
+            "Professional sealing of all air-leaks and bypasses in the attic",
+            "Upgrade of attic insulation to modern DOE standards (R-49 to R-60)",
+            "Installation of self-regulating 'smart' heat cable systems",
+            "Design and mounting of metal 'ice belts' on low-pitch areas",
+            "Final thermal-imaging verification of balanced roof temperatures"
         ],
         materials: [
-            { name: "Self-Regulating Heat Cables", description: "Automatically adjust heat output based on temperature" },
-            { name: "Ice & Water Shield", description: "Rubberized membrane prevents water intrusion" },
-            { name: "Soffit Baffles", description: "Ensure proper airflow from eaves to ridge" },
-            { name: "Ridge Vents", description: "Allow warm attic air to escape properly" }
+            { name: "Blown-In Cellulose Insulation", description: "Eco-friendly, fire-resistant insulation with high R-value" },
+            { name: "Pro-Grade Heat Cables", description: "Self-regulating cables that adjust heat based on ambient temperature" },
+            { name: "High-Flow Soffit Baffles", description: "Ventilation channels that ensure fresh air reaches the ridge vent" },
+            { name: "Metal Ice Belts", description: "Slick aluminum panels that encourage snow to slide off before damming" }
         ],
         faqs: [
-            { q: "Is prevention better than removal?", a: "Yes! Prevention is a one-time investment that saves thousands in potential water damage and emergency repairs." },
-            { q: "Do heat cables use a lot of electricity?", a: "Self-regulating cables are energy-efficient, only using power when temperatures drop below freezing." },
-            { q: "How long do prevention systems last?", a: "Heat cables last 10-15 years, ice shields last the life of your roof." }
+            { q: "How much insulation do I really need?", a: "In cold climates, the Department of Energy recommends R-49 to R-60. Most older homes have less than R-19, which is the primary cause of ice dams." },
+            { q: "Do heat cables use a lot of electricity?", a: "Modern self-regulating cables only draw significant power when they detect ice or near-freezing temperatures, making them much more efficient than older 'constant heat' kits." },
+            { q: "Is ventilation more important than insulation?", a: "They work together. Insulation keeps the heat in your house, but ventilation carries away whatever heat does escape, keeping the roof deck cold." },
+            { q: "Can you prevent ice dams on flat roofs?", a: "Yes, flat roofs require specialized internal drain heaters and improved tapered insulation to ensure water moves toward the drains before it can freeze." }
         ],
-        priceRange: "$500-2,500 depending on coverage",
-        duration: "4-8 hours",
-        warranty: "10-year installation warranty"
+        priceRange: "$1,500 - $5,000+ for full systems",
+        duration: "1 - 3 days typically",
+        warranty: "10-Year No-Dam Guarantee"
     },
     "roof-snow-removal": {
-        whatIs: "Roof snow removal safely clears heavy snow accumulation from your roof to prevent ice dams, structural damage, and potential roof collapse. Our trained crews use specialized equipment to remove snow without damaging shingles or gutters.",
+        whatIs: "Heavy snow accumulation on your roof is more than just a winter chore; it's a significant structural risk. A single cubic foot of wet snow can weigh up to 20 pounds, and a large roof can easily accumulate several tons of weight, leading to roof sagging, cracked rafters, and even total collapse. Furthermore, excessive snow is the fuel for ice dams. Our professional roof snow removal service safely clears your roof while protecting your shingles from damage. We use specialized long-reach rake systems and poly-edge shovels that never scrape the protective granules off your roof. Our crews are trained in safe weight-distribution techniques, ensuring that we clear the snow systematically to prevent 'unbalanced loading' that can stress your home's framing. Whether you have a flat commercial roof or a steep residential gable, we provide the rapid response you need after a major blizzard.",
         process: [
-            "Roof load assessment and safety planning",
-            "Safe access setup with proper equipment",
-            "Careful snow removal using roof rakes",
-            "Steam clearing for ice-heavy areas",
-            "Gutter and downspout snow clearing",
-            "Inspection for ice dam formation"
+            "Total roof-load structural weight assessment",
+            "Strategic clearing path planning to prevent unbalanced loads",
+            "Manual removal using long-reach, non-marring roof rakes",
+            "Safe shoveling of thick accumulations using poly-shovels",
+            "Clearing and flushing of all gutter and downspout exits",
+            "Safe clearing of fallen snow from around foundation and vents",
+            "Final inspection of roof surface for potential storm damage"
         ],
         materials: [
-            { name: "Roof Rakes", description: "Extended aluminum rakes that reach from ground level" },
-            { name: "Steam Equipment", description: "Low-pressure steam for ice and packed snow" },
-            { name: "Safety Harnesses", description: "OSHA-compliant fall protection for roof work" },
-            { name: "Roof Protection Pads", description: "Prevent shingle damage during removal" }
+            { name: "Non-Marring Poly-Edge Rakes", description: "Designed to remove snow without damaging shingle granules" },
+            { name: "Snow Slide Systems", description: "Slick sheets that allow large volumes of snow to slide off safely" },
+            { name: "Stabilized Ladder Systems", description: "Equipemt that allows access without leaning against frozen gutters" },
+            { name: "Roof-Safe Ice Augers", description: "Tools for clearing ventilation points and drainage outlets" }
         ],
         faqs: [
-            { q: "When should I remove roof snow?", a: "When accumulation exceeds 12 inches, before rapid warming, or if you notice sagging or creaking." },
-            { q: "Can heavy snow damage my roof?", a: "Yes! Fresh snow weighs 3-5 lbs per cubic foot, packed snow 20+ lbs. This stresses rafters and can cause collapse." },
-            { q: "Do you remove all the snow?", a: "We leave 1-2 inches to protect shingles. Complete removal risks shingle damage." }
+            { q: "When should I be worried about snow on my roof?", a: "Generally, if you have more than 12-18 inches of snow—or if you notice internal doors sticking or see drywall cracks—it's time for professional removal." },
+            { q: "Can I just use my garden rake?", a: "No. Garden rakes have vertical teeth that will rip your shingles and damage your gutters. Professional roof rakes are designed with rollers to stay off the shingle surface." },
+            { q: "Do you clear the snow from the ground too?", a: "Yes, we ensure that the snow removed from the roof doesn't block your home's secondary exits, dryer vents, or gas meters." },
+            { q: "Will hiring you help prevent ice dams?", a: "Absolutely. Removing the 'fuel' (snow) is the only way to stop an ice dam from growing or forming in the first place." }
         ],
-        priceRange: "$200-600 per visit",
-        duration: "2-4 hours",
-        warranty: "Service satisfaction guarantee"
+        priceRange: "$250 - $600 per visit",
+        duration: "1.5 - 4 hours typically",
+        warranty: "Structural Load Relief Guarantee"
     },
     "gutter-heat-cables": {
-        whatIs: "Gutter heat cable installation prevents ice dams and frozen gutters by maintaining temperatures above freezing in problem areas. Self-regulating cables automatically adjust their heat output, running only when needed to save energy while protecting your home.",
+        whatIs: "Gutter heat cables, also known as 'de-icing cables,' are a specialized solution for homes that suffer from chronic ice buildup despite proper insulation. Our professional-grade, self-regulating cable systems are much more advanced than the kits found in big-box stores. These cables are designed to detect ambient temperatures and only draw power when needed, automatically increasing their heat output as it gets colder and decreasing it as it warms up. We install them in a strategic 'zig-zag' pattern along the roof's edge and weave them directly into your gutters and downspouts. This creates a permanent, heated 'melt channel' that ensures water can always reach the ground, even in sub-zero temperatures. This prevents the weight of ice from Ripping your gutters off the house and protects your home's interior from leaks caused by backing-up water.",
         process: [
-            "Assessment of ice-prone areas on roof edge",
-            "Heat cable layout design for optimal coverage",
-            "Professional cable installation in zigzag pattern",
-            "Gutter and downspout cable routing",
-            "Electrical connection with GFCI protection",
-            "Thermostat and timer setup for efficiency"
+            "Custom-engineered drainage path mapping and load calculation",
+            "Installation of heavy-duty, self-regulating heating cables",
+            "Secure mounting with shingle-safe clips and stabilizers",
+            "Integration of cables directly into gutters and downspouts",
+            "Installation of moisture-sensing controllers and automatic timers",
+            "Professional electrical connection with GFCI protection",
+            "Full-system diagnostic and cold-weather simulation test"
         ],
         materials: [
-            { name: "Self-Regulating Cables", description: "Adjust heat output automatically based on temperature" },
-            { name: "Constant Wattage Cables", description: "Consistent heat output for severe climates" },
-            { name: "Mounting Clips", description: "UV-resistant clips for secure roof attachment" },
-            { name: "Waterproof Connectors", description: "Weather-sealed electrical connections" }
+            { name: "Self-Regulating 6-Watt Cables", description: "Industrial-grade cables that adjust heat based on external cold" },
+            { name: "ETL-Listed Shingle Clips", description: "Permanent, corrosion-resistant mounting hardware" },
+            { name: "Automated Control Sensors", description: "Devices that turn the system on only when moisture is detected" },
+            { name: "Internal Gutter Spacers", description: "Keep cables centered in the gutter for maximum heat transfer" }
         ],
         faqs: [
-            { q: "How much electricity do heat cables use?", a: "Self-regulating cables use 5-8 watts per foot. A typical 100-foot installation costs $10-20/month during winter." },
-            { q: "Should I leave heat cables on all winter?", a: "Thermostat-controlled systems only run when needed. Manual systems should run during snow/ice events." },
-            { q: "Can I install heat cables myself?", a: "For safety and warranty, professional installation is recommended. Improper installation can damage roofing and void warranties." }
+            { q: "Do the cables stay on all winter?", a: "No. Our self-regulating systems and sensors ensure the cables only operate when conditions for ice damming exist, keeping your energy bills low." },
+            { q: "Will the cables damage my roof shingles?", a: "No. Our mounting clips are designed to be installed without drilling holes in your shingles, maintaining your roof's integrity." },
+            { q: "Can I install these myself?", a: "While kits are available, a professional installation ensures the cables are placed correctly for your roof's specific drainage needs and that the electrical load is handled safely." },
+            { q: "What is the lifespan of these cables?", a: "Our industrial-grade cables typically last 10-15 years with minimal maintenance." }
         ],
-        priceRange: "$500-1,500 depending on length",
-        duration: "4-6 hours",
-        warranty: "5-year installation, manufacturer cable warranty"
+        priceRange: "$750 - $3,500 installed",
+        duration: "4 - 8 hours typical",
+        warranty: "5-Year Full Replacement Warranty"
     },
     "underground-drain-solutions": {
-        whatIs: "Underground drain solutions move rainwater from downspouts to a safe discharge point far from your foundation. We install buried drain lines, pop-up emitters, French drains, and dry wells to eliminate soggy yards and protect foundations from water damage.",
+        whatIs: "Underground drainage is the most effective and aesthetically pleasing way to move water far away from your home's foundation. While standard splash blocks only move water a few feet, our buried drainage systems use 4-inch PVC or heavy-duty HDPE piping to transport water 10, 20, or even 50 feet away to a safe discharge area. This is essential for homes with grading issues, crawl spaces, or finished basements where foundation saturation is a primary concern. We use 'pop-up' emitters that stay low and out of the way of your lawnmower, only opening when water pressure is present. By moving the water away from the 'zone of influence' around your foundation, we permanently solve basement seepage and foundation settling issues. Our systems are designed to be maintenance-free, featuring integrated debris filters (catch basins) to ensure that leaves never clog your underground pipes.",
         process: [
-            "Site grading and water flow assessment",
-            "Drain path planning to avoid utilities",
-            "Trenching to proper depth and slope",
-            "Solid or perforated pipe installation",
-            "Pop-up emitter or dry well termination",
-            "Backfilling and landscape restoration"
+            "Comprehensive yard grading and drainage slope analysis",
+            "Strategic trenching using low-impact equipment",
+            "Installation of solid 4-inch SDR-35 PVC or heavy-duty HDPE piping",
+            "Connection of downspouts via debris-filtering catch basins",
+            "Installation of high-pressure pop-up discharge emitters",
+            "Precision backfilling and professional sod restoration",
+            "Full system flush to verify 100% underground flow"
         ],
         materials: [
-            { name: "Corrugated Drain Pipe", description: "Flexible, easy to route around obstacles" },
-            { name: "Solid PVC Pipe", description: "Durable option for long runs" },
-            { name: "Pop-Up Emitters", description: "Opens when water flows, closes when dry" },
-            { name: "Dry Wells", description: "Underground basins for water absorption" }
+            { name: "4-Inch SDR-35 PVC Pipe", description: "Solid-wall pipe for maximum durability and root resistance" },
+            { name: "Integrated Debris Catch Basins", description: "Filters that prevent gutter debris from entering the pipes" },
+            { name: "Pop-Up Emitter Valves", description: "Self-closing discharge points that block pests and grass" },
+            { name: "Bentonite Foundation Seals", description: "Waterproof sealant where the pipe exits the house area" }
         ],
         faqs: [
-            { q: "How deep are drains buried?", a: "Typically 12-18 inches, below the frost line where required by code." },
-            { q: "Will this kill my grass?", a: "Trenching disturbs sod, but we restore it. Within weeks, you won't see the line." },
-            { q: "Can drains freeze?", a: "Properly sloped drains empty completely and won't freeze. We ensure correct installation." }
+            { q: "Will the underground pipes freeze in winter?", a: "We install our systems with a consistent slope so that gravity empties the pipes completely after each rain, preventing standing water and ice buildup." },
+            { q: "Will this ruin my lawn?", a: "We use specialized trenching techniques and carefully preserve and replace your sod. Within 2-3 weeks, the installation is typically invisible." },
+            { q: "Can't I just use cheap corrugated tubing?", a: "Corrugated tubing is prone to crushing and clogging with roots and silt. We recommend solid-wall PVC for a permanent, 50-year solution." },
+            { q: "Where does the water go?", a: "We direct water to a lower point in your yard, a dry well, or a municipal storm drain (where permitted) to ensure it can never return to your foundation." }
         ],
-        priceRange: "$15-30 per linear foot",
-        duration: "1-2 days",
-        warranty: "10-year drain system warranty"
+        priceRange: "$25 - $45 per linear foot",
+        duration: "1 - 2 days typical",
+        warranty: "25-Year No-Clog/No-Crush Warranty"
     },
     "color-gutter-matching": {
-        whatIs: "Color gutter matching ensures your new or replacement gutters perfectly complement your home's exterior. We offer 30+ factory-baked aluminum colors, custom color matching, and advice on choosing colors that enhance your curb appeal and coordinate with trim and roofing.",
+        whatIs: "Your gutters shouldn't just be functional; they should complement your home's unique architectural style and color palette. Our color matching service offers over 35 factory-baked enamel colors, from classic eggshell white and royal brown to modern bronze, matte black, and forest green. We go beyond 'close enough' by providing physical color swatches that allow you to match your gutters perfectly to your siding, trim, or roof shingles. Our finishes are applied using a multi-stage baked-on enamel process that resists fading, chalking, and scratching for decades. Whether you want your gutters to blend invisibly into your trim or serve as a bold architectural accent, we have the palette and expertise to deliver a premium, high-end look for your home's exterior.",
         process: [
-            "On-site color consultation with samples",
-            "Existing trim and roof color assessment",
-            "Factory color selection or custom match",
-            "Material ordering in specified color",
-            "Professional installation with color-matched hardware",
-            "Touch-up paint for any installation marks"
+            "On-site color consultation with physical swatches",
+            "Digital simulation of color choices on your home's exterior",
+            "Order of premium factory-baked color-matched aluminum coils",
+            "On-site fabrication of seamless runs to ensure color consistency",
+            "Installation using color-matched hardware, screws, and hangers",
+            "Precision sealing with specialized color-matched silicone",
+            "Final walk-through to ensure perfect aesthetic integration"
         ],
         materials: [
-            { name: "Factory-Baked Aluminum", description: "30+ standard colors that won't peel or fade" },
-            { name: "Custom Color Matching", description: "Match any existing color for additions" },
-            { name: "Painted Copper", description: "Copper gutters with factory finish" },
-            { name: "Color-Matched Accessories", description: "Downspouts, elbows, end caps in same color" }
+            { name: "Factory-Baked Enamel Coils", description: "High-durability finish that resists UV fading and chalking" },
+            { name: "Color-Matched Hardware", description: "Everything from screws to downspout straps matches exactly" },
+            { name: "Premium Architectural Palettes", description: "Access to designer colors like Musket Brown, Tuxedo Gray, and Copper" },
+            { name: "Color-Flex Sealants", description: "Specialized caulking that maintains its color even after years of exposure" }
         ],
         faqs: [
-            { q: "Will the color fade?", a: "Factory-baked finishes resist fading for 20+ years. Low-quality paint will fade." },
-            { q: "Can you match my old gutters?", a: "Usually yes. We have color charts and can custom order to match existing systems." },
-            { q: "What colors are most popular?", a: "White, cream, brown, and bronze. Dark colors like black are trending for modern homes." }
+            { q: "Will the color fade over time?", a: "Our factory-baked finishes are designed for 30+ years of UV resistance. They are significantly more durable than field-painted gutters." },
+            { q: "Can you match my house paint exactly?", a: "While we have 35+ standard colors that match 95% of home trims, we can also order custom-coated coils for an exact match to any major paint brand." },
+            { q: "Are colored gutters more expensive?", a: "Standard colors (white, brown, bone) are our base price. Premium architectural colors carry a small surcharge but offer much higher curb appeal." },
+            { q: "Can I paint my existing aluminum gutters?", a: "You can, but it requires specialized primer and doesn't last nearly as long as a factory-baked finish. If yours are old, replacement is usually a better long-term value." }
         ],
-        priceRange: "$1-3 upcharge per linear foot for specialty colors",
-        duration: "No additional time",
-        warranty: "Color fade warranty included"
+        priceRange: "+$1 - $5 per linear foot vs. White",
+        duration: "Integrated into standard install",
+        warranty: "20-Year No-Fade/No-Chalk Warranty"
     },
     "emergency-gutter-repair": {
-        whatIs: "Emergency gutter repair provides rapid response when gutters fail during storms or after damage. Overflowing, detached, or crushed gutters cause immediate water intrusion. Our 24/7 service stabilizes the situation and performs permanent repairs quickly.",
+        whatIs: "When gutter failure threatens your home's interior, you can't wait weeks for a repair. Emergency gutter failure—such as a collapsed section after a storm, a completely blocked downspout causing a basement float, or a detached gutter hanging dangerously over a walkway—requires immediate professional intervention. Our rapid-response team is on call 24/7 to stabilize your drainage system and prevent further damage. We arrive with a fully equipped 'mobile workshop' that allows us to fabricate parts and perform permanent repairs on the spot. Our priority is immediate stabilization: we stop the water intrusion, secure the dangerous components, and restore your home's safety. Whether it's a holiday weekend or a midnight storm, US Gutter Installation is ready to protect your most valuable asset.",
         process: [
-            "Rapid dispatch and phone assessment",
-            "Temporary measures to stop water intrusion",
-            "Damage documentation for insurance",
-            "Emergency repair or replacement",
-            "Downspout clearing if blocked",
-            "Full system inspection for hidden damage"
+            "Priority dispatch and 24/7 emergency site arrival",
+            "Immediate stabilization of falling or dangerous components",
+            "Localization and temporary sealing of active water leaks",
+            "High-volume clearing of emergency downspout clogs",
+            "On-site fabrication of replacement gutter and hardware parts",
+            "Refastening and structural reinforcement of the entire run",
+            "Full water flow test and insurance-ready documentation"
         ],
         materials: [
-            { name: "Emergency Patch Materials", description: "Quick-set repairs for immediate stop-gap" },
-            { name: "Replacement Sections", description: "Trucks stocked with common sizes and colors" },
-            { name: "Heavy-Duty Hangers", description: "Reinforce failing connections" },
-            { name: "Sealant", description: "Stop active leaks immediately" }
+            { name: "High-Strength Structural Fasteners", description: "Oversized screws for securing to damaged fascia boards" },
+            { name: "Rapid-Cure Industrial Sealants", description: "Waterproof sealants that set in minutes, even in rain" },
+            { name: "Emergency Stabilization Brackets", description: "Temporary bracing to prevent further gutter collapse" },
+            { name: "Heavy-Gauge Aluminum Patching", description: "Custom-cut pieces for immediate puncture or hole repair" }
         ],
         faqs: [
-            { q: "Do you come out in storms?", a: "For safety, we wait for active severe weather to pass, but respond immediately after." },
-            { q: "Is there an emergency fee?", a: "After-hours calls include a dispatch fee. We provide upfront pricing before work begins." },
-            { q: "Can you do permanent repairs same day?", a: "Often yes for common repairs. Specialty materials may require a follow-up visit." }
+            { q: "How fast can you be at my house?", a: "For active flooding or life-safety issues (like hanging metal), we typically have a crew on-site within 2-4 hours." },
+            { q: "Is the repair permanent?", a: "In 90% of cases, yes. Our goal is to fix the problem completely during the emergency visit. If a full replacement is needed, we will stabilize the house and quote the replacement separately." },
+            { q: "Do you charge extra for emergency visits?", a: "We have a flat-rate emergency call-out fee that covers the first hour of stabilization. We provide full pricing before any work begins." },
+            { q: "Can you work in the rain or dark?", a: "Yes. Our crews are equipped with industrial lighting and specialized waterproof gear to perform critical repairs in any conditions." }
         ],
-        priceRange: "$150-500+ depending on repair",
-        duration: "1-3 hours for most repairs",
-        warranty: "Standard repair warranty applies"
+        priceRange: "$250 Call-Out + Materials",
+        duration: "1 - 3 hours typically",
+        warranty: "Immediate Peace-of-Mind Guarantee"
     }
 }
 

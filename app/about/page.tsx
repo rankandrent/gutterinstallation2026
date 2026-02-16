@@ -189,11 +189,11 @@ export default function AboutPage() {
                             </h2>
                             <address className="not-italic text-slate-700">
                                 <strong>US Gutter Installation, LLC</strong><br />
-                                123 Gutter Lane<br />
-                                San Diego, CA 92101<br />
+                                1650 Garnet Ave<br />
+                                San Diego, CA 92109<br />
                                 United States<br /><br />
                                 <strong>Phone:</strong> <a href="tel:+18588985338" className="text-blue-600 hover:underline">+1 (858) 898-5338</a><br />
-                                <strong>Email:</strong> <a href="mailto:support@usgutterinstallation.com" className="text-blue-600 hover:underline">support@usgutterinstallation.com</a>
+                                <strong>Email:</strong> <a href="mailto:contact@usgutterinstallation.com" className="text-blue-600 hover:underline">contact@usgutterinstallation.com</a>
                             </address>
                         </section>
                     </div>

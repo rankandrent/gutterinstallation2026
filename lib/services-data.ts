@@ -14,8 +14,8 @@ export const servicesData: Record<string, ServiceDetail> = {
         slug: "seamless-gutter-installation",
         description: (city, state) => `Searching for seamless gutter installation near me in ${city}, ${state}? Our custom-fit 5" and 6" K-style seamless aluminum gutters are fabricated on-site to eliminate leaks. Licensed, insured, EPA RRP certified crews with lifetime warranty.`,
         icon: "🔧",
-        heroImage: "https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png",
-        features: ["Custom on-site fabrication with portable gutter machines", "5-inch and 6-inch K-style options", "0.027 and 0.032 gauge aluminum available", "20+ color options with baked enamel finish", "Professional hidden hanger installation"],
+        heroImage: "/services/seamless-gutter-installation.png",
+        features: ["Custom on-site fabrication with portable gutter machines", "5-inch and 6-inch K-style options", "0.027 and 0.032 gauge aluminum available", "30+ color options with baked enamel finish", "Professional hidden hanger installation"],
         benefits: ["No seams means no leaks", "Improved aesthetics and curb appeal", "30+ year lifespan with proper maintenance", "Lifetime transferable warranty", "Same-day installation available"]
     },
     "gutter-guards-leaf-protection": {
@@ -41,7 +41,7 @@ export const servicesData: Record<string, ServiceDetail> = {
         slug: "downspout-installation-extensions",
         description: (city, state) => `Searching for downspout installation near me in ${city}, ${state}? We install 2x3" and 3x4" rectangular downspouts strategically sized for your roof. Underground drainage extensions keep water 10+ feet from your foundation.`,
         icon: "💧",
-        heroImage: "https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png",
+        heroImage: "/services/downspout-installation.png",
         features: ["2x3\" standard and 3x4\" high-capacity options", "Underground drain connections available", "Pop-up emitters for invisible drainage", "Proper sizing based on roof area", "French drain integration"],
         benefits: ["Protects foundation from water damage", "Prevents soil erosion", "Manages high-volume rain events", "Improves landscape appearance", "Eliminates foundation moisture problems"]
     },
@@ -86,7 +86,7 @@ export const servicesData: Record<string, ServiceDetail> = {
         slug: "ice-dam-removal",
         description: (city, state) => `Searching for ice dam removal near me in ${city}, ${state}? Our low-pressure steam removal safely melts ice dams without damaging shingles or gutters. Professional ice dam prevention systems and heated gutter cables available.`,
         icon: "❄️",
-        heroImage: "https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png",
+        heroImage: "/services/ice-dam-removal.png",
         features: ["Low-pressure steam removal (safe for shingles)", "Heat cable installation available", "Ice and water shield installation", "Attic insulation assessment", "Gutter heating systems"],
         benefits: ["Prevents interior roof leaks", "Protects gutters from ice weight", "Safe for all roofing materials", "Long-term prevention options", "Emergency same-day service"]
     },
