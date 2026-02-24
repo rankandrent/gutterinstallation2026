@@ -8,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { ServiceDetail } from '@/lib/services-data'
 import CityMap from '@/components/CityMap'
 import NeighborhoodsSection from '@/components/NeighborhoodsSection'
+import LocalEnvironmentData from '@/components/LocalEnvironmentData'
 import type { NeighborhoodData } from '@/lib/neighborhoods-supabase'
 
 interface ServiceSpecificPageProps {
@@ -765,6 +766,12 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     </p>
                 </div>
             </section>
+
+            {/* Local Environment Data */}
+            <LocalEnvironmentData
+                city={formattedCity}
+                stateCode={stateCode}
+            />
 
             {/* Neighborhoods Section */}
             {neighborhoodData && (

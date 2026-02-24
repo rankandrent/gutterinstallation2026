@@ -13,6 +13,7 @@ import AuthoritySignals from '@/components/AuthoritySignals'
 import TopBusinesses from '@/components/TopBusinesses'
 import { servicesData } from '@/lib/services-data'
 import NeighborhoodsSection from '@/components/NeighborhoodsSection'
+import LocalEnvironmentData from '@/components/LocalEnvironmentData'
 import type { NeighborhoodData } from '@/lib/neighborhoods-supabase'
 
 interface ServicePageProps {
@@ -293,6 +294,14 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                     </div>
                 </div>
             </section>
+
+            <LocalEnvironmentData
+                city={formattedCity}
+                stateCode={stateCode}
+                population={cityData?.population} // Assuming this might be available, otherwise it falls back inside
+                lat={latitude}
+                lng={longitude}
+            />
 
             {/* Top 10 Businesses Section */}
             <TopBusinesses city={formattedCity} state={stateCode} />
