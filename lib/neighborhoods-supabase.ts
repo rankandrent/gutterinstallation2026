@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 
 // Separate Supabase client for neighborhoods data
-const neighborhoodsSupabaseUrl = process.env.LEADS_SUPABASE_URL || ''
-const neighborhoodsSupabaseKey = process.env.LEADS_SUPABASE_SERVICE_ROLE_KEY || ''
+const neighborhoodsSupabaseUrl = process.env.LEADS_SUPABASE_URL || 'https://placeholder.supabase.co'
+const neighborhoodsSupabaseKey = process.env.LEADS_SUPABASE_SERVICE_ROLE_KEY || 'placeholder'
 
 export const neighborhoodsSupabase = createClient(neighborhoodsSupabaseUrl, neighborhoodsSupabaseKey)
 
@@ -15,7 +15,7 @@ export interface NeighborhoodData {
 }
 
 export async function getNeighborhoodData(city: string, state: string): Promise<NeighborhoodData | null> {
-    if (!neighborhoodsSupabaseUrl || !neighborhoodsSupabaseKey) {
+    if (!process.env.LEADS_SUPABASE_URL || process.env.LEADS_SUPABASE_URL === 'https://placeholder.supabase.co') {
         return null
     }
 
