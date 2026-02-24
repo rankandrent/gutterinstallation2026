@@ -15,6 +15,7 @@ import { servicesData } from '@/lib/services-data'
 import NeighborhoodsSection from '@/components/NeighborhoodsSection'
 import LocalEnvironmentData from '@/components/LocalEnvironmentData'
 import type { NeighborhoodData } from '@/lib/neighborhoods-supabase'
+import AerialMeasurementTool from '@/components/AerialMeasurementTool'
 
 interface ServicePageProps {
     city: string
@@ -298,7 +299,6 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             <LocalEnvironmentData
                 city={formattedCity}
                 stateCode={stateCode}
-                population={cityData?.population} // Assuming this might be available, otherwise it falls back inside
                 lat={latitude}
                 lng={longitude}
             />
@@ -391,6 +391,25 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Aerial Measurement Tool Section */}
+            <section className="py-24 px-6 bg-slate-900 border-t border-slate-800 relative z-20">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                        <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-300 text-sm font-semibold uppercase tracking-wider">
+                            Advanced Technology
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                            A Smarter Way to Measure in {formattedCity}
+                        </h2>
+                        <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                            Skip the ladder. We use high-resolution aerial imagery and proprietary algorithms to measure your {formattedCity} home's roofline with 99% accuracy before we even arrive.
+                        </p>
+                    </div>
+
+                    <AerialMeasurementTool city={formattedCity} stateCode={stateCode} />
                 </div>
             </section>
 

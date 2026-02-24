@@ -1,7 +1,13 @@
 "use client"
 import { useState } from 'react';
 
-export default function AerialMeasurementTool() {
+interface AerialMeasurementToolProps {
+    city?: string;
+    stateCode?: string;
+}
+
+export default function AerialMeasurementTool({ city, stateCode }: AerialMeasurementToolProps) {
+    const locationText = city ? `${city}${stateCode ? `, ${stateCode.toUpperCase()}` : ''}` : 'your area';
     const [step, setStep] = useState(0);
     const [address, setAddress] = useState('');
 
@@ -42,7 +48,7 @@ export default function AerialMeasurementTool() {
 
             <div className="text-center mb-8 relative z-10">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Try GutterScope / RoofScope+</h3>
-                <p className="text-slate-400">See how precise aerial measurements work instantly without a ladder.</p>
+                <p className="text-slate-400">See how precise aerial measurements work instantly for homes in {locationText}.</p>
             </div>
 
             <div className="max-w-xl mx-auto relative z-10 flex flex-col items-center min-h-[300px] justify-center">
@@ -53,7 +59,7 @@ export default function AerialMeasurementTool() {
                                 type="text"
                                 value={address}
                                 onChange={(e) => setAddress(e.target.value)}
-                                placeholder="Enter an address (e.g., 123 Main St, Orlando, FL)"
+                                placeholder={`Enter an address (e.g., 123 Main St${city ? `, ${city}, ${stateCode?.toUpperCase() || ''}` : ', Orlando, FL'})`}
                                 className="flex-grow px-5 py-4 rounded-xl text-slate-900 focus:outline-none focus:ring-4 focus:ring-blue-500/50 bg-white shadow-inner"
                                 required
                             />
