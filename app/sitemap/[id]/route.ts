@@ -61,18 +61,32 @@ export async function GET(
 
     const stateCode = stateMatch[1].toUpperCase()
 
-    // Fetch cities for this state with population data if available
+    // Fetch cities for this state with population > 5000 to manage crawl budget
     const { data: cities } = await supabase
         .from('usa city name')
         .select('city, state_id, population')
         .ilike('state_id', stateCode)
+        .gte('population', 5000) // Koray's Framework: Quality Threshold & Crawl Budget Pruning
         .order('population', { ascending: false, nullsFirst: false })
-        .limit(1000) // Limit to top 1000 cities per state for crawl efficiency
+        .limit(200) // Limit to top 200 cities per state for crawl efficiency
 
-    if (!cities || cities.length === 0) {
-        return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
-            headers: { 'Content-Type': 'application/xml' }
-        })
+    let activeCities = cities || [];
+
+    if (activeCities.length === 0) {
+        // Fallback: if no cities > 5000, just get the top 50
+        const { data: fallbackCities } = await supabase
+            .from('usa city name')
+            .select('city, state_id, population')
+            .ilike('state_id', stateCode)
+            .order('population', { ascending: false, nullsFirst: false })
+            .limit(50)
+
+        if (!fallbackCities || fallbackCities.length === 0) {
+            return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
+                headers: { 'Content-Type': 'application/xml' }
+            })
+        }
+        activeCities = fallbackCities;
     }
 
     // State Page URL (highest priority)
@@ -85,7 +99,7 @@ export async function GET(
     </url>`
 
     // City URLs - prioritize by population
-    const cityUrls = cities.map((city, index) => {
+    const cityUrls = activeCities.map((city, index) => {
         const citySlug = city.city.trim().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
 
         // Higher priority for top cities (by population or index)

@@ -120,8 +120,18 @@ export default async function TopBusinesses({ city, state }: TopBusinessesProps)
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
-                            {leads.map((lead: any, index: number) => {
-                                const actionText = actionTexts[index % actionTexts.length]
+                            {leads.sort((a, b) => {
+                                // Deterministic sort based on city/state to shuffle rows per page
+                                const valA = (a.company_name || a.name || "").length + formattedCity.charCodeAt(0);
+                                const valB = (b.company_name || b.name || "").length + stateUpper.charCodeAt(0);
+                                return (valA % 3) - (valB % 3);
+                            }).map((lead: any, index: number) => {
+                                // Deterministic "shuffle" pick based on city length and index
+                                // This ensures the buttons look randomized but stay consistent on reload per city
+                                const salt = formattedCity.length + stateUpper.charCodeAt(0);
+                                const pickedIndex = (index * 3 + salt) % actionTexts.length;
+                                const actionText = actionTexts[pickedIndex];
+
                                 return (
                                     <tr
                                         key={lead.id || index}

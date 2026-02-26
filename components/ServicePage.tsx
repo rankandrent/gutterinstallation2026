@@ -32,6 +32,17 @@ interface ServicePageProps {
     neighborhoodData?: NeighborhoodData | null
 }
 
+// Simple string hash function for deterministic variation
+function getHash(str: string): number {
+    let hash = 0
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i)
+        hash = ((hash << 5) - hash) + char
+        hash = hash & hash // Convert to 32bit integer
+    }
+    return Math.abs(hash)
+}
+
 export default function ServicePage({ city, state, stateCode, zipCodes, relatedCities, latitude, longitude, customIntro, neighborhoodData }: ServicePageProps) {
     const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     const formattedState = state.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
@@ -43,6 +54,13 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
     if (customIntro) {
         content.intro = customIntro
     }
+
+    // Determine layout variations based on a unique hash for this city page
+    const hash = getHash(city + stateCode)
+    const showCoverage = hash % 5 !== 0 // Hide on 20% of pages
+    const showAuthority = hash % 4 !== 0 // Hide on 25% of pages
+    const swapFeaturesAndContent = hash % 2 === 0 // 50/50 swap
+    const swapProcessAndExpertise = (hash >> 1) % 2 === 0 // 50/50 swap
 
     return (
         <div
@@ -175,7 +193,11 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                                 },
                                 "areaServed": {
                                     "@type": "City",
-                                    "name": formattedCity
+                                    "name": formattedCity,
+                                    "containedInPlace": {
+                                        "@type": "State",
+                                        "name": stateCode.toUpperCase()
+                                    }
                                 },
                                 "priceRange": "$$",
                                 "aggregateRating": {
@@ -195,7 +217,11 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                                 "provider": { "@id": `https://usgutterinstallation.com/${stateCode}/${city}/#localbusiness` },
                                 "areaServed": {
                                     "@type": "City",
-                                    "name": formattedCity
+                                    "name": formattedCity,
+                                    "containedInPlace": {
+                                        "@type": "State",
+                                        "name": stateCode.toUpperCase()
+                                    }
                                 },
                                 "hasOfferCatalog": {
                                     "@type": "OfferCatalog",
@@ -213,88 +239,29 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                 }}
             />
 
-            <CoverageStats />
+            {showCoverage && <CoverageStats />}
 
-            <AuthoritySignals stateCode={stateCode} city={formattedCity} />
+            {showAuthority && <AuthoritySignals stateCode={stateCode} city={formattedCity} />}
 
             <RelatedServices city={formattedCity} state={stateCode} />
 
-            {/* Features Grid */}
-            <section className="py-24 px-6 bg-white relative z-20">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-3 gap-8 -mt-32">
-                        {Object.values(servicesData).slice(0, 3).map((service, i) => (
-                            <div key={i} className="bg-white p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-blue-100 transition-all hover:-translate-y-1 group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                                <h3 className="text-xl font-bold mb-3 text-slate-800">{service.title}</h3>
-                                <p className="text-slate-600 leading-relaxed line-clamp-2">{service.description(formattedCity, formattedState).split('.')[0]}.</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* Layout Order Block 1 */}
+            {swapFeaturesAndContent ? (
+                <>
+                    <FeaturesGrid formattedCity={formattedCity} formattedState={formattedState} />
+                    <LocalContentSection formattedCity={formattedCity} stateCode={stateCode} content={content} />
+                </>
+            ) : (
+                <>
+                    <LocalContentSection formattedCity={formattedCity} stateCode={stateCode} content={content} />
+                    <FeaturesGrid formattedCity={formattedCity} formattedState={formattedState} />
+                </>
+            )}
 
-            {/* Local Content Section */}
-            <section className="py-20 px-6 bg-slate-50">
-                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                            Why {formattedCity} Homeowners Trust Us
-                        </h2>
-                        <div className="text-lg text-slate-600 mb-6 leading-relaxed space-y-4">
-                            <p dangerouslySetInnerHTML={{ __html: content.whyChoose.replace(/\*\*(.*?)\*\*/g, '<span class="text-slate-900 font-semibold">$1</span>') }} />
-                            <p dangerouslySetInnerHTML={{ __html: content.materials.replace(/\*\*(.*?)\*\*/g, '<span class="text-slate-900 font-semibold">$1</span>') }} />
-                        </div>
-
-                        {/* Technical Specs Box */}
-                        <div className="bg-slate-100 p-4 rounded-xl border border-slate-200 mb-4">
-                            <p className="text-sm text-slate-700 font-semibold mb-1">📐 Technical Specifications</p>
-                            <p className="text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: content.technicalSpecs.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
-                        </div>
-
-                        {/* Climate Considerations */}
-                        <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 mb-6">
-                            <p className="text-sm text-amber-800 font-semibold mb-1">🌤️ {stateCode.toUpperCase()} Weather Alert</p>
-                            <p className="text-sm text-amber-700">{content.climateConsiderations}</p>
-                        </div>
-
-                        <ul className="space-y-4 mb-8">
-                            {['Licensed & Insured in ' + stateCode.toUpperCase(), '24/7 Emergency Service', 'Same-Day Quotes'].map((item, i) => (
-                                <li key={i} className="flex items-center text-slate-700 font-medium">
-                                    <span className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-sm">✓</span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-
-                        {/* Dynamic Map Placeholder */}
-                        <CityMap city={formattedCity} state={stateCode} />
-                        <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 mt-4">
-                            <p className="text-sm text-blue-800 font-semibold mb-1">Service Area Coverage</p>
-                            <div className="text-blue-600">
-                                We cover all neighborhoods in <span className="underline">{formattedCity}</span> and surrounding {stateCode.toUpperCase()} counties.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl transform rotate-3 opacity-20"></div>
-                        <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
-                            <div className="aspect-[4/3] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative">
-                                <div className="absolute inset-0 bg-slate-800 flex items-center justify-center">
-                                    <div className="text-center text-white p-4">
-                                        <div className="text-5xl mb-2">🔧</div>
-                                        <p className="font-bold">Local Service in {formattedCity}</p>
-                                    </div>
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-                                    <p className="font-medium text-lg">Project: {formattedCity}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* The main component handles rendering these via inline variables to avoid creating too many sub-components.
+                But we need to move the JSX blocks out to small functions so we can reorder them cleanly.
+                See the bottom of the file for these extracted components.
+                Layout Block Extracted */}
 
             <LocalEnvironmentData
                 city={formattedCity}
@@ -413,129 +380,19 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                 </div>
             </section>
 
-            {/* Our Process Section */}
-            <section className="py-24 px-6 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
-                            How It Works
-                        </h2>
-                        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                            {content.processIntro}
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-12 relative">
-                        <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -z-10 hidden md:block"></div>
-
-                        {[
-                            { step: "01", title: "Assessment", desc: "We inspect your roofline, fascia boards, and current drainage to identify the ideal gutter system for your home." },
-                            { step: "02", title: "Custom Fabrication", desc: "Our technicians fabricate your seamless gutters on-site, ensuring a perfect fit with no leaks." },
-                            { step: "03", title: "Precision Install", desc: "We install your new gutters with heavy-duty hidden hangers and ensure proper pitch for drainage." }
-                        ].map((step, i) => (
-                            <div key={i} className="bg-white p-8 pt-0 text-center">
-                                <div className="w-20 h-20 mx-auto bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-lg shadow-blue-200 mb-8 relative z-10">
-                                    {step.step}
-                                </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-4">{step.title}</h3>
-                                <p className="text-slate-600">{step.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Local Expertise Section */}
-            <section className="py-20 px-6 bg-gradient-to-br from-blue-50 to-cyan-50">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                            Local Experts Serving {formattedCity} & Surrounding Areas
-                        </h2>
-                        <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                            When you search for <strong>gutter installation near me in {formattedCity}</strong>, you deserve contractors who truly understand your local area. Our {stateCode.toUpperCase()}-based crews have served thousands of homeowners across {formattedCity} and the surrounding communities.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        {/* Local Service Area */}
-                        <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                                🏠 Neighborhoods We Serve in {formattedCity}
-                            </h3>
-                            <p className="text-slate-600 mb-4">
-                                Our <strong>gutter repair near me in {formattedCity}</strong> specialists cover all residential zones including downtown, suburbs, and rural properties. We understand the drainage challenges and tree coverage in your community.
-                            </p>
-                            <p className="text-slate-600">
-                                We also serve surrounding {stateCode.toUpperCase()} communities within a 30-mile radius. Looking for <strong>gutter contractors near me</strong> outside city limits? Our crews regularly travel to nearby towns to provide the same quality service.
-                            </p>
-                        </div>
-
-                        {/* Climate Expertise */}
-                        <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                                🌤️ {stateCode.toUpperCase()} Storm-Ready Rain Systems
-                            </h3>
-                            <p className="text-slate-600 mb-4">
-                                {stateCode.toUpperCase()} homeowners face unique weather challenges: {content.climateConsiderations}. That's why our <strong>gutter installation near me</strong> specialists design systems specifically engineered for local rainfall averages.
-                            </p>
-                            <p className="text-slate-600">
-                                We recommend <strong>seamless aluminum gutters</strong> that handle {stateCode.toUpperCase()}'s storms. Don't let a leaky gutter damage your foundation—get protected today.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Additional Local Content */}
-                    <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
-                        <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                            Why {formattedCity} Homeowners Choose Us for <span className="text-blue-600">Gutter Services</span>
-                        </h3>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <h4 className="font-bold text-slate-800 mb-2">🔧 Full-Service Solutions</h4>
-                                <p className="text-slate-600 text-sm">
-                                    From <strong>seamless gutter installation</strong> to <strong>leaf guard protection</strong>, we handle everything: downspouts, soffit, fascia, and underground drainage.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-slate-800 mb-2">⭐ Trusted Local Reputation</h4>
-                                <p className="text-slate-600 text-sm">
-                                    With thousands of completed projects across {stateCode.toUpperCase()}, we're the <strong>gutter company near me</strong> that {formattedCity} residents recommend.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-slate-800 mb-2">💰 Transparent Local Pricing</h4>
-                                <p className="text-slate-600 text-sm">
-                                    When you search for <strong>gutter installation cost</strong>, you'll find our {formattedCity} pricing is competitive and straightforward—no hidden fees, no upsells.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Service Links with Strong Anchor Text */}
-                    <div className="text-center">
-                        <p className="text-slate-600 mb-4">
-                            Ready to get started with a <strong>gutter installation near me in {formattedCity}</strong>? Contact our local team today for a free, no-obligation estimate.
-                        </p>
-                        <div className="flex flex-wrap gap-3 justify-center">
-                            <Link href={`/${stateCode.toLowerCase()}/${city}/seamless-gutter-installation`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
-                                Gutter Installation {formattedCity}
-                            </Link>
-                            <Link href={`/${stateCode.toLowerCase()}/${city}/gutter-guards-leaf-protection`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
-                                Gutter Guards Near Me
-                            </Link>
-                            <Link href={`/${stateCode.toLowerCase()}/${city}/gutter-cleaning-maintenance`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
-                                Gutter Cleaning
-                            </Link>
-                            <Link href={`/${stateCode.toLowerCase()}/${city}/emergency-gutter-repair`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
-                                Emergency Repairs
-                            </Link>
-                            {/* Structured Data: FAQ + LocalBusiness + Breadcrumb */}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            {/* Layout Order Block 2 */}
+            {swapProcessAndExpertise ? (
+                <>
+                    <OurProcessSection content={content} />
+                    <LocalExpertiseSection formattedCity={formattedCity} stateCode={stateCode} content={content} />
+                </>
+            ) : (
+                <>
+                    <LocalExpertiseSection formattedCity={formattedCity} stateCode={stateCode} content={content} />
+                    <OurProcessSection content={content} />
+                </>
+            )}
+            {/* Layout Block Extracted */}
             <section className="py-24 px-6 bg-slate-50">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions in {formattedCity}</h2>
@@ -608,5 +465,217 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             <TrustBadges />
             <Footer />
         </div>
+    )
+}
+
+function FeaturesGrid({ formattedCity, formattedState }: { formattedCity: string, formattedState: string }) {
+    return (
+        <section className="py-24 px-6 bg-white relative z-20">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-8 -mt-32">
+                    {Object.values(servicesData).slice(0, 3).map((service, i) => (
+                        <div key={i} className="bg-white p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-blue-100 transition-all hover:-translate-y-1 group">
+                            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                            <h3 className="text-xl font-bold mb-3 text-slate-800">{service.title}</h3>
+                            <p className="text-slate-600 leading-relaxed line-clamp-2">{service.description(formattedCity, formattedState).split('.')[0]}.</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function LocalContentSection({ formattedCity, stateCode, content }: { formattedCity: string, stateCode: string, content: any }) {
+    return (
+        <section className="py-20 px-6 bg-slate-50">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        Why {formattedCity} Homeowners Trust Us
+                    </h2>
+                    <div className="text-lg text-slate-600 mb-6 leading-relaxed space-y-4">
+                        <p dangerouslySetInnerHTML={{ __html: content.whyChoose.replace(/\*\*(.*?)\*\*/g, '<span class="text-slate-900 font-semibold">$1</span>') }} />
+                        <p dangerouslySetInnerHTML={{ __html: content.materials.replace(/\*\*(.*?)\*\*/g, '<span class="text-slate-900 font-semibold">$1</span>') }} />
+                    </div>
+
+                    {/* Technical Specs Box */}
+                    <div className="bg-slate-100 p-4 rounded-xl border border-slate-200 mb-4">
+                        <p className="text-sm text-slate-700 font-semibold mb-1">📐 Technical Specifications</p>
+                        <p className="text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: content.technicalSpecs.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                    </div>
+
+                    {/* Climate Considerations */}
+                    <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 mb-6">
+                        <p className="text-sm text-amber-800 font-semibold mb-1">🌤️ {stateCode.toUpperCase()} Weather Alert</p>
+                        <p className="text-sm text-amber-700">{content.climateConsiderations}</p>
+                    </div>
+
+                    <ul className="space-y-4 mb-8">
+                        {['Licensed & Insured in ' + stateCode.toUpperCase(), '24/7 Emergency Service', 'Same-Day Quotes'].map((item, i) => (
+                            <li key={i} className="flex items-center text-slate-700 font-medium">
+                                <span className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-sm">✓</span>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+
+                    {/* Dynamic Map Placeholder */}
+                    <CityMap city={formattedCity} state={stateCode} />
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 mt-4">
+                        <p className="text-sm text-blue-800 font-semibold mb-1">Service Area Coverage</p>
+                        <div className="text-blue-600">
+                            We cover all neighborhoods in <span className="underline">{formattedCity}</span> and surrounding {stateCode.toUpperCase()} counties.
+                        </div>
+                    </div>
+                </div>
+
+                <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl transform rotate-3 opacity-20"></div>
+                    <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
+                        <div className="aspect-[4/3] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative">
+                            <div className="absolute inset-0 bg-slate-800 flex items-center justify-center">
+                                <div className="text-center text-white p-4">
+                                    <div className="text-5xl mb-2">🔧</div>
+                                    <p className="font-bold">Local Service in {formattedCity}</p>
+                                </div>
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <p className="font-medium text-lg">Project: {formattedCity}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function OurProcessSection({ content }: { content: any }) {
+    return (
+        <section className="py-24 px-6 bg-white">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                        How It Works
+                    </h2>
+                    <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                        {content.processIntro}
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-12 relative">
+                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -z-10 hidden md:block"></div>
+
+                    {[
+                        { step: "01", title: "Assessment", desc: "We inspect your roofline, fascia boards, and current drainage to identify the ideal gutter system for your home." },
+                        { step: "02", title: "Custom Fabrication", desc: "Our technicians fabricate your seamless gutters on-site, ensuring a perfect fit with no leaks." },
+                        { step: "03", title: "Precision Install", desc: "We install your new gutters with heavy-duty hidden hangers and ensure proper pitch for drainage." }
+                    ].map((step, i) => (
+                        <div key={i} className="bg-white p-8 pt-0 text-center">
+                            <div className="w-20 h-20 mx-auto bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-lg shadow-blue-200 mb-8 relative z-10">
+                                {step.step}
+                            </div>
+                            <h3 className="text-xl font-bold text-slate-900 mb-4">{step.title}</h3>
+                            <p className="text-slate-600">{step.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function LocalExpertiseSection({ formattedCity, stateCode, content }: { formattedCity: string, stateCode: string, content: any }) {
+    const citySlug = formattedCity.toLowerCase().replace(/ /g, '-')
+    return (
+        <section className="py-20 px-6 bg-gradient-to-br from-blue-50 to-cyan-50">
+            <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        Local Experts Serving {formattedCity} & Surrounding Areas
+                    </h2>
+                    <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                        When you search for <strong>gutter installation near me in {formattedCity}</strong>, you deserve contractors who truly understand your local area. Our {stateCode.toUpperCase()}-based crews have served thousands of homeowners across {formattedCity} and the surrounding communities.
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 mb-12">
+                    {/* Local Service Area */}
+                    <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                        <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                            🏠 Neighborhoods We Serve in {formattedCity}
+                        </h3>
+                        <p className="text-slate-600 mb-4">
+                            Our <strong>gutter repair near me in {formattedCity}</strong> specialists cover all residential zones including downtown, suburbs, and rural properties. We understand the drainage challenges and tree coverage in your community.
+                        </p>
+                        <p className="text-slate-600">
+                            We also serve surrounding {stateCode.toUpperCase()} communities within a 30-mile radius. Looking for <strong>gutter contractors near me</strong> outside city limits? Our crews regularly travel to nearby towns to provide the same quality service.
+                        </p>
+                    </div>
+
+                    {/* Climate Expertise */}
+                    <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                        <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                            🌤️ {stateCode.toUpperCase()} Storm-Ready Rain Systems
+                        </h3>
+                        <p className="text-slate-600 mb-4">
+                            {stateCode.toUpperCase()} homeowners face unique weather challenges: {content.climateConsiderations}. That's why our <strong>gutter installation near me</strong> specialists design systems specifically engineered for local rainfall averages.
+                        </p>
+                        <p className="text-slate-600">
+                            We recommend <strong>seamless aluminum gutters</strong> that handle {stateCode.toUpperCase()}'s storms. Don't let a leaky gutter damage your foundation—get protected today.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Additional Local Content */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                        Why {formattedCity} Homeowners Choose Us for <span className="text-blue-600">Gutter Services</span>
+                    </h3>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-2">🔧 Full-Service Solutions</h4>
+                            <p className="text-slate-600 text-sm">
+                                From <strong>seamless gutter installation</strong> to <strong>leaf guard protection</strong>, we handle everything: downspouts, soffit, fascia, and underground drainage.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-2">⭐ Trusted Local Reputation</h4>
+                            <p className="text-slate-600 text-sm">
+                                With thousands of completed projects across {stateCode.toUpperCase()}, we're the <strong>gutter company near me</strong> that {formattedCity} residents recommend.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-slate-800 mb-2">💰 Transparent Local Pricing</h4>
+                            <p className="text-slate-600 text-sm">
+                                When you search for <strong>gutter installation cost</strong>, you'll find our {formattedCity} pricing is competitive and straightforward—no hidden fees, no upsells.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Service Links with Strong Anchor Text */}
+                <div className="text-center">
+                    <p className="text-slate-600 mb-4">
+                        Ready to get started with a <strong>gutter installation near me in {formattedCity}</strong>? Contact our local team today for a free, no-obligation estimate.
+                    </p>
+                    <div className="flex flex-wrap gap-3 justify-center">
+                        <Link href={`/${stateCode.toLowerCase()}/${citySlug}/seamless-gutter-installation`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                            Gutter Installation {formattedCity}
+                        </Link>
+                        <Link href={`/${stateCode.toLowerCase()}/${citySlug}/gutter-guards-leaf-protection`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                            Gutter Guards Near Me
+                        </Link>
+                        <Link href={`/${stateCode.toLowerCase()}/${citySlug}/gutter-cleaning-maintenance`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                            Gutter Cleaning
+                        </Link>
+                        <Link href={`/${stateCode.toLowerCase()}/${citySlug}/emergency-gutter-repair`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                            Emergency Repairs
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }

@@ -70,7 +70,7 @@ export default async function Page(props: PageProps) {
 
     // Fetch related cities and neighborhood data in parallel
     const [relatedCities, neighborhoodData] = await Promise.all([
-        getRelatedCities(stateCodeProper, cityName),
+        getRelatedCities(stateCodeProper, cityName, cityData?.lat, cityData?.lng),
         getNeighborhoodData(cityName, stateCodeProper)
     ])
 

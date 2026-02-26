@@ -22,14 +22,31 @@ export async function getCityData(stateCode: string, citySlug: string) {
     return data
 }
 
-export async function getRelatedCities(stateCode: string, currentCity: string) {
+export async function getRelatedCities(stateCode: string, currentCity: string, lat?: number, lng?: number) {
+    const limit = (lat && lng) ? 150 : 10;
+
     const { data } = await supabase
         .from('usa city name')
-        .select('city, state_id')
+        .select('city, state_id, lat, lng')
         .eq('state_id', stateCode)
         .neq('city', currentCity)
         .order('population', { ascending: false })
-        .limit(10)
+        .limit(limit)
 
-    return data || []
+    if (!data) return [];
+
+    if (lat && lng) {
+        // Calculate distance and sort by closest geographic proximity
+        const withDistance = data.map(city => {
+            if (!city.lat || !city.lng) return { ...city, dist: Infinity };
+            // Simple Euclidean distance approximation for relative sorting within a state
+            const dist = Math.sqrt(Math.pow(Number(city.lat) - lat, 2) + Math.pow(Number(city.lng) - lng, 2));
+            return { ...city, dist };
+        });
+
+        withDistance.sort((a, b) => a.dist - b.dist);
+        return withDistance.slice(0, 10);
+    }
+
+    return data;
 }
