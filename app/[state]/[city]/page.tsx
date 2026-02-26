@@ -36,7 +36,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const metaTitle = getMetaTitle(formattedCity, stateCode, stateName)
 
     return {
-        title: `Gutter Installation Near Me in ${formattedCity}, ${stateCode} | Local Pros`,
+        title: metaTitle,
         description: `Looking for gutter installation near me in ${formattedCity}, ${stateCode}? Find licensed local contractors for seamless gutters, gutter guards, and repairs. Free quote!`,
         keywords: `gutter installation near me ${formattedCity}, seamless gutters near me ${formattedCity} ${stateCode}, gutter guards near me ${formattedCity}, gutter repair near me ${formattedCity}, gutter cleaning near me ${formattedCity}, downspout installation near me ${formattedCity}, leaf guards ${formattedCity}`,
         alternates: {
