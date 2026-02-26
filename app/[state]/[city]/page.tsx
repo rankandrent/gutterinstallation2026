@@ -46,7 +46,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         openGraph: {
             title: `Find Gutter Installation Near Me in ${formattedCity}, ${stateCode}`,
             description: `Connect with the #1 rated gutter installation contractors near you in ${formattedCity}. Seamless gutters, repairs, and guards. 24/7 Service. Free quotes!`,
-            url: `https://usgutterinstallation.com/${state}/${city}`,
+            url: `https://usgutterinstallation.com/${state.toLowerCase()}/${city.toLowerCase()}`,
         }
     }
 }

@@ -493,7 +493,7 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
             "availability": "https://schema.org/InStock"
         },
         "termsOfService": extendedContent.warranty,
-        "url": `https://usgutterinstallation.com/${stateCode}/${city}/${service.slug}`
+        "url": `https://usgutterinstallation.com/${stateCode.toLowerCase()}/${city.toLowerCase()}/${service.slug}`
     }
 
     const faqSchema = {
@@ -590,9 +590,9 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
             </header>
 
             <Breadcrumb items={[
-                { label: state, href: `/${stateCode}` },
-                { label: formattedCity, href: `/${stateCode}/${city}` },
-                { label: service.title, href: `/${stateCode}/${city}/${service.slug}` }
+                { label: state, href: `/${stateCode.toLowerCase()}` },
+                { label: formattedCity, href: `/${stateCode.toLowerCase()}/${city}` },
+                { label: service.title, href: `/${stateCode.toLowerCase()}/${city}/${service.slug}` }
             ]} />
 
             {/* What Is This Service Section */}

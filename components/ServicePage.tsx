@@ -138,8 +138,8 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             </header>
 
             <Breadcrumb items={[
-                { label: state, href: `/${stateCode}` },
-                { label: formattedCity, href: `/${stateCode}/${city}` }
+                { label: state, href: `/${stateCode.toLowerCase()}` },
+                { label: formattedCity, href: `/${stateCode.toLowerCase()}/${city}` }
             ]} />
 
             <script
@@ -179,10 +179,10 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             // Local Business Branch for this city
                             {
                                 "@type": "HomeAndConstructionBusiness",
-                                "@id": `https://usgutterinstallation.com/${stateCode}/${city}/#localbusiness`,
+                                "@id": `https://usgutterinstallation.com/${stateCode.toLowerCase()}/${city}/#localbusiness`,
                                 "name": `US Gutter Installation - ${formattedCity}, ${stateCode.toUpperCase()}`,
                                 "description": `Professional gutter installation repair and protection in ${formattedCity}, ${stateCode.toUpperCase()}. Same-day quotes, licensed & insured.`,
-                                "url": `https://usgutterinstallation.com/${stateCode}/${city}`,
+                                "url": `https://usgutterinstallation.com/${stateCode.toLowerCase()}/${city}`,
                                 "telephone": "+18588985338",
                                 "parentOrganization": { "@id": "https://usgutterinstallation.com/#organization" },
                                 "address": {
@@ -211,11 +211,11 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             // Service Schema for primary service
                             {
                                 "@type": "Service",
-                                "@id": `https://usgutterinstallation.com/${stateCode}/${city}/#service`,
+                                "@id": `https://usgutterinstallation.com/${stateCode.toLowerCase()}/${city}/#service`,
                                 "name": `Gutter Installation Near Me in ${formattedCity}, ${stateCode.toUpperCase()}`,
                                 "serviceType": "Gutter Installation",
                                 "description": `Looking for gutter installation near me in ${formattedCity}, ${stateCode.toUpperCase()}? Complete gutter services including seamless gutters, gutter guards, and downspout extensions.`,
-                                "provider": { "@id": `https://usgutterinstallation.com/${stateCode}/${city}/#localbusiness` },
+                                "provider": { "@id": `https://usgutterinstallation.com/${stateCode.toLowerCase()}/${city}/#localbusiness` },
                                 "areaServed": {
                                     "@type": "City",
                                     "name": formattedCity,
