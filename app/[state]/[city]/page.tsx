@@ -17,7 +17,7 @@ interface PageProps {
     }>
 }
 
-import { getMetaTitle } from '@/lib/state-meta-patterns'
+import { getMetaTitle, getMetaDescription } from '@/lib/state-meta-patterns'
 
 // ... existing imports ...
 
@@ -34,10 +34,11 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const stateName = cityData?.state_name || stateCode
 
     const metaTitle = getMetaTitle(formattedCity, stateCode, stateName)
+    const metaDescription = getMetaDescription(formattedCity, stateCode, stateName)
 
     return {
         title: metaTitle,
-        description: `Looking for gutter installation near me in ${formattedCity}, ${stateCode}? Find licensed local contractors for seamless gutters, gutter guards, and repairs. Free quote!`,
+        description: metaDescription,
         keywords: `gutter installation near me ${formattedCity}, seamless gutters near me ${formattedCity} ${stateCode}, gutter guards near me ${formattedCity}, gutter repair near me ${formattedCity}, gutter cleaning near me ${formattedCity}, downspout installation near me ${formattedCity}, leaf guards ${formattedCity}`,
         alternates: {
             canonical: `/${state.toLowerCase()}/${city.toLowerCase()}`

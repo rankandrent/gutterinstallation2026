@@ -7,7 +7,7 @@ import { NavbarCallBtn } from '@/components/CallBtn'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import RelatedServices from '@/components/RelatedServices'
-import { getStatePageMetaTitle } from '@/lib/state-meta-patterns'
+import { getStatePageMetaTitle, getStatePageMetaDescription } from '@/lib/state-meta-patterns'
 
 export const revalidate = 3600
 
@@ -45,10 +45,11 @@ export async function generateMetadata(props: StatePageProps): Promise<Metadata>
 
     const stateName = cityData?.state_name || stateCode
     const metaTitle = getStatePageMetaTitle(stateCode, stateName)
+    const metaDescription = getStatePageMetaDescription(stateCode, stateName)
 
     return {
         title: metaTitle,
-        description: `Find gutter installation near me in ${stateName}. Connect with licensed local contractors for seamless gutters, gutter guards, and repairs. Free quotes!`,
+        description: metaDescription,
         keywords: `gutter installation near me ${stateName}, seamless gutters near me ${stateName}, gutter repair near me ${stateName}, gutter guards ${stateName}, gutter cleaning ${stateName}`,
         alternates: {
             canonical: `/${stateCode.toLowerCase()}`
