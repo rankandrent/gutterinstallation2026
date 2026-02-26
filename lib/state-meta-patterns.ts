@@ -222,9 +222,120 @@ export const statePageMetaDescriptionPatterns: Record<string, string> = {
     "DC": "Stop basement leaks in the capital. Find expert gutter installation and repair contractors in Washington {StateName}."
 };
 
+// SEO Optimization: 50 Unique H1 Patterns emphasizing different aspects of the service per state
+export const stateH1Patterns: Record<string, string> = {
+    "AL": "Seamless Gutter Installation & Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "AK": "Heavy-Duty Gutter Systems & Snow Protection in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "AZ": "Monsoon-Ready Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "AR": "Expert Rain Gutter Installation & Maintenance in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "CA": "Premium Gutter Replacement & Leaf Protection in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "CO": "Durable Gutter Installation for Snow & Ice in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "CT": "Professional Gutter Contractors & Leaf Guards in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "DE": "Coastal Home Gutter Services & Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "FL": "Hurricane-Ready Gutter Installation Near <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "GA": "Top-Rated Seamless Gutter Installers in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "HI": "High-Volume Rain Gutter Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "ID": "Mountain & Valley Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "IL": "Clog-Free Gutter Installation & Cleaning in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "IN": "Trusted Local Gutter Repair & Replacement in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "IA": "Storm-Resistant Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "KS": "Heavy Rain & Wind Ready Gutter Services in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "KY": "Foundation-Protecting Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "LA": "High-Capacity Gutter Install & Drainage in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "ME": "Winterized Gutter Systems & Ice Protection in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MD": "Chesapeake Bay Area Gutter Contractors in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MA": "New England Seamless Gutter Solutions in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MI": "Lake-Effect Snow Certified Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MN": "Ice Dam Prevention & Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MS": "Southern Storm Gutter Repair & Installs in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MO": "Affordable Premium Gutter Replacements in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "MT": "Rugged Mountain Gutter & Fascia Services in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NE": "Midwest Storm Damage Gutter Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NV": "Desert Climate Seamless Gutter Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NH": "Pine Needle Resistant Gutter Guards in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NJ": "High-Quality Rain Gutter Installers in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NM": "Custom Metal & Seamless Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NY": "Licensed Rain Gutter Specialists in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "NC": "Coastal & Inland Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "ND": "Freeze-Resistant Aluminum Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "OH": "Ohio's #1 Rated Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "OK": "Extreme Weather Gutter Protection in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "OR": "Pacific Northwest Heavy Rain Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "PA": "Maintenance-Free Gutter Systems & Guards in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "RI": "Oceanfront Property Gutter Installs in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "SC": "Low Country Quality Gutter Replacements in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "SD": "Cold Climate Seamless Rain Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "TN": "Erosion-Preventing Gutter Solutions in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "TX": "Texas-Sized 6-Inch Seamless Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "UT": "Flash Flood Ready Home Drainage Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "VT": "Spring Thaw Gutter & Downspout Service in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "VA": "Complete Exterior Gutter Contractors in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "WA": "Evergreen State Rain Gutter Masters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "WV": "Hillside Property Rainwater Management in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "WI": "Heavy Duty Seamless Gutter Installers in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "WY": "High-Wind Rated Gutter Fastening & Setup in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>",
+    "DC": "Capital Region Custom Rain Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode}</span>"
+};
+
+export const statePageH1Patterns: Record<string, string> = {
+    "AL": "Statewide Gutter Installation & Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "AK": "Arctic-Ready Gutter Systems across <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "AZ": "Monsoon Defense Gutter Services in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "AR": "Top-Rated Gutter Installation Pros in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "CA": "Premium Leaf Guards & Gutter Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "CO": "Heavy Snow & Meltwater Gutter Solutions in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "CT": "Professional Gutter Installers throughout <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "DE": "Coastal Storm Gutter Services in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "FL": "Hurricane-Ready Rain Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "GA": "Leading Seamless Gutter Companies in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "HI": "High-Capacity Tropical Gutter Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "ID": "Durable Mountain Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "IL": "Clog-Free Gutter & Guard Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "IN": "Indiana's Trusted Local Gutter Experts in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "IA": "Storm & Wind Resistant Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "KS": "Tornado-Alley Weather Protected Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "KY": "Foundation-Protecting Gutter Solutions in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "LA": "Heavy Rain & Flood Drainage Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "ME": "Winterized Gutter & Ice Dam Protection in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MD": "Chesapeake Rain & Storm Gutter Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MA": "New England's Top Rated Gutter Contractors in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MI": "Lake-Effect Snow Certified Seamless Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MN": "Harsh Winter & Ice Dam Gutter Specialists in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MS": "Southern Storm Drainage & Gutter Installers in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MO": "Affordable Premium Gutter Replacements in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "MT": "Rugged Mountain Gutter & Fascia Services in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NE": "Midwest Weather & Storm Damage Gutter Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NV": "Desert Climate Seamless Gutter Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NH": "Pine Needle Resistant Gutter Guards in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NJ": "High-Quality Rain Gutter Installers in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NM": "Custom Metal & Seamless Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NY": "Licensed Rain Gutter Specialists in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "NC": "Coastal & Inland Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "ND": "Freeze-Resistant Aluminum Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "OH": "Ohio's #1 Rated Gutter Installation in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "OK": "Extreme Weather Gutter Protection in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "OR": "Pacific NW Heavy Rain Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "PA": "Maintenance-Free Gutter Systems & Guards in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "RI": "Oceanfront Property Gutter Installs in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "SC": "Low Country Quality Gutter Replacements in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "SD": "Cold Climate Seamless Rain Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "TN": "Erosion-Preventing Gutter Solutions in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "TX": "Texas-Sized Strong Seamless Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "UT": "Flash Flood Ready Home Drainage Systems in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "VT": "Spring Thaw Gutter & Downspout Service in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "VA": "Complete Exterior Gutter Contractors in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "WA": "Evergreen State Rain Gutter Masters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "WV": "Hillside Property Rainwater Management in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "WI": "Heavy Duty Seamless Gutter Installers in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "WY": "High-Wind Rated Gutter Fastening & Setup in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>",
+    "DC": "Capital Region Custom Rain Gutters in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>"
+};
 
 export const defaultMetaPattern = "Gutter Installation, Cleaning & Repair in {City}, {StateCode}";
 export const defaultStateMetaPattern = "Gutter Installation & Repair Services in {StateName}";
+
+export const defaultH1Pattern = "Gutter Installation, Cleaning & Repair in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{City}, {StateCode} Near Me</span>";
+export const defaultStateH1Pattern = "Gutter Installation & Services in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400\">{StateName}</span>";
 
 export const defaultMetaDescriptionPattern = "Looking for gutter installation near me in {City}, {StateCode}? Find licensed local contractors for seamless gutters, gutter guards, and repairs. Free quote!";
 export const defaultStateMetaDescriptionPattern = "Find gutter installation near me in {StateName}. Connect with licensed local contractors for seamless gutters, gutter guards, and repairs. Free quotes!";
@@ -256,5 +367,19 @@ export function getStatePageMetaDescription(stateCode: string, stateName: string
     const pattern = statePageMetaDescriptionPatterns[stateCode.toUpperCase()] || defaultStateMetaDescriptionPattern;
     return pattern
         .replace(/{StateCode}/g, stateCode)
+        .replace(/{StateName}/g, stateName);
+}
+
+export function getH1Tag(city: string, stateCode: string): string {
+    const pattern = stateH1Patterns[stateCode.toUpperCase()] || defaultH1Pattern;
+    return pattern
+        .replace(/{City}/g, city)
+        .replace(/{StateCode}/g, stateCode.toUpperCase());
+}
+
+export function getStateH1Tag(stateCode: string, stateName: string): string {
+    const pattern = statePageH1Patterns[stateCode.toUpperCase()] || defaultStateH1Pattern;
+    return pattern
+        .replace(/{StateCode}/g, stateCode.toUpperCase())
         .replace(/{StateName}/g, stateName);
 }

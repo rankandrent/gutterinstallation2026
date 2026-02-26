@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
 import { getSEOContent } from '@/lib/seo-content'
+import { getH1Tag } from '@/lib/state-meta-patterns'
 import RelatedServices from '@/components/RelatedServices'
 import { CallBtn, NavbarCallBtn } from '@/components/CallBtn'
 import CoverageStats from '@/components/CoverageStats'
@@ -96,13 +97,13 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
 
                 <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Column: Text */}
-                    <div className="text-center lg:text-left">
-                        <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-300 text-sm font-semibold uppercase tracking-wider">
-                            #1 Rated in {stateCode.toUpperCase()}
-                        </div>
-                        <h1 className="text-4xl md:text-[3.5rem] font-extrabold text-white mb-8 leading-tight tracking-tight">
-                            Gutter Installation, Cleaning & Repair in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{formattedCity}, {stateCode.toUpperCase()} Near Me</span>
-                        </h1>
+                    <div className="text-center lg:text-left">                        <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-300 text-sm font-semibold uppercase tracking-wider">
+                        #1 Rated in {stateCode.toUpperCase()}
+                    </div>
+                        <h1
+                            className="text-4xl md:text-[3.5rem] font-extrabold text-white mb-8 leading-tight tracking-tight"
+                            dangerouslySetInnerHTML={{ __html: getH1Tag(formattedCity, stateCode) }}
+                        />
                         <div className="text-lg md:text-xl text-slate-300 mb-10 font-light space-y-4">
                             <p dangerouslySetInnerHTML={{ __html: content.intro.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-medium">$1</span>') }} />
                         </div>

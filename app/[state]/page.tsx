@@ -7,7 +7,7 @@ import { NavbarCallBtn } from '@/components/CallBtn'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import RelatedServices from '@/components/RelatedServices'
-import { getStatePageMetaTitle, getStatePageMetaDescription } from '@/lib/state-meta-patterns'
+import { getStatePageMetaTitle, getStatePageMetaDescription, getStateH1Tag } from '@/lib/state-meta-patterns'
 
 export const revalidate = 3600
 
@@ -105,9 +105,10 @@ export default async function StatePage(props: StatePageProps) {
                     <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-300 text-sm font-semibold uppercase tracking-wider">
                         Serving All of {stateName}
                     </div>
-                    <h1 className="text-5xl md:text-[4rem] font-extrabold mb-6 tracking-tight">
-                        Gutter Installation in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{stateName}</span>
-                    </h1>
+                    <h1
+                        className="text-5xl md:text-[4rem] font-extrabold mb-6 tracking-tight"
+                        dangerouslySetInnerHTML={{ __html: getStateH1Tag(stateCode, stateName) }}
+                    />
                     <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
                         Find your local expert. We provide professional gutter installation, repair, and gutter guards across {cities.length} cities in {stateCode.toUpperCase()}.
                     </p>
