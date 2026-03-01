@@ -13,10 +13,12 @@ export async function getCityData(stateCode: string, citySlug: string) {
         // We limit to 1. Note: There might be duplicate city names in same state (rare but possible with counties), 
         // strictly we might want to just take the first one found.
         .limit(1)
-        .single()
+        .maybeSingle()
 
     if (error || !data) {
-        console.error('Error fetching city:', error)
+        if (error) {
+            console.error('Error fetching city:', error)
+        }
         return null
     }
     return data
