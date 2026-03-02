@@ -53,9 +53,9 @@ export default async function Home() {
             </span>
             Find Gutter Services Near You
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-7xl font-extrabold mb-8 text-white tracking-tight leading-tight">
             Find <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Gutter Installation</span><br />Near Me
-          </h1>
+          </h2>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light mb-12 leading-relaxed">
             Searching for <span className="text-white font-semibold">gutter contractors near me</span>? Connect with licensed, insured gutter installers in over <span className="text-white font-semibold">31,000+ cities</span> across all 50 states. Get same-day quotes for seamless gutters, gutter guards, repairs & more.
           </p>
@@ -106,7 +106,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">How to Install Gutters: Complete DIY Guide</h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">How to Install Gutters: Complete DIY Guide</h2>
         <p className="text-slate-500 text-sm font-medium mb-12 uppercase tracking-wide">Published on 09. 23. 2024</p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Why Gutters Matter</h2>
@@ -221,7 +221,7 @@ export default async function Home() {
           Review 4 specific property elements prior to a full teardown. First, confirm your fascia boards possess intact wood without soft rot. Second, verify if your local municipality requires specific building permits for exterior renovation. Third, calculate your total necessary gutter installation cost clearly, considering material upgrades like copper over zinc. Finally, check if the project requires comprehensive soffit panel replacement for attic airflow.
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-16 mb-8 tracking-tight">Gutter Installation Costs and Considerations</h1>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-16 mb-8 tracking-tight">Gutter Installation Costs and Considerations</h2>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Factors Affecting Gutter Installation Cost</h2>
         <p className="mb-6">
@@ -315,7 +315,7 @@ export default async function Home() {
           </table>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-16 mb-8 tracking-tight">Gutter Services and Maintenance</h1>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-16 mb-8 tracking-tight">Gutter Services and Maintenance</h2>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Commercial &amp; Residential Gutter Services</h2>
         <p className="mb-6">
@@ -374,7 +374,7 @@ export default async function Home() {
           Before authorizing local labor inside Orlando city lines, demand 3 specific confirmations. First, check proof of up-to-date worker&amp;apos; compensation insurance. Second, clarify the specific 0.027 or 0.032 aluminum gauge thickness on the contract. Third, establish total clarity on warranty lengths for material fading versus physical labor detachment issues.
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-16 mb-8 tracking-tight">FAQ</h1>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-16 mb-8 tracking-tight">FAQ</h2>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Frequently Asked Questions</h2>
 

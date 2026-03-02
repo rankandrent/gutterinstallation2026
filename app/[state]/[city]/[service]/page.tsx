@@ -47,6 +47,14 @@ export async function generateMetadata(props: StartServicePageProps): Promise<Me
         description: serviceInfo.description(formattedCity, formattedState),
         alternates: {
             canonical: `/${state.toLowerCase()}/${city.toLowerCase()}/${service}`
+        },
+        openGraph: {
+            title: metaTitle,
+            description: serviceInfo.description(formattedCity, formattedState),
+            url: `https://usgutterinstallation.com/${state.toLowerCase()}/${city.toLowerCase()}/${service}`,
+            siteName: 'US Gutter Installation',
+            type: 'website',
+            images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
         }
     }
 }

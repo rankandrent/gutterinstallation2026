@@ -156,6 +156,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                                 "description": "Professional gutter installation, repair, and protection services across 31,000+ cities in the United States. Licensed, insured, and certified.",
                                 "url": "https://usgutterinstallation.com",
                                 "logo": "https://usgutterinstallation.com/logo.png",
+                                "image": "https://usgutterinstallation.com/og-image.jpg",
                                 "telephone": "+18588985338",
                                 "priceRange": "$$",
                                 "areaServed": {
@@ -164,9 +165,11 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                                 },
                                 "address": {
                                     "@type": "PostalAddress",
+                                    "streetAddress": `Serving ${formattedCity}`,
                                     "addressLocality": formattedCity,
                                     "addressRegion": stateCode.toUpperCase(),
-                                    "addressCountry": "US"
+                                    "addressCountry": "US",
+                                    ...(zipCodes && zipCodes.length > 0 && { postalCode: zipCodes[0] })
                                 },
                                 "aggregateRating": {
                                     "@type": "AggregateRating",

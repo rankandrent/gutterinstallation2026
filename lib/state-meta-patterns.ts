@@ -340,34 +340,48 @@ export const defaultStateH1Pattern = "Gutter Installation & Services in <span cl
 export const defaultMetaDescriptionPattern = "Looking for gutter installation near me in {City}, {StateCode}? Find licensed local contractors for seamless gutters, gutter guards, and repairs. Free quote!";
 export const defaultStateMetaDescriptionPattern = "Find gutter installation near me in {StateName}. Connect with licensed local contractors for seamless gutters, gutter guards, and repairs. Free quotes!";
 
+function truncate(str: string, maxLength: number): string {
+    if (str.length <= maxLength) return str;
+    // Try to cut at the last space before maxLength
+    const subString = str.substring(0, maxLength);
+    const lastSpaceIndex = subString.lastIndexOf(" ");
+    // If no space found, just hard cut, otherwise cut at space
+    const cutPos = lastSpaceIndex > 0 ? lastSpaceIndex : maxLength;
+    return str.substring(0, cutPos).replace(/[.,;!?]+$/, "") + "...";
+}
+
 export function getMetaTitle(city: string, stateCode: string, stateName?: string): string {
     const pattern = stateMetaPatterns[stateCode.toUpperCase()] || defaultMetaPattern;
-    return pattern
+    const title = pattern
         .replace(/{City}/g, city)
         .replace(/{StateCode}/g, stateCode)
         .replace(/{StateName}/g, stateName || stateCode);
+    return truncate(title, 60);
 }
 
 export function getMetaDescription(city: string, stateCode: string, stateName?: string): string {
     const pattern = stateMetaDescriptionPatterns[stateCode.toUpperCase()] || defaultMetaDescriptionPattern;
-    return pattern
+    const desc = pattern
         .replace(/{City}/g, city)
         .replace(/{StateCode}/g, stateCode)
         .replace(/{StateName}/g, stateName || stateCode);
+    return truncate(desc, 155);
 }
 
 export function getStatePageMetaTitle(stateCode: string, stateName: string): string {
     const pattern = statePageMetaPatterns[stateCode.toUpperCase()] || defaultStateMetaPattern;
-    return pattern
+    const title = pattern
         .replace(/{StateCode}/g, stateCode)
         .replace(/{StateName}/g, stateName);
+    return truncate(title, 60);
 }
 
 export function getStatePageMetaDescription(stateCode: string, stateName: string): string {
     const pattern = statePageMetaDescriptionPatterns[stateCode.toUpperCase()] || defaultStateMetaDescriptionPattern;
-    return pattern
+    const desc = pattern
         .replace(/{StateCode}/g, stateCode)
         .replace(/{StateName}/g, stateName);
+    return truncate(desc, 155);
 }
 
 export function getH1Tag(city: string, stateCode: string): string {

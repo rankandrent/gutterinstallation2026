@@ -47,6 +47,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
             title: `Find Gutter Installation Near Me in ${formattedCity}, ${stateCode}`,
             description: `Connect with the #1 rated gutter installation contractors near you in ${formattedCity}. Seamless gutters, repairs, and guards. 24/7 Service. Free quotes!`,
             url: `https://usgutterinstallation.com/${state.toLowerCase()}/${city.toLowerCase()}`,
+            siteName: 'US Gutter Installation',
+            type: 'website',
+            images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
         }
     }
 }

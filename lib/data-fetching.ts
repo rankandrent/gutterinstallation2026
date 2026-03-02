@@ -25,7 +25,7 @@ export async function getCityData(stateCode: string, citySlug: string) {
 }
 
 export async function getRelatedCities(stateCode: string, currentCity: string, lat?: number, lng?: number) {
-    const limit = (lat && lng) ? 150 : 10;
+    const limit = (lat && lng) ? 150 : 24;
 
     const { data } = await supabase
         .from('usa city name')
@@ -47,8 +47,9 @@ export async function getRelatedCities(stateCode: string, currentCity: string, l
         });
 
         withDistance.sort((a, b) => a.dist - b.dist);
-        return withDistance.slice(0, 10);
+        return withDistance.slice(0, 24);
     }
 
     return data;
 }
+
